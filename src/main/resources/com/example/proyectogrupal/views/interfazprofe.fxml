@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.calendarfx.view.MonthView?>
+<?import com.calendarfx.view.TimeField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1080.0" maxWidth="1920.0" minHeight="1080.0" minWidth="1920.0" prefHeight="1080.0" prefWidth="1114.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.InterfazProfesor">
+   <right>
+      <VBox alignment="TOP_RIGHT" maxWidth="600.0" minWidth="600.0" prefHeight="1014.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="80.0" />
+         </BorderPane.margin>
+         <children>
+            <TimeField accessibleRole="DATE_PICKER" blendMode="EXCLUSION" maxWidth="206.0" minWidth="76.0" prefHeight="26.0" prefWidth="76.0" scaleX="2.0" scaleY="2.0" translateZ="6.0">
+               <VBox.margin>
+                  <Insets bottom="100.0" left="1200.0" top="40.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </TimeField>
+            <MonthView availabilityFill="RED" maxHeight="500.0" maxWidth="500.0" minHeight="400.0" minWidth="100.0" prefHeight="485.0" prefWidth="500.0" styleClass="calendar" stylesheets="@../../../../Style.css">
+               <VBox.margin>
+                  <Insets right="30.0" top="145.0" />
+               </VBox.margin>
+            </MonthView>
+         </children>
+      </VBox>
+   </right>
+   <top>
+      <MenuBar prefWidth="1920.0" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Alumnos">
+            <items>
+              <MenuItem fx:id="AlumnoTabla" mnemonicParsing="false" onAction="#TablaAlumno" text="Tabla de Alumnos" />
+                  <MenuItem fx:id="RegistrarAlumno" mnemonicParsing="false" onAction="#RegistrarA" text="Registrar Alumnos" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Empresa">
+            <items>
+              <MenuItem fx:id="RegistrarEmpresa" mnemonicParsing="false" onAction="#RegistrarE" text="Registrar Empresa" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Salir">
+            <items>
+              <MenuItem fx:id="Salr" mnemonicParsing="false" text="Cerrar Sesion" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox maxHeight="1055.0" maxWidth="1800.0" minHeight="1014.0" minWidth="1000.0" prefHeight="1014.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="129.0" prefWidth="1233.0" text="Bienvenido Profesor@" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Italic" size="54.0" />
+               </font>
+            </Label>
+            <TableView prefHeight="699.0" prefWidth="1070.0">
+              <columns>
+                <TableColumn fx:id="cNombre" prefWidth="190.0" text="Nombre" />
+                <TableColumn fx:id="cApellidos" prefWidth="432.0" text="Apellidos" />
+                  <TableColumn fx:id="cEmail" prefWidth="359.0" text="Emaill" />
+                  <TableColumn fx:id="cTTelefono" prefWidth="183.0" text="Teléfono" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+               <VBox.margin>
+                  <Insets left="60.0" right="40.0" />
+               </VBox.margin>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets top="100.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

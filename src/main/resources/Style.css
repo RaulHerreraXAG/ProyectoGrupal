@@ -1,0 +1,27 @@
+.textfied{
+    -fx-background-color : transparent;
+    -fx-border-width :  0px 0px 2px 0px;
+    -fx-border-color :  #1F58A1;
+}
+
+.buttonIS{
+    -fx-background-color : #1F58A1;
+    -fx-background-radius : 15px;
+}
+
+.vBoxFondo{
+    -fx-background-image: url("images/fonfo.png");
+}
+.vBoxFondo2{
+    -fx-background-color: white;
+
+}
+
+.calendar{
+    -fx-border-color: black;
+    -fx-background-color: white;
+}
+.FondoP {
+    -fx-background-image: url("images/fondoProfesor.png");
+
+}
