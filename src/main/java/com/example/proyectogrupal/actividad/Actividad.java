@@ -1,13 +1,12 @@
 package com.example.proyectogrupal.actividad;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.example.proyectogrupal.alumno.Alumno;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Entity
@@ -17,6 +16,27 @@ public class Actividad implements Serializable {
     @Id
     @GeneratedValue
     private Integer id;
+
+    @Column(name = "Fecha")
+    private Date fecha;
+
+    @Column(name = "Tipo")
+    @Enumerated(EnumType.STRING)
+    private Tips tipo;
+
+    @Column(name = "Horas")
+    private Integer horas;
+
+    @Column(name = "Actividad")
+    private String actividad;
+
+    @Column(name = "Observaciones")
+    private String observaciones;
+
+    @ManyToOne
+    @JoinColumn(name = "Alumno")
+    private Alumno alumno;
+
 
 
 

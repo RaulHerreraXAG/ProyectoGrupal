@@ -17,6 +17,16 @@ public class Main extends Application {
         stage.show();
     }
 
+
+    public void changeScene(Stage stage,String text) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/proyectogrupal/views/"+stage));
+        Scene scene = new Scene(fxmlLoader.load(), 700, 520);
+        stage.setTitle(text);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
     public static void main(String[] args) {
         launch();
     }

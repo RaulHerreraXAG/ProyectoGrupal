@@ -10,7 +10,7 @@ module com.example.proyectogrupal {
     opens com.example.proyectogrupal.actividad;
     opens com.example.proyectogrupal.alumno;
     opens com.example.proyectogrupal.empresa;
-    opens com.example.proyectogrupal.usuario;
+
 
 
     opens com.example.proyectogrupal to javafx.fxml;
