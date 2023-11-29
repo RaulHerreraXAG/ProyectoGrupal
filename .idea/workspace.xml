@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="hecho el boceto de registrar alumno">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/fondo-registro.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/CreacionAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/CreacionAlumno.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/CreacionAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/interfazAlumno.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fondo-registro.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/pagina-alumno.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +76,7 @@
       <workItem from="1701106511225" duration="956000" />
       <workItem from="1701113192526" duration="1358000" />
       <workItem from="1701165059402" duration="4742000" />
-      <workItem from="1701253057639" duration="3765000" />
+      <workItem from="1701253057639" duration="5389000" />
     </task>
     <task id="LOCAL-00001" summary="hecho el boceto de registrar alumno">
       <option name="closed" value="true" />
@@ -86,7 +86,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701256328584</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="hecho el boceto de registrar alumno">
+      <option name="closed" value="true" />
+      <created>1701257641886</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701257641886</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,5 +103,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hecho el boceto de registrar alumno" />
     <option name="LAST_COMMIT_MESSAGE" value="hecho el boceto de registrar alumno" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

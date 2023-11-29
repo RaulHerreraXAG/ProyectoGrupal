@@ -110,7 +110,7 @@
       </GridPane>
    </center>
    <top>
-      <Label text="Registrar nuevo alumn@" BorderPane.alignment="CENTER">
+      <Label text="Bienvenid@ pepito" BorderPane.alignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>
