@@ -1,10 +1,14 @@
 package com.example.proyectogrupal.controllers;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 
-public class InterfazProfesor
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class InterfazProfesor implements Initializable
 {
     @javafx.fxml.FXML
     private MenuItem AlumnoTabla;
@@ -23,9 +27,6 @@ public class InterfazProfesor
     @javafx.fxml.FXML
     private TableColumn cTTelefono;
 
-    @javafx.fxml.FXML
-    public void initialize() {
-    }
 
     @javafx.fxml.FXML
     public void TablaAlumno(ActionEvent actionEvent) {
@@ -37,5 +38,11 @@ public class InterfazProfesor
 
     @javafx.fxml.FXML
     public void RegistrarE(ActionEvent actionEvent) {
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
