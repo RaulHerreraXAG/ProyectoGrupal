@@ -15,9 +15,9 @@ module com.example.proyectogrupal {
 
 
     opens com.example.proyectogrupal to javafx.fxml;
+    exports com.example.proyectogrupal;
+    exports com.example.proyectogrupal.controllers;
     opens com.example.proyectogrupal.controllers to javafx.fxml;
 
 
-    exports com.example.proyectogrupal;
-    exports com.example.proyectogrupal.controllers;
 }
