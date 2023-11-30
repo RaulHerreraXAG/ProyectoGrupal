@@ -13,7 +13,7 @@ public class App extends Application {
     public void start(Stage stage) throws IOException {
         this.stage = stage;
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/com/example/proyectogrupal/views/login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
+        Scene scene = new Scene(fxmlLoader.load(), 1800, 720);
         stage.setTitle("Login");
         stage.setScene(scene);
         stage.show();
@@ -23,7 +23,7 @@ public class App extends Application {
     public static void changeScene(String fxml,String title) throws IOException {
        try{
            FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/com/example/proyectogrupal/views/"+fxml));
-           Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
+           Scene scene = new Scene(fxmlLoader.load(), 1800, 720);
            stage.setTitle(title);
            stage.setScene(scene);
            stage.show();

@@ -62,14 +62,11 @@ public class Alumno implements Serializable {
    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
-
-
-
-/*
     @Override
     public String toString() {
         return "Alumno{" +
-                "DNI=" + DNI +
+                "ID_Alumno=" + ID_Alumno +
+                ", DNI=" + DNI +
                 ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", contrasenya='" + contrasenya + '\'' +
@@ -83,5 +80,5 @@ public class Alumno implements Serializable {
                 ", telefono=" + telefono +
                 ", actividad_diaria=" + actividad_diaria +
                 '}';
-    }*/
+    }
 }

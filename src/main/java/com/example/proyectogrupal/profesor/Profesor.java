@@ -31,16 +31,16 @@ public class Profesor implements Serializable {
 
     @OneToMany(mappedBy = "tutor", fetch = FetchType.EAGER)
     private List<Alumno> alumnos = new ArrayList<>();
-/*
+
     @Override
     public String toString() {
         return "Profesor{" +
-                "id=" + id +
+                "id=" + ID_Profesor +
                 ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", contrasenya='" + contrasenya + '\'' +
                 ", email='" + email + '\'' +
                 ", alumnos=" + alumnos +
                 '}';
-    }*/
+    }
 }
