@@ -11,7 +11,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "profesor")
+@Table(name = "Profesor")
 public class Profesor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +29,7 @@ public class Profesor implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "alumno", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "Tutor", fetch = FetchType.EAGER)
     private List<Alumno> alumnos = new ArrayList<>();
 
     @Override

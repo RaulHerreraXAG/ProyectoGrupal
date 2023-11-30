@@ -33,11 +33,11 @@ public class Alumno implements Serializable {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "Empresa",referencedColumnName = "empresas")
+    @JoinColumn(name = "Empresa")
     private Empresa empresa;
 
     @ManyToOne
-    @JoinColumn(name = "Tutor",referencedColumnName = "profesor")
+    @JoinColumn(name = "Tutor")
     private Profesor tutor;
 
     @Column(name = "Observaciones")
@@ -75,7 +75,7 @@ public class Alumno implements Serializable {
                 ", horasDual=" + horasDual +
                 ", horasFCT=" + horasFCT +
                 ", telefono=" + telefono +
-                ", actividad_diaria=" + actividad_diaria +
+                ", actividad_diaria=" + /*actividad_diaria +*/
                 '}';
     }
 }

@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "empresas")
+@Table(name = "empresa")
 public class Empresa implements Serializable{
 
     @Id

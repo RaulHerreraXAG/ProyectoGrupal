@@ -10,13 +10,14 @@ module com.example.proyectogrupal {
     opens com.example.proyectogrupal.actividad;
     opens com.example.proyectogrupal.alumno;
     opens com.example.proyectogrupal.empresa;
+    opens com.example.proyectogrupal.profesor;
 
 
 
     opens com.example.proyectogrupal to javafx.fxml;
+    exports com.example.proyectogrupal;
+    exports com.example.proyectogrupal.controllers;
     opens com.example.proyectogrupal.controllers to javafx.fxml;
 
 
-    exports com.example.proyectogrupal;
-    exports com.example.proyectogrupal.controllers;
 }
