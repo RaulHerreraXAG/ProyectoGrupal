@@ -33,7 +33,7 @@ public class Actividad implements Serializable {
     @Column(name = "Observaciones")
     private String observaciones;
 
-  @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "ID_Alumno" )
     private Alumno alumno;
 

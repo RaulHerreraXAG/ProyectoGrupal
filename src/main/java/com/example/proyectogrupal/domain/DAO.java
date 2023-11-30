@@ -22,7 +22,7 @@ public interface DAO<T> {
      * @param id Identificador del elemento a buscar.
      * @return El elemento del tipo T encontrado o nulo si no se encuentra.
      */
-    public T get(Integer id);
+    public T get(Long id);
 
     /**
      * Guarda un nuevo elemento del tipo T en la base de datos.

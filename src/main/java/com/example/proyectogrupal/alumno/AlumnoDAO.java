@@ -12,12 +12,21 @@ public class AlumnoDAO implements DAO<Alumno> {
 
     @Override
     public ArrayList<Alumno> getAll() {
-        return null;
+        var salida = new ArrayList<Alumno>(0);
+        try (Session sesion = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Alumno> query = sesion.createQuery("from Alumno", Alumno.class);
+            salida = (ArrayList<Alumno>) query.getResultList();
+        }
+        return salida;
     }
 
     @Override
-    public Alumno get(Integer id) {
-        return null;
+    public Alumno get(Long id) {
+        var salida = new Alumno();
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            salida = session.get(Alumno.class, id);
+        }
+        return salida;
     }
 
     @Override

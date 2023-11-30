@@ -12,13 +12,22 @@ public class ProfesorDAO implements DAO<Profesor> {
 
 
     @Override
-    public ArrayList<Profesor> getAll() {
-        return null;
+        public ArrayList<Profesor> getAll() {
+            var salida = new ArrayList<Profesor>(0);
+            try(Session sesion = HibernateUtil.getSessionFactory().openSession()){
+                Query<Profesor> query = sesion.createQuery("from Profesor", Profesor.class);
+                salida = (ArrayList<Profesor>) query.getResultList();
+            }
+            return salida;
     }
 
     @Override
-    public Profesor get(Integer id) {
-        return null;
+    public Profesor get(Long id) {
+        var salida = new Profesor();
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            salida = session.get(Profesor.class, id);
+        }
+        return salida;
     }
 
     @Override

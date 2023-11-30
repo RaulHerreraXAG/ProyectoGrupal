@@ -35,7 +35,7 @@ public class Alumno implements Serializable {
     @Column(name = "Email")
     private String email;
 
-   @ManyToOne
+    @ManyToOne
     @JoinColumn(name = "Empresa",referencedColumnName = "ID_Empresa")
     private Empresa empresa;
 
@@ -59,7 +59,7 @@ public class Alumno implements Serializable {
     private Integer telefono;
 
 
-   @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
     @Override
@@ -82,3 +82,4 @@ public class Alumno implements Serializable {
                 '}';
     }
 }
+

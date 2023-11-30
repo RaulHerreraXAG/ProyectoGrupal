@@ -9,6 +9,17 @@
     -fx-background-radius : 15px;
 }
 
+.buttonMenu{
+    -fx-background-color : #F6A83B;
+    -fx-background-radius : 10px;
+    -fx-border-color: black;
+}
+
+.buttonCS{
+    -fx-background-color : red;
+    -fx-background-radius : 15px;
+}
+
 .vBoxFondo{
     -fx-background-image: url("images/fonfo.png");
 }
