@@ -29,9 +29,9 @@ public class Profesor implements Serializable {
     @Column(name = "email")
     private String email;
 
-    @OneToMany(mappedBy = "alumno", fetch = FetchType.EAGER)
-    private List<Alumno> alumnos = new ArrayList<>();
-
+  /*  @OneToMany(mappedBy = "tutor", fetch = FetchType.EAGER)
+    private List<Alumno> alumnos = new ArrayList<>();*/
+/*
     @Override
     public String toString() {
         return "Profesor{" +
@@ -42,5 +42,5 @@ public class Profesor implements Serializable {
                 ", email='" + email + '\'' +
                 ", alumnos=" + alumnos +
                 '}';
-    }
+    }*/
 }

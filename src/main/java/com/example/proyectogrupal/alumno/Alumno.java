@@ -32,13 +32,13 @@ public class Alumno implements Serializable {
     @Column(name = "Email")
     private String email;
 
-    @ManyToOne
-    @JoinColumn(name = "Empresa",referencedColumnName = "empresas")
+   @ManyToOne
+    @JoinColumn(name = "ID",referencedColumnName = "ID")
     private Empresa empresa;
-
+/*
     @ManyToOne
     @JoinColumn(name = "Tutor",referencedColumnName = "profesor")
-    private Profesor tutor;
+    private Profesor tutor;*/
 
     @Column(name = "Observaciones")
     private String observaciones;
@@ -56,10 +56,13 @@ public class Alumno implements Serializable {
     private Integer telefono;
 
 
-    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
+   @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
 
+
+
+/*
     @Override
     public String toString() {
         return "Alumno{" +
@@ -77,5 +80,5 @@ public class Alumno implements Serializable {
                 ", telefono=" + telefono +
                 ", actividad_diaria=" + actividad_diaria +
                 '}';
-    }
+    }*/
 }

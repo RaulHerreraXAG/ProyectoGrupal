@@ -32,7 +32,7 @@ public class Empresa implements Serializable{
     @Column(name = "Observaciones")
     private String observaciones;
 
-    @OneToMany(mappedBy = "Alumno" , fetch = FetchType.EAGER)
+   @OneToMany(mappedBy = "empresa" , fetch = FetchType.EAGER)
     private List<Alumno> alumnos = new ArrayList<>();
 
 }
