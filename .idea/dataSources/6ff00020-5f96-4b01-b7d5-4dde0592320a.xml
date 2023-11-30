@@ -1019,8 +1019,8 @@
     </schema>
     <schema id="326" parent="1" name="cesurbd">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-11-30.21:27:08</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-11-30.19:27:08</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-11-30.22:31:32</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-11-30.20:31:32</LocalIntrospectionTimestamp>
       <CollationName>latin1_swedish_ci</CollationName>
     </schema>
     <schema id="327" parent="1" name="gestionpedidos">
@@ -1094,14 +1094,14 @@
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="346" parent="337" name="ID">
+    <column id="346" parent="337" name="ID_Actividad">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
     <index id="347" parent="337" name="PRIMARY">
-      <ColNames>ID</ColNames>
+      <ColNames>ID_Actividad</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
@@ -1110,7 +1110,7 @@
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="349" parent="338" name="ID">
+    <column id="349" parent="338" name="ID_Alumno">
       <AutoIncrement>1</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
@@ -1177,27 +1177,27 @@
       <Position>13</Position>
     </column>
     <foreign-key id="362" parent="338" name="alumno_ibfk_3">
-      <ColNames>ID</ColNames>
-      <RefColNames>ID</RefColNames>
+      <ColNames>ID_Alumno</ColNames>
+      <RefColNames>ID_Actividad</RefColNames>
       <RefTableName>actividad</RefTableName>
     </foreign-key>
     <foreign-key id="363" parent="338" name="alumno_ibfk_1">
       <ColNames>Empresa</ColNames>
-      <RefColNames>ID</RefColNames>
+      <RefColNames>ID_Empresa</RefColNames>
       <RefTableName>empresas</RefTableName>
     </foreign-key>
     <foreign-key id="364" parent="338" name="alumno_ibfk_2">
       <ColNames>Tutor</ColNames>
-      <RefColNames>ID</RefColNames>
+      <RefColNames>ID_Profesor</RefColNames>
       <RefTableName>profesor</RefTableName>
     </foreign-key>
     <index id="365" parent="338" name="PRIMARY">
-      <ColNames>ID</ColNames>
+      <ColNames>ID_Alumno</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
     <index id="366" parent="338" name="ID">
-      <ColNames>ID</ColNames>
+      <ColNames>ID_Alumno</ColNames>
       <Type>btree</Type>
     </index>
     <index id="367" parent="338" name="Empresa">
@@ -1214,8 +1214,8 @@ Tutor</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="370" parent="339" name="ID">
-      <AutoIncrement>2</AutoIncrement>
+    <column id="370" parent="339" name="ID_Empresa">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1246,7 +1246,7 @@ Tutor</ColNames>
       <Position>6</Position>
     </column>
     <index id="376" parent="339" name="PRIMARY">
-      <ColNames>ID</ColNames>
+      <ColNames>ID_Empresa</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
@@ -1255,8 +1255,8 @@ Tutor</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="378" parent="340" name="ID">
-      <AutoIncrement>2</AutoIncrement>
+    <column id="378" parent="340" name="ID_Profesor">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1282,7 +1282,7 @@ Tutor</ColNames>
       <Position>5</Position>
     </column>
     <index id="383" parent="340" name="PRIMARY">
-      <ColNames>ID</ColNames>
+      <ColNames>ID_Profesor</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>

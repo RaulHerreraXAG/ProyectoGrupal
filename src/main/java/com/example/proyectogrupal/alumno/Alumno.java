@@ -17,6 +17,9 @@ import java.util.List;
 public class Alumno implements Serializable {
     @Id
     @GeneratedValue
+    @Column(name = "ID_Alumno")
+    private Long ID_Alumno;
+
     @Column(name = "DNI")
     private Integer DNI;
 
@@ -33,12 +36,12 @@ public class Alumno implements Serializable {
     private String email;
 
    @ManyToOne
-    @JoinColumn(name = "ID",referencedColumnName = "ID")
+    @JoinColumn(name = "Empresa",referencedColumnName = "ID_Empresa")
     private Empresa empresa;
-/*
+
     @ManyToOne
-    @JoinColumn(name = "Tutor",referencedColumnName = "profesor")
-    private Profesor tutor;*/
+    @JoinColumn(name = "ID_Profesor")
+    private Profesor tutor;
 
     @Column(name = "Observaciones")
     private String observaciones;

@@ -15,7 +15,7 @@ import java.util.Date;
 public class Actividad implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long ID_Actividad;
 
     @Column(name = "Fecha")
     private Date fecha;
@@ -34,7 +34,7 @@ public class Actividad implements Serializable {
     private String observaciones;
 
   @ManyToOne
-    @JoinColumn(name = "ID" )
+    @JoinColumn(name = "ID_Alumno" )
     private Alumno alumno;
 
 

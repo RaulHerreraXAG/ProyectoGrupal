@@ -15,7 +15,7 @@ import java.util.List;
 public class Profesor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long ID_Profesor;
 
     @Column(name = "Nombre")
     private String nombre;
@@ -29,8 +29,8 @@ public class Profesor implements Serializable {
     @Column(name = "email")
     private String email;
 
-  /*  @OneToMany(mappedBy = "tutor", fetch = FetchType.EAGER)
-    private List<Alumno> alumnos = new ArrayList<>();*/
+    @OneToMany(mappedBy = "tutor", fetch = FetchType.EAGER)
+    private List<Alumno> alumnos = new ArrayList<>();
 /*
     @Override
     public String toString() {
