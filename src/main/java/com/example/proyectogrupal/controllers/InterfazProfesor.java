@@ -1,48 +1,56 @@
 package com.example.proyectogrupal.controllers;
 
+import com.example.proyectogrupal.App;
+import com.example.proyectogrupal.alumno.Alumno;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class InterfazProfesor implements Initializable
 {
     @javafx.fxml.FXML
-    private MenuItem AlumnoTabla;
+    private TableColumn<Alumno , String>  cNombre;
     @javafx.fxml.FXML
-    private MenuItem RegistrarAlumno;
+    private TableColumn<Alumno , String> cApellidos;
     @javafx.fxml.FXML
-    private MenuItem RegistrarEmpresa;
+    private TableColumn<Alumno , String>  cEmail;
     @javafx.fxml.FXML
-    private MenuItem Salr;
+    private TableColumn<Alumno , String>  cTTelefono;
     @javafx.fxml.FXML
-    private TableColumn cNombre;
+    private Button RegistraAlumnos;
     @javafx.fxml.FXML
-    private TableColumn cApellidos;
+    private Button TablaAlumnos;
     @javafx.fxml.FXML
-    private TableColumn cEmail;
+    private Button RegistarEmpresa;
     @javafx.fxml.FXML
-    private TableColumn cTTelefono;
+    private TableView TvAlumnos;
 
 
     @javafx.fxml.FXML
-    public void TablaAlumno(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void RegistrarA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
-    public void RegistrarE(ActionEvent actionEvent) {
+    public void RegistrarA(ActionEvent actionEvent) throws IOException {
+        App.changeScene("registrar-alumno.fxml","Registrar Alumno");
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    @javafx.fxml.FXML
+    public void MenuTablaAlumno(ActionEvent actionEvent) throws IOException {
+        App.changeScene("InformacionDeAlumnos.fxml","Tus Alumnos");
+    }
+
+    @javafx.fxml.FXML
+    public void RegistrarEmp(ActionEvent actionEvent) throws IOException {
+        App.changeScene("registrar-empresa.fxml","Registrar Empresa");
     }
 }

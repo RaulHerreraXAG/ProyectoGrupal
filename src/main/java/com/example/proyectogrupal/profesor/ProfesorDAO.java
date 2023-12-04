@@ -4,6 +4,7 @@ import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -32,17 +33,58 @@ public class ProfesorDAO implements DAO<Profesor> {
 
     @Override
     public Profesor save(Profesor data) {
-        return null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Transaction transaction = null;
+            try {
+                // Comienza la transacción.
+                transaction = session.beginTransaction();
+
+                // Guarda el nuevo ítem en la Base de Datos.
+                session.save(data);
+
+                // Commit de la transacción.
+                transaction.commit();
+            } catch (Exception e) {
+                // Maneja cualquier excepción que pueda ocurrir durante la transacción.
+                if (transaction != null) {
+                    transaction.rollback();
+                }
+                e.printStackTrace();
+            }
+            return data;
+        }
     }
 
     @Override
     public void update(Profesor data) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction transaction = null;
+
+        try {
+            transaction = session.beginTransaction();
+
+            // Actualizar el pedido en la base de datos
+            session.update(data);
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+
 
     }
 
     @Override
     public void delete(Profesor data) {
-
+        HibernateUtil.getSessionFactory().inTransaction((session -> {
+            Alumno alumno = session.get(Alumno.class, data.getID_Profesor());
+            session.remove(alumno);
+        }));
     }
     public Profesor validateUser(String email, String contrasenya) {
         Profesor result = null;

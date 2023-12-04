@@ -23,7 +23,7 @@
    <center>
       <VBox maxHeight="1055.0" maxWidth="1800.0" minHeight="1014.0" minWidth="1000.0" prefHeight="1014.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView prefHeight="567.0" prefWidth="1140.0">
+            <TableView fx:id="TvAlumnos" prefHeight="567.0" prefWidth="1140.0">
               <columns>
                 <TableColumn fx:id="cNombre" prefWidth="190.0" text="Nombre" />
                 <TableColumn fx:id="cApellidos" prefWidth="432.0" text="Apellidos" />
@@ -75,7 +75,7 @@
                   <Font name="Bell MT" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="TablaAlumnos" alignment="CENTER" mnemonicParsing="false" onAction="#TablaAlum" prefHeight="63.0" prefWidth="641.0" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="Tabla Alumnos">
+            <Button fx:id="TablaAlumnos" alignment="CENTER" mnemonicParsing="false" onAction="#MenuTablaAlumno" prefHeight="63.0" prefWidth="641.0" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="Tus Alumnos">
                <font>
                   <Font name="Bell MT" size="30.0" />
                </font>
