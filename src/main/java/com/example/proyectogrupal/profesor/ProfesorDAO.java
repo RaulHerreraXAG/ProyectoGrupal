@@ -99,8 +99,8 @@ public class ProfesorDAO implements DAO<Profesor> {
                 System.out.println(e.getMessage());
             }
         }
-
-
+        System.out.println("aquiiiiiiiii");
+        System.out.println(result);
         return result;
     }
 }

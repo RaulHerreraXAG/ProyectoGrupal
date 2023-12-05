@@ -3,15 +3,18 @@ package com.example.proyectogrupal.actividad;
 
 import com.example.proyectogrupal.alumno.Alumno;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Entity
 @Table(name = "actividad")
-
 public class Actividad implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,13 +33,23 @@ public class Actividad implements Serializable {
     @Column(name = "Actividad")
     private String actividad;
 
-    @Column(name = "Observaciones")
+    @Column(name = "Observacion")
     private String observaciones;
 
     @ManyToOne
-    @JoinColumn(name = "ID_Alumno" )
+    @JoinColumn(name = "Alumno", referencedColumnName = "ID_Alumno")
     private Alumno alumno;
 
-
-
+    @Override
+    public String toString() {
+        return "Actividad{" +
+                "ID_Actividad=" + ID_Actividad +
+                ", fecha=" + fecha +
+                ", tipo=" + tipo +
+                ", horas=" + horas +
+                ", actividad='" + actividad + '\'' +
+                ", observaciones='" + observaciones + '\'' +
+                ", alumno=" + alumno.getID_Alumno() +
+                '}';
+    }
 }

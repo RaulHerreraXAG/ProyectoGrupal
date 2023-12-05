@@ -4,7 +4,9 @@ import com.example.proyectogrupal.actividad.Actividad;
 import com.example.proyectogrupal.empresa.Empresa;
 import com.example.proyectogrupal.profesor.Profesor;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -13,15 +15,17 @@ import java.util.List;
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "alumno")
 public class Alumno implements Serializable {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Alumno")
     private Long ID_Alumno;
 
     @Column(name = "DNI")
-    private Integer DNI;
+    private String DNI;
 
     @Column(name = "Nombre")
     private String nombre;
@@ -29,7 +33,7 @@ public class Alumno implements Serializable {
     @Column(name = "Apellidos")
     private String apellidos;
 
-    @Column(name = "Contraseña")
+    @Column(name = "Contrasenya")
     private String contrasenya;
 
     @Column(name = "Email")
@@ -40,7 +44,7 @@ public class Alumno implements Serializable {
     private Empresa empresa;
 
     @ManyToOne
-    @JoinColumn(name = "ID_Profesor")
+    @JoinColumn(name = "Tutor",referencedColumnName = "ID_Profesor")
     private Profesor tutor;
 
     @Column(name = "Observaciones")
@@ -66,19 +70,19 @@ public class Alumno implements Serializable {
     public String toString() {
         return "Alumno{" +
                 "ID_Alumno=" + ID_Alumno +
-                ", DNI=" + DNI +
+                ", DNI='" + DNI + '\'' +
                 ", nombre='" + nombre + '\'' +
                 ", apellidos='" + apellidos + '\'' +
                 ", contrasenya='" + contrasenya + '\'' +
                 ", email='" + email + '\'' +
                 ", empresa=" + empresa +
-                ", tutor=" + tutor +
+                ", tutor=" + tutor.getID_Profesor() +
                 ", observaciones='" + observaciones + '\'' +
                 ", nacimiento=" + nacimiento +
                 ", horasDual=" + horasDual +
                 ", horasFCT=" + horasFCT +
                 ", telefono=" + telefono +
-                ", actividad_diaria=" + actividad_diaria +
+               ", actividad_diaria=" + actividad_diaria +
                 '}';
     }
 }

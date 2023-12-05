@@ -1,7 +1,9 @@
 package com.example.proyectogrupal.controllers;
 
 import com.example.proyectogrupal.App;
+import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.alumno.Alumno;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -41,6 +43,20 @@ public class InterfazProfesor implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        cNombre.setCellValueFactory((fila)->{
+            return new SimpleStringProperty(fila.getValue().getNombre());
+        });
+        cApellidos.setCellValueFactory((fila)->{
+            return new SimpleStringProperty(fila.getValue().getApellidos());
+        });
+        cEmail.setCellValueFactory((fila)->{
+            return new SimpleStringProperty(fila.getValue().getEmail());
+        });
+        cTTelefono.setCellValueFactory((fila) -> {
+            String telefono= String.valueOf(fila.getValue().getTelefono());
+            return new SimpleStringProperty(telefono);
+        });
+        TvAlumnos.getItems().addAll(Session.getCurrentProfesor().getAlumnos());
 
     }
 

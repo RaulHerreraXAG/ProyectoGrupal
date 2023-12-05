@@ -34,31 +34,31 @@ public class LoginController implements Initializable
     @javafx.fxml.FXML
     public void SignIn(ActionEvent actionEvent) {
         String email = txtCorreo.getText();
-        String contraseya = txtPassword.getText();
-
+        String contrasenya = txtPassword.getText();
 
         //comprobamos si el usuario esta en la base de datos
-        Alumno a = (new AlumnoDAO()).validateUser(email, contraseya);
-        Profesor p = (new ProfesorDAO()).validateUser(email, contraseya);
+        Alumno a = (new AlumnoDAO()).validateUser(email, contrasenya);
+        Profesor p = (new ProfesorDAO()).validateUser(email, contrasenya);
 
-        if (a == null) {
+        if (a != null) {
             //Guardamos el usuario en sesión e iremos a su ventana principal
-            Session.setCurrentAlumno(a);
             try {
+                Session.setCurrentAlumno(a);
                 App.changeScene("PaginaAlumno.fxml", "Página Alumno");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-            if (p==null){
+        }
+        if (p!=null){
+            try {
                 Session.setCurrentProfesor(p);
-                try {
-                    App.changeScene("interfazprofe.fxml", "Página Profesor");
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
+                App.changeScene("PaginaProfesor.fxml", "Página Profesor");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
+        }
 
-        } else {
+        if (a==null && p==null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Email o contraseña incorrecto.");

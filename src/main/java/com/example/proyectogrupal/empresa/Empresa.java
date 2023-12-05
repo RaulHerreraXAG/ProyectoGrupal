@@ -10,7 +10,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "empresa")
+@Table(name = "empresas")
 public class Empresa implements Serializable{
 
     @Id
@@ -35,4 +35,16 @@ public class Empresa implements Serializable{
    @OneToMany(mappedBy = "empresa" , fetch = FetchType.EAGER)
     private List<Alumno> alumnos = new ArrayList<>();
 
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "ID_Empresa=" + ID_Empresa +
+                ", nombre='" + nombre + '\'' +
+                ", email='" + email + '\'' +
+                ", telefono=" + telefono +
+                ", responsable='" + responsable + '\'' +
+                ", observaciones='" + observaciones + '\'' +
+                //", alumnos=" + alumnos +
+                '}';
+    }
 }
