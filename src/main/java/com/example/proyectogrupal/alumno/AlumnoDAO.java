@@ -56,23 +56,13 @@ public class AlumnoDAO implements DAO<Alumno> {
 
     @Override
     public void update(Alumno data) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = null;
+        try( org.hibernate.Session s = HibernateUtil.getSessionFactory().openSession()){
+            Transaction t = s.beginTransaction();
 
-        try {
-            transaction = session.beginTransaction();
+            Alumno g = s.get(Alumno.class, data.getID_Alumno());
+            Alumno.merge(data, g);
+            t.commit();
 
-            // Actualizar el pedido en la base de datos
-            session.update(data);
-
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.close();
         }
 
     }

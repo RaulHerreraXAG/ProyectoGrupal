@@ -132,7 +132,7 @@ test\\_%|schema||&apos;&apos;||SELECT|G
 test\\_%|schema||&apos;&apos;||SHOW VIEW|G
 test\\_%|schema||&apos;&apos;||TRIGGER|G
 test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
-      <ServerVersion>10.4.32</ServerVersion>
+      <ServerVersion>10.4.28</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1145,8 +1145,8 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
     </schema>
     <schema id="325" parent="1" name="cesurbd">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-12-05.13:46:27</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-05.11:46:27</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-12-05.22:48:43</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-05.20:48:43</LocalIntrospectionTimestamp>
       <CollationName>utf8mb4_general_ci</CollationName>
     </schema>
     <schema id="326" parent="1" name="information_schema">
@@ -1248,7 +1248,7 @@ test\\_%|schema||&apos;&apos;||UPDATE|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="350" parent="336" name="ID_Alumno">
-      <AutoIncrement>3</AutoIncrement>
+      <AutoIncrement>4</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1346,7 +1346,7 @@ Tutor</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="370" parent="337" name="ID_Empresa">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
@@ -1387,7 +1387,7 @@ Tutor</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="378" parent="338" name="ID_Profesor">
-      <AutoIncrement>2</AutoIncrement>
+      <AutoIncrement>3</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

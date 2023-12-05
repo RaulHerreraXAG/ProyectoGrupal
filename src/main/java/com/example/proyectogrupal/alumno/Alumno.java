@@ -9,8 +9,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -51,7 +51,7 @@ public class Alumno implements Serializable {
     private String observaciones;
 
     @Column(name = "Nacimiento")
-    private Date nacimiento;
+    private LocalDate nacimiento;
 
     @Column(name = "HorasDual")
     private Integer horasDual;
@@ -66,6 +66,21 @@ public class Alumno implements Serializable {
     @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
+    public static void merge(Alumno origen, Alumno destino) {
+        destino.setNombre(origen.getNombre());
+        destino.setApellidos(origen.getApellidos());
+        destino.setContrasenya(origen.getContrasenya());
+        destino.setDNI(origen.getDNI());
+        destino.setNacimiento(origen.getNacimiento());
+        destino.setEmail(origen.getEmail());
+        destino.setTelefono(origen.getTelefono());
+        destino.setEmpresa(origen.getEmpresa());
+        destino.setTutor(origen.getTutor());
+        destino.setHorasDual(origen.getHorasDual());
+        destino.setHorasFCT(origen.getHorasFCT());
+        destino.setObservaciones(origen.getObservaciones());
+    }
+
     @Override
     public String toString() {
         return "Alumno{" +
@@ -75,14 +90,14 @@ public class Alumno implements Serializable {
                 ", apellidos='" + apellidos + '\'' +
                 ", contrasenya='" + contrasenya + '\'' +
                 ", email='" + email + '\'' +
-                ", empresa=" + empresa +
-                ", tutor=" + tutor.getID_Profesor() +
+                ", empresa=" + empresa.getNombre() +
+                ", tutor=" + tutor.getNombre() +
                 ", observaciones='" + observaciones + '\'' +
                 ", nacimiento=" + nacimiento +
                 ", horasDual=" + horasDual +
                 ", horasFCT=" + horasFCT +
                 ", telefono=" + telefono +
-               ", actividad_diaria=" + actividad_diaria +
+                ", actividad_diaria=" + actividad_diaria +
                 '}';
     }
 }

@@ -3,11 +3,13 @@ package com.example.proyectogrupal.profesor;
 import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProfesorDAO implements DAO<Profesor> {
 
@@ -102,5 +104,26 @@ public class ProfesorDAO implements DAO<Profesor> {
         System.out.println("aquiiiiiiiii");
         System.out.println(result);
         return result;
+    }
+
+    public List<String> getnombreProfesor(){
+        ArrayList<String> result = new ArrayList<>();
+
+        try(Session s = HibernateUtil.getSessionFactory().openSession()){
+            Query<String> q = s.createQuery("select distinct(p.nombre) from Profesor p", String.class);
+            result = (ArrayList<String>) q.getResultList();
+        }
+        return result;
+    }
+
+    public Profesor buscarProfesorPorNombre(String nombre) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Profesor> query = session.createQuery("from Profesor where nombre = :nombre", Profesor.class);
+            query.setParameter("nombre", nombre);
+            return query.uniqueResult();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

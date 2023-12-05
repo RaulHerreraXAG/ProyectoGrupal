@@ -2,11 +2,13 @@ package com.example.proyectogrupal.empresa;
 
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EmpresaDAO implements DAO<Empresa> {
     @Override
@@ -89,5 +91,26 @@ public class EmpresaDAO implements DAO<Empresa> {
             session.remove(empresa);
         });
 
+    }
+
+    public List<String> getnombreEmpresas(){
+        ArrayList<String> result = new ArrayList<>();
+
+        try(Session s = HibernateUtil.getSessionFactory().openSession()){
+            Query<String> q = s.createQuery("select distinct(e.nombre) from Empresa e", String.class);
+            result = (ArrayList<String>) q.getResultList();
+        }
+        return result;
+    }
+
+    public Empresa buscarEmpresaPorNombre(String nombre) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Empresa> query = session.createQuery("from Empresa where nombre = :nombre", Empresa.class);
+            query.setParameter("nombre", nombre);
+            return query.uniqueResult();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
