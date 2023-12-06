@@ -28,10 +28,10 @@
 
 }
 
-/*.calendar{
+.calendar{
     -fx-border-color: black;
     -fx-background-color: white;
-}*/
+}
 .FondoP {
     -fx-background-image: url("images/fondoProfesor.png");
 
