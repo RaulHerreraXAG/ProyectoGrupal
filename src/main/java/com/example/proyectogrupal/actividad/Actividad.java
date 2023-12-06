@@ -9,7 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Locale;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -21,7 +24,7 @@ public class Actividad implements Serializable {
     private Long ID_Actividad;
 
     @Column(name = "Fecha")
-    private Date fecha;
+    private LocalDate fecha;
 
     @Column(name = "Tipo")
     @Enumerated(EnumType.STRING)

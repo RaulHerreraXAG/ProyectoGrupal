@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="hecho el boceto de registrar alumno">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/registrarAlumno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/AlumnoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/AlumnoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/EmpresaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/EmpresaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/profesor/ProfesorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/profesor/ProfesorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-alumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-alumno.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
