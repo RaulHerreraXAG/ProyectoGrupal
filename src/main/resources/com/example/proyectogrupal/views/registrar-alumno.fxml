@@ -143,7 +143,7 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="comboTutor" prefWidth="360.0" />
+                  <TextField fx:id="txtProfesor" editable="false" />
                </children>
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

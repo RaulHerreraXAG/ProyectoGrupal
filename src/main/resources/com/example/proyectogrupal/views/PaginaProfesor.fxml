@@ -42,7 +42,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="171.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cerrar Sesion" textFill="WHITE" BorderPane.alignment="CENTER">
+      <Button fx:id="btncerrarsesion" mnemonicParsing="false" onAction="#cerrarsesion" prefHeight="37.0" prefWidth="171.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cerrar Sesion" textFill="WHITE" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="30.0" />
          </BorderPane.margin>
@@ -53,9 +53,9 @@
    <top>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="102.0" prefWidth="640.0" text="Bienvenido Profesor@" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="labelProfesor" alignment="CENTER" contentDisplay="CENTER" prefHeight="102.0" prefWidth="632.0" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Bell MT Italic" size="54.0" />
+                  <Font size="50.0" />
                </font>
             </Label>
             <HBox alignment="CENTER" spacing="10.0">

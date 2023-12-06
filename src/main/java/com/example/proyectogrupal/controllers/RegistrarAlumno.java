@@ -1,6 +1,7 @@
 package com.example.proyectogrupal.controllers;
 
 import com.example.proyectogrupal.App;
+import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.alumno.AlumnoDAO;
 import com.example.proyectogrupal.empresa.Empresa;
@@ -34,8 +35,6 @@ public class RegistrarAlumno implements Initializable
     @javafx.fxml.FXML
     private ComboBox<String> comboEmpresa;
     @javafx.fxml.FXML
-    private ComboBox<String> comboTutor;
-    @javafx.fxml.FXML
     private Button btncancelar;
     @javafx.fxml.FXML
     private Button btnregistrar;
@@ -47,15 +46,16 @@ public class RegistrarAlumno implements Initializable
     private TextArea textObserva;
     private final ProfesorDAO profesorDAO = new ProfesorDAO();
     private final EmpresaDAO empresaDAO = new EmpresaDAO();
+    @javafx.fxml.FXML
+    private TextField txtProfesor;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         spinnerDual.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0,700,1,1));
         spinnerFCT.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0,700,1,1));
 
-        //Añadido nombre de los profesores
-        var nombreprofesor = profesorDAO.getnombreProfesor();
-        comboTutor.getItems().addAll(nombreprofesor);
+        txtProfesor.setText(Session.getCurrentProfesor().getNombre());
 
         //Añadido nombre empresas
         var nombreempresas = empresaDAO.getnombreEmpresas();
@@ -106,11 +106,6 @@ public class RegistrarAlumno implements Initializable
             a.setEmpresa(empresaSeleccionada);
         }
 
-        if (comboTutor.getValue().length()>1){
-            String nombreTutorSeleccionado = comboTutor.getValue();
-            Profesor tutorSeleccionado = profesorDAO.buscarProfesorPorNombre(nombreTutorSeleccionado);
-            a.setTutor(tutorSeleccionado);
-        }
         a.setHorasDual(spinnerDual.getValue());
         a.setHorasFCT(spinnerFCT.getValue());
         if (textObserva.getText() != null){

@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -20,9 +19,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="fondoProfesorChiquitito" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.DatosYEditarAlumnoController">
+<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="vBoxFondo" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.DatosYEditarAlumnoController">
    <top>
-      <Label text="Editar a pepito" textFill="WHITE" BorderPane.alignment="CENTER">
+      <Label fx:id="labelnombre" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>
@@ -34,8 +33,8 @@
    <bottom>
       <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCancelar" mnemonicParsing="false" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="CANCELAR" />
-            <Button fx:id="btnBorrar" mnemonicParsing="false" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="BORRAR">
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="37.0" prefWidth="88.0" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="CANCELAR" />
+            <Button fx:id="btnBorrar" mnemonicParsing="false" onAction="#eliminar" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="BORRAR">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,7 +42,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="btnActualizar" mnemonicParsing="false" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="ACTUALIZAR">
+            <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizar" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="ACTUALIZAR">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -103,10 +102,6 @@
                      <GridPane.margin>
                         <Insets right="40.0" />
                      </GridPane.margin></TextField>
-                  <PasswordField fx:id="txtContraseña" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></PasswordField>
                   <TextField fx:id="txtDNI" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets right="40.0" />
@@ -162,12 +157,17 @@
                   <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" />
                   <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
                   <TextField fx:id="txtHorasPorRealizar" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtContraseña" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="40.0" />
+                     </GridPane.margin>
+                  </TextField>
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" />
                </VBox.margin>
             </GridPane>
-            <TableView fx:id="tv">
+            <TableView fx:id="tablaeditAlum">
               <columns>
                 <TableColumn fx:id="cFecha" prefWidth="75.0" text="Fecha" />
                 <TableColumn fx:id="cPractica" prefWidth="75.0" text="Tipo de práctica" />

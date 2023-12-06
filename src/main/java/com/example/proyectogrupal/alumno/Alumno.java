@@ -90,7 +90,7 @@ public class Alumno implements Serializable {
                 ", apellidos='" + apellidos + '\'' +
                 ", contrasenya='" + contrasenya + '\'' +
                 ", email='" + email + '\'' +
-                ", empresa=" + empresa.getNombre() +
+                ", empresa=" + empresa +
                 ", tutor=" + tutor.getNombre() +
                 ", observaciones='" + observaciones + '\'' +
                 ", nacimiento=" + nacimiento +

@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -51,12 +52,14 @@ public class InterfazAlumno implements Initializable {
 
         //Mostramos los datos en las columnas.
         cFecha.setCellValueFactory((fila) -> {
-            LocalDate fecha = fila.getValue().getFecha();
-            // Definir el formato deseado para la fecha (día/mes/año)
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            // Formatear la fecha al nuevo formato
-            String fechaFormateada = fecha.format(formatter);
-            return new SimpleStringProperty(fechaFormateada);
+            Date fecha = fila.getValue().getFecha();
+            String fechaformato= "";
+
+            if(fecha != null){
+                SimpleDateFormat nuevafecha = new SimpleDateFormat("dd-MM-yyyy");
+                fechaformato = nuevafecha.format(fecha);
+            }
+            return new SimpleStringProperty(fechaformato);
         });
 
         cTipoPractica.setCellValueFactory((fila) -> {

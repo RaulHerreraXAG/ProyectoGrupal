@@ -3,13 +3,13 @@ package com.example.proyectogrupal.controllers;
 import com.example.proyectogrupal.App;
 import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.alumno.Alumno;
+import javafx.beans.Observable;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,7 +32,13 @@ public class InterfazProfesor implements Initializable
     @javafx.fxml.FXML
     private Button RegistarEmpresa;
     @javafx.fxml.FXML
-    private TableView TvAlumnos;
+    private TableView<Alumno> TvAlumnos;
+
+    ObservableList<Alumno> observableList = FXCollections.observableArrayList();
+    @javafx.fxml.FXML
+    private Button btncerrarsesion;
+    @javafx.fxml.FXML
+    private Label labelProfesor;
 
 
     @javafx.fxml.FXML
@@ -43,6 +49,11 @@ public class InterfazProfesor implements Initializable
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        labelProfesor.setText("Bienvenido " + Session.getCurrentProfesor().getNombre());
+
+
         cNombre.setCellValueFactory((fila)->{
             return new SimpleStringProperty(fila.getValue().getNombre());
         });
@@ -58,7 +69,23 @@ public class InterfazProfesor implements Initializable
         });
         TvAlumnos.getItems().addAll(Session.getCurrentProfesor().getAlumnos());
 
+        TvAlumnos.setOnMouseClicked(event -> {
+            if(event.getClickCount()==1){
+                Alumno alumnoselect = TvAlumnos.getSelectionModel().getSelectedItem();
+                if (alumnoselect != null){
+                    Session.setCurrentAlumno(alumnoselect);
+                    try {
+                        App.changeScene("DatosYEditarAlumno.fxml", "Editar Alumno");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        });
+
     }
+
+
 
     @javafx.fxml.FXML
     public void MenuTablaAlumno(ActionEvent actionEvent) throws IOException {
@@ -68,5 +95,14 @@ public class InterfazProfesor implements Initializable
     @javafx.fxml.FXML
     public void RegistrarEmp(ActionEvent actionEvent) throws IOException {
         App.changeScene("registrar-empresa.fxml","Registrar Empresa");
+    }
+
+    @javafx.fxml.FXML
+    public void cerrarsesion(ActionEvent actionEvent) {
+        try {
+            App.changeScene("login.fxml","Login");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

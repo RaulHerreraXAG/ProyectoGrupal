@@ -24,7 +24,7 @@ public class Actividad implements Serializable {
     private Long ID_Actividad;
 
     @Column(name = "Fecha")
-    private LocalDate fecha;
+    private Date fecha;
 
     @Column(name = "Tipo")
     @Enumerated(EnumType.STRING)
