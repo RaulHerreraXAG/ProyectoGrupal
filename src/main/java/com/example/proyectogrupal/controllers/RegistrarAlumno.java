@@ -1,26 +1,21 @@
 package com.example.proyectogrupal.controllers;
 
 import com.example.proyectogrupal.App;
-import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.alumno.AlumnoDAO;
 import com.example.proyectogrupal.empresa.Empresa;
 import com.example.proyectogrupal.empresa.EmpresaDAO;
 import com.example.proyectogrupal.profesor.Profesor;
 import com.example.proyectogrupal.profesor.ProfesorDAO;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
-public class registrarAlumno implements Initializable
+public class RegistrarAlumno implements Initializable
 {
     @javafx.fxml.FXML
     private TextField txtnombre;
