@@ -42,7 +42,6 @@ public class InterfazAlumno implements Initializable {
     private TableColumn<Actividad, String> cObservaciones;
     @javafx.fxml.FXML
     private TableView TvActividades;
-
     private ObservableList<Actividad> observableList;
 
     private ActividadDAO actividadDAO = new ActividadDAO();
@@ -50,6 +49,7 @@ public class InterfazAlumno implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        //Mostramos los datos en las columnas.
         cFecha.setCellValueFactory((fila) -> {
             LocalDate fecha = fila.getValue().getFecha();
             // Definir el formato deseado para la fecha (día/mes/año)
@@ -77,6 +77,7 @@ public class InterfazAlumno implements Initializable {
             return new SimpleStringProperty(fila.getValue().getObservaciones());
         });
 
+        //cargamos los datos en la tabla
         observableList = FXCollections.observableArrayList();
         Session.setCurrentAlumno(new AlumnoDAO().get(Session.getCurrentAlumno().getID_Alumno()));
         observableList.setAll(Session.getCurrentAlumno().getActividad_diaria());
