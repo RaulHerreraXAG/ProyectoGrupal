@@ -14,95 +14,126 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.AnadirObservacionDeAlumno">
    <center>
-      <GridPane BorderPane.alignment="CENTER">
+      <GridPane prefWidth="1200.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="195.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="162.0" minHeight="10.0" prefHeight="157.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox alignment="CENTER_LEFT">
+            <VBox alignment="CENTER">
                <children>
-                  <Label text="Fecha">
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="287.0" text="Fecha" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="28.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
                   </Label>
-                  <DatePicker />
+                  <DatePicker fx:id="DatePickerFecha" prefHeight="46.0" prefWidth="385.0" />
                </children>
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </VBox>
-            <VBox alignment="CENTER_LEFT" GridPane.rowIndex="1">
+            <VBox alignment="CENTER" GridPane.rowIndex="1">
                <children>
-                  <Label text="Total de horas realizadas">
+                  <Label text="Total de horas realizadas" textFill="WHITE">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="28.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
                   </Label>
-                  <Spinner />
+                  <Spinner fx:id="spinnerHoras" prefHeight="46.0" prefWidth="385.0" />
                </children>
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </VBox>
-            <VBox alignment="CENTER_LEFT" GridPane.rowIndex="2">
+            <VBox alignment="CENTER" GridPane.rowIndex="2">
                <children>
-                  <Label text="Tipo de práctica">
+                  <Label text="Tipo de práctica" textFill="WHITE">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="28.0" />
                      </font>
                      <VBox.margin>
                         <Insets />
                      </VBox.margin>
                   </Label>
-                  <RadioButton mnemonicParsing="false" text="DUAL">
+                  <RadioButton fx:id="rbDual" mnemonicParsing="false" text="DUAL" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </VBox.margin></RadioButton>
-                  <RadioButton mnemonicParsing="false" text="FCT">
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font></RadioButton>
+                  <RadioButton fx:id="rbFCT" mnemonicParsing="false" prefHeight="27.0" prefWidth="78.0" text="FCT" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                     </VBox.margin></RadioButton>
-               </children>
-               <GridPane.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-               </GridPane.margin>
-            </VBox>
-            <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
-               <children>
-                  <Label text="Actividad realizada">
+                     </VBox.margin>
                      <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Label>
-                  <TextField maxWidth="500.0" minHeight="150.0" minWidth="500.0" prefHeight="150.0" prefWidth="500.0" />
+                        <Font size="18.0" />
+                     </font></RadioButton>
                </children>
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </VBox>
-            <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <VBox alignment="CENTER" GridPane.columnIndex="1">
                <children>
-                  <Label text="Observaciones o incidencias">
+                  <Label text="Actividad realizada" textFill="WHITE">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="28.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
                   </Label>
-                  <TextField maxHeight="150.0" maxWidth="500.0" minHeight="150.0" minWidth="500.0" prefHeight="150.0" prefWidth="500.0" />
+                  <TextField fx:id="txtActividad" maxWidth="500.0" minHeight="118.0" minWidth="500.0" prefHeight="118.0" prefWidth="500.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></TextField>
                </children>
                <GridPane.margin>
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </VBox>
-            <Button alignment="CENTER" mnemonicParsing="false" styleClass="buttonIS" stylesheets="" text="AÑADIR" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <VBox alignment="CENTER" prefHeight="198.0" prefWidth="550.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Observaciones o incidencias" textFill="WHITE">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="txtObservaciones" maxHeight="150.0" maxWidth="500.0" minHeight="129.0" minWidth="500.0" prefHeight="129.0" prefWidth="500.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin></TextField>
+               </children>
+               <GridPane.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </GridPane.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Button fx:id="btnAceptar" mnemonicParsing="false" onAction="#btnAnadir" prefHeight="49.0" prefWidth="146.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="AÑADIR" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Button>
+               </children>
+            </VBox>
          </children>
          <BorderPane.margin>
             <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
@@ -110,10 +141,13 @@
       </GridPane>
    </center>
    <top>
-      <Label text="Bienvenid@ pepito" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" prefHeight="58.0" prefWidth="514.0" text="Bienvenid@ pepito" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
-            <Font size="36.0" />
+            <Font name="Bell MT" size="49.0" />
          </font>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <padding>

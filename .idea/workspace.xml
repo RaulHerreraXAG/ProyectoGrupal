@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="hecho el boceto de registrar alumno">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" afterDir="false" />
+    <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="Cambios del Leo &#10;&#10;Cambio de variable fecha en la clase Actividad&#10;Realizado la Interfaz Alumno (Le falta diseño)">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/fondoProfesorChiquitito.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/InformacionDeAlumnos.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +59,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\6002509\IdeaProjects\ProyectoGrupal\src\main\resources\images" />
       <recent name="C:\Users\Raul\IdeaProjects\ProyectoGrupal\src\main\resources\images" />
+      <recent name="C:\Users\6002509\IdeaProjects\ProyectoGrupal\src\main\resources\images" />
       <recent name="C:\Users\Raul\IdeaProjects\ProyectoGrupal\src\main\resources" />
       <recent name="C:\Users\Raul\IdeaProjects\ProyectoGrupal\src\main\resources\com\example\proyectogrupal\views\images" />
       <recent name="C:\Users\Raul\IdeaProjects\ProyectoGrupal\src\main\resources\com\example\proyectogrupal\views" />
@@ -117,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701261737740</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Cambios del Leo &#10;&#10;Cambio de variable fecha en la clase Actividad&#10;Realizado la Interfaz Alumno (Le falta diseño)">
+      <option name="closed" value="true" />
+      <created>1701863441355</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701863441355</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,7 +133,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="hecho el boceto de registrar alumno" />
-    <option name="LAST_COMMIT_MESSAGE" value="hecho el boceto de registrar alumno" />
+    <MESSAGE value="Cambios del Leo &#10;&#10;Cambio de variable fecha en la clase Actividad&#10;Realizado la Interfaz Alumno (Le falta diseño)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios del Leo &#10;&#10;Cambio de variable fecha en la clase Actividad&#10;Realizado la Interfaz Alumno (Le falta diseño)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

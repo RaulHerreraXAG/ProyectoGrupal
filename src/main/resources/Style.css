@@ -33,6 +33,12 @@
     -fx-background-color: white;
 }*/
 .FondoP {
-    -fx-background-image: url("images/fondoProfesor.png");
+    -fx-background-image: url("images/fondoProfesorChiquitito.png");
 
+}
+
+.buttonM{
+    -fx-background-color : #F6A83B;
+    -fx-background-radius : 10px;
+    -fx-border-color: black;
 }
