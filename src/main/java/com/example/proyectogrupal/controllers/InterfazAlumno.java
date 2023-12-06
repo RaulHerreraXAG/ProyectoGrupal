@@ -40,11 +40,11 @@ public class InterfazAlumno implements Initializable {
     private TableColumn<Actividad, String> cActividadRealizada;
     @javafx.fxml.FXML
     private TableColumn<Actividad, String> cObservaciones;
-    @javafx.fxml.FXML
-    private TableView TvActividades;
     private ObservableList<Actividad> observableList;
 
     private ActividadDAO actividadDAO = new ActividadDAO();
+    @javafx.fxml.FXML
+    private TableView TvActividades;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

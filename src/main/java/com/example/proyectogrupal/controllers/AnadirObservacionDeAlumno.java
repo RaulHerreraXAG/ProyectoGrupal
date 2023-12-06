@@ -1,5 +1,8 @@
 package com.example.proyectogrupal.controllers;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
+
 public class AnadirObservacionDeAlumno
 {
     @javafx.fxml.FXML
