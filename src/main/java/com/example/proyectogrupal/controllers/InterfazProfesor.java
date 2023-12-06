@@ -94,7 +94,7 @@ public class InterfazProfesor implements Initializable
 
     @javafx.fxml.FXML
     public void RegistrarEmp(ActionEvent actionEvent) throws IOException {
-        App.changeScene("registrar-empresa.fxml","Registrar Empresa");
+        App.changeScene("registrar-empresas.fxml","Registrar Empresa");
     }
 
     @javafx.fxml.FXML
