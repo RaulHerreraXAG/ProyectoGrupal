@@ -138,30 +138,36 @@
                      <GridPane.margin>
                         <Insets right="40.0" />
                      </GridPane.margin></TextField>
-                  <Label text="Nº horas que ha realizado:" textFill="WHITE" GridPane.columnIndex="4">
+                  <Label text="Nº horas que ha realizado:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label text="Nº horas pendientes de realizar:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <Label text="Nº horas pendientes de realizar:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <Label text="Observaciones:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                  <Label text="Observaciones:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
                      <font>
                         <Font size="18.0" />
                      </font></Label>
-                  <TextArea fx:id="txtObservaciones" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                  <TextArea fx:id="txtObservaciones" prefHeight="10.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
                      <GridPane.margin>
                         <Insets top="10.0" />
                      </GridPane.margin></TextArea>
-                  <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" />
+                  <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                   <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtHorasPorRealizar" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtHorasPorRealizar" GridPane.columnIndex="5" GridPane.rowIndex="2" />
                   <TextField fx:id="txtContraseña" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
                         <Insets right="40.0" />
                      </GridPane.margin>
                   </TextField>
+                  <Label prefHeight="17.0" prefWidth="87.0" text="Teléfono:" textFill="WHITE" GridPane.columnIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txttelefono" GridPane.columnIndex="5" />
                </children>
                <VBox.margin>
                   <Insets bottom="20.0" />

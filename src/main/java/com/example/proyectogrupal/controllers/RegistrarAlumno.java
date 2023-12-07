@@ -44,6 +44,8 @@ public class RegistrarAlumno implements Initializable
     private Spinner<Integer> spinnerFCT;
     @javafx.fxml.FXML
     private TextArea textObserva;
+
+    private final AlumnoDAO alumnoDAO = new AlumnoDAO();
     private final ProfesorDAO profesorDAO = new ProfesorDAO();
     private final EmpresaDAO empresaDAO = new EmpresaDAO();
     @javafx.fxml.FXML
@@ -74,7 +76,7 @@ public class RegistrarAlumno implements Initializable
     //TODO Cambiar empresa y tutor de tipo varchar porque estan en INT
 
     @javafx.fxml.FXML
-    public void registrarAlumno(ActionEvent actionEvent) {
+    public void registrarAlumno(ActionEvent actionEvent) throws IOException {
 
         Alumno a = new Alumno();
 
@@ -106,6 +108,10 @@ public class RegistrarAlumno implements Initializable
             a.setEmpresa(empresaSeleccionada);
         }
 
+        if (txtProfesor.getText().length()>1){
+            a.setTutor(Session.getCurrentProfesor());
+        }
+
         a.setHorasDual(spinnerDual.getValue());
         a.setHorasFCT(spinnerFCT.getValue());
         if (textObserva.getText() != null){
@@ -122,6 +128,10 @@ public class RegistrarAlumno implements Initializable
             alumnoDAO.save(a);
         }
 
+        Session.getCurrentProfesor().getAlumnos().clear();
+        Session.getCurrentProfesor().getAlumnos().addAll(alumnoDAO.getAlumnosPorProfesor(Session.getCurrentProfesor()));
+
+        App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
     }
 
 }

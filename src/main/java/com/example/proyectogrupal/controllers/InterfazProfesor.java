@@ -8,8 +8,10 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import lombok.Getter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -67,7 +69,8 @@ public class InterfazProfesor implements Initializable
             String telefono= String.valueOf(fila.getValue().getTelefono());
             return new SimpleStringProperty(telefono);
         });
-        TvAlumnos.getItems().addAll(Session.getCurrentProfesor().getAlumnos());
+        observableList.addAll(Session.getCurrentProfesor().getAlumnos());
+        TvAlumnos.setItems(observableList);
 
         TvAlumnos.setOnMouseClicked(event -> {
             if(event.getClickCount()==1){
@@ -85,6 +88,11 @@ public class InterfazProfesor implements Initializable
 
     }
 
+    public void actualizarTablaAlumnos() {
+        TvAlumnos.getItems().clear();
+        TvAlumnos.getItems().addAll(Session.getCurrentProfesor().getAlumnos());
+    }
+
 
 
     @javafx.fxml.FXML
@@ -95,6 +103,7 @@ public class InterfazProfesor implements Initializable
     @javafx.fxml.FXML
     public void RegistrarEmp(ActionEvent actionEvent) throws IOException {
         App.changeScene("registrar-empresa.fxml","Registrar Empresa");
+
     }
 
     @javafx.fxml.FXML

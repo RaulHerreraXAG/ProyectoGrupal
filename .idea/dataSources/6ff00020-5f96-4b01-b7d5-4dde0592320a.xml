@@ -1019,8 +1019,8 @@
     </schema>
     <schema id="326" parent="1" name="cesurbd">
       <Current>1</Current>
-      <IntrospectionTimestamp>2023-12-06.22:38:22</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-06.20:38:22</LocalIntrospectionTimestamp>
+      <IntrospectionTimestamp>2023-12-07.01:08:57</IntrospectionTimestamp>
+      <LocalIntrospectionTimestamp>2023-12-06.23:08:57</LocalIntrospectionTimestamp>
       <CollationName>latin1_swedish_ci</CollationName>
     </schema>
     <schema id="327" parent="1" name="gestionpedidos">
@@ -1128,7 +1128,7 @@
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="353" parent="339" name="ID_Alumno">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>5</AutoIncrement>
       <DasType>int(11)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

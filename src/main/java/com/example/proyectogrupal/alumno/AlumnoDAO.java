@@ -2,11 +2,13 @@ package com.example.proyectogrupal.alumno;
 
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
+import com.example.proyectogrupal.profesor.Profesor;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AlumnoDAO implements DAO<Alumno> {
 
@@ -92,5 +94,16 @@ public class AlumnoDAO implements DAO<Alumno> {
 
 
         return result;
+    }
+
+    public List<Alumno> getAlumnosPorProfesor(Profesor profesor) {
+        List<Alumno> alumnos = new ArrayList<>();
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Alumno> query = session.createQuery("from Alumno where tutor = :profesor", Alumno.class);
+            query.setParameter("profesor", profesor);
+
+            alumnos = query.getResultList();
+        }
+        return alumnos;
     }
 }
