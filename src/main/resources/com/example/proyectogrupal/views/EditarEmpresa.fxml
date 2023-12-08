@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.EditarEmpresa">
+   <top>
+      <Label alignment="CENTER" prefHeight="83.0" prefWidth="380.0" text="Edita Empresa" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="37.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <center>
+      <GridPane prefHeight="382.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="221.0" minHeight="10.0" prefHeight="212.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="222.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="349.0" text="Teléfono" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtTelefono" maxHeight="300.0" maxWidth="349.0" minHeight="25.0" minWidth="300.0" prefHeight="30.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="349.0" text="Nombre de la empresa" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombre" maxHeight="300.0" maxWidth="349.0" minHeight="25.0" minWidth="300.0" prefHeight="30.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="349.0" text="Email" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtEmail" maxHeight="300.0" maxWidth="349.0" minHeight="25.0" minWidth="300.0" prefHeight="30.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="36.0" prefWidth="349.0" text="Responsable" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtResponsable" maxHeight="300.0" maxWidth="349.0" minHeight="25.0" minWidth="300.0" prefHeight="30.0" prefWidth="349.0" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="31.0" prefWidth="656.0" text="Observaciones" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtObservaciones" maxHeight="300.0" maxWidth="653.0" minHeight="25.0" minWidth="300.0" prefHeight="77.0" prefWidth="653.0" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnActualizar" alignment="CENTER" mnemonicParsing="false" onAction="#Actualizar" prefHeight="40.0" prefWidth="110.0" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="Actualizar">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnEliminar" alignment="CENTER" mnemonicParsing="false" onAction="#Eliminar" prefHeight="40.0" prefWidth="110.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Eliminar" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="30.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnCancelar" alignment="CENTER" mnemonicParsing="false" onAction="#Cancelar" prefHeight="40.0" prefWidth="110.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="30.0" />
+         </BorderPane.margin>
+      </VBox>
+   </bottom>
+</BorderPane>

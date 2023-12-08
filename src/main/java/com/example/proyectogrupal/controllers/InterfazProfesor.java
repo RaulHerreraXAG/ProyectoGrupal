@@ -30,8 +30,6 @@ public class InterfazProfesor implements Initializable
     @javafx.fxml.FXML
     private Button RegistraAlumnos;
     @javafx.fxml.FXML
-    private Button TablaAlumnos;
-    @javafx.fxml.FXML
     private Button RegistarEmpresa;
     @javafx.fxml.FXML
     private TableView<Alumno> TvAlumnos;
@@ -41,6 +39,8 @@ public class InterfazProfesor implements Initializable
     private Button btncerrarsesion;
     @javafx.fxml.FXML
     private Label labelProfesor;
+    @FXML
+    private Button TablaEmpresa;
 
 
     @javafx.fxml.FXML
@@ -94,10 +94,6 @@ public class InterfazProfesor implements Initializable
 
 
 
-    @javafx.fxml.FXML
-    public void MenuTablaAlumno(ActionEvent actionEvent) throws IOException {
-        App.changeScene("InformacionDeAlumnos.fxml","Tus Alumnos");
-    }
 
     @javafx.fxml.FXML
     public void RegistrarEmp(ActionEvent actionEvent) throws IOException {
@@ -112,5 +108,10 @@ public class InterfazProfesor implements Initializable
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @FXML
+    public void MenuEmpresa(ActionEvent actionEvent) throws IOException {
+        App.changeScene("InformacionEmpresa.fxml","Tus Empresas");
     }
 }

@@ -1,7 +1,9 @@
 package com.example.proyectogrupal.empresa;
 
+import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
+import com.example.proyectogrupal.profesor.Profesor;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -114,3 +116,5 @@ public class EmpresaDAO implements DAO<Empresa> {
         }
     }
 }
+
+
