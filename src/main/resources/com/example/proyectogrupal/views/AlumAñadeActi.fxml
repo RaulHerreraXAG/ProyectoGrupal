@@ -128,10 +128,18 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button fx:id="btnAceptar" mnemonicParsing="false" onAction="#btnAnadir" prefHeight="49.0" prefWidth="146.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="AÑADIR" textFill="WHITE">
+                  <Button fx:id="btnAñadir" mnemonicParsing="false" onAction="#btnAnadir" prefHeight="49.0" prefWidth="146.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Añadir" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font></Button>
+                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="49.0" prefWidth="146.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
                </children>
             </VBox>
          </children>
@@ -141,7 +149,7 @@
       </GridPane>
    </center>
    <top>
-      <Label alignment="CENTER" prefHeight="58.0" prefWidth="514.0" text="Bienvenid@ pepito" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
+      <Label fx:id="labelNombre" alignment="CENTER" prefHeight="58.0" prefWidth="514.0" textAlignment="CENTER" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
             <Font name="Bell MT" size="49.0" />
          </font>

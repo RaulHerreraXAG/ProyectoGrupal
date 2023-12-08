@@ -14,9 +14,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -41,11 +39,25 @@ public class InterfazAlumno implements Initializable {
     private TableColumn<Actividad, String> cActividadRealizada;
     @javafx.fxml.FXML
     private TableColumn<Actividad, String> cObservaciones;
+    @javafx.fxml.FXML
+    private TableView TvActividades;
+    @javafx.fxml.FXML
+    private TextField textDNI;
+    @javafx.fxml.FXML
+    private TextField textEmpresa;
+    @javafx.fxml.FXML
+    private TextField textFechaNac;
+    @javafx.fxml.FXML
+    private TextField textProfesor;
+    @javafx.fxml.FXML
+    private TextField textEmail;
+    @javafx.fxml.FXML
+    private Label labelNombreAlumno;
     private ObservableList<Actividad> observableList;
 
     private ActividadDAO actividadDAO = new ActividadDAO();
     @javafx.fxml.FXML
-    private TableView TvActividades;
+    private TextField textTelefono;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -86,6 +98,16 @@ public class InterfazAlumno implements Initializable {
         observableList.setAll(Session.getCurrentAlumno().getActividad_diaria());
         TvActividades.setItems(observableList);
 
+
+
+        labelNombreAlumno.setText("Bienvenido/a " + Session.getCurrentAlumno().getNombre());
+        textDNI.setText(Session.getCurrentAlumno().getDNI());
+        textEmail.setText(Session.getCurrentAlumno().getEmail());
+        textEmpresa.setText(String.valueOf(Session.getCurrentAlumno().getEmpresa().getNombre()));
+        textProfesor.setText(String.valueOf(Session.getCurrentAlumno().getTutor().getNombre()));
+        textTelefono.setText(String.valueOf(Session.getCurrentAlumno().getTelefono()));
+        textFechaNac.setText(String.valueOf(Session.getCurrentAlumno().getNacimiento()));
+
     }
 
 
@@ -93,6 +115,15 @@ public class InterfazAlumno implements Initializable {
     public void añadirActividad(ActionEvent actionEvent) {
         try {
             App.changeScene("AlumAñadeActi.fxml", "Página Alumno");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @javafx.fxml.FXML
+    public void cerrarsession(ActionEvent actionEvent) {
+        try {
+            App.changeScene("login.fxml","Login");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -85,7 +85,6 @@ public class InterfazProfesor implements Initializable
                 }
             }
         });
-
     }
 
     public void actualizarTablaAlumnos() {
