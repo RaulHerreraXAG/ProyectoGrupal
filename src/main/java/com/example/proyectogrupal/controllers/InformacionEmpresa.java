@@ -4,37 +4,42 @@ import com.example.proyectogrupal.App;
 import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.empresa.Empresa;
+import com.example.proyectogrupal.empresa.EmpresaDAO;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class InformacionEmpresa {
+public class InformacionEmpresa implements Initializable {
 
     @javafx.fxml.FXML
-    private TableColumn<Empresa , String> cNombre;
+    private TableColumn<Empresa,String> cNombre;
     @javafx.fxml.FXML
-    private TableColumn<Empresa , String> cEmail;
+    private TableColumn<Empresa,String> cEmail;
     @javafx.fxml.FXML
-    private TableColumn<Empresa , String> cTelefono;
+    private TableColumn<Empresa,String> cTelefono;
     @javafx.fxml.FXML
-    private TableColumn<Empresa , String> cResponsable;
+    private TableColumn<Empresa,String> cResponsable;
     @javafx.fxml.FXML
-    private TableColumn<Empresa , String> cObservaciones;
+    private TableColumn<Empresa,String> cObservaciones;
     @javafx.fxml.FXML
     private Button btnVolver;
     @javafx.fxml.FXML
     private TableView<Empresa> tvEmpresa;
 
-    ObservableList<Empresa> observableList = FXCollections.observableArrayList();
+    private ObservableList<Empresa> observableList = FXCollections.observableArrayList();
 
-    @javafx.fxml.FXML
-    public void initialize() {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         cNombre.setCellValueFactory((fila)->{
             return new SimpleStringProperty(fila.getValue().getNombre());
         });
@@ -52,7 +57,7 @@ public class InformacionEmpresa {
             return new SimpleStringProperty(fila.getValue().getObservaciones());
         });
 
-        observableList.addAll(Session.getCurrentEmpresa());
+        observableList.addAll(new EmpresaDAO().getAll());
         tvEmpresa.setItems(observableList);
 
         tvEmpresa.setOnMouseClicked(event -> {
@@ -74,4 +79,6 @@ public class InformacionEmpresa {
     public void volver(ActionEvent actionEvent) throws IOException {
         App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
     }
+
+
 }

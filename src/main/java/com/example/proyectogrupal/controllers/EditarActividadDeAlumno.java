@@ -52,8 +52,7 @@ public class EditarActividadDeAlumno implements Initializable {
         rbDual.setToggleGroup(toggleGroup);
         rbFCT.setToggleGroup(toggleGroup);
 
-        var tipo = Session.getCurrentActividad().getTipo();
-        toggleGroup.selectedToggleProperty(tipo);
+
 
 
     }

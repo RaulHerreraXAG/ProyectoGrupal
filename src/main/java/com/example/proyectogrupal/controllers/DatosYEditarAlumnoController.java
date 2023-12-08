@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -86,7 +88,7 @@ public class DatosYEditarAlumnoController implements Initializable {
         LocalDate fechana = Session.getCurrentAlumno().getNacimiento();
         txtFecha.setValue(fechana);
 
-        //TODO Fumada de como añadir la empresa asociada al alumno al combo y te aparezca :)
+        //TODO como añadir la empresa asociada al alumno al combo y te aparezca :)
         Alumno alumno = Session.getCurrentAlumno();
         Empresa empresaasociada = alumno.getEmpresa();
         //Obtener las empresas
@@ -119,8 +121,8 @@ public class DatosYEditarAlumnoController implements Initializable {
             String fechaformato= "";
 
             if(fecha != null){
-                SimpleDateFormat nuevafecha = new SimpleDateFormat("dd-MM-yyyy");
-                fechaformato = nuevafecha.format(fecha);
+                DateTimeFormatter nuevafecha = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                fechaformato = fecha.format(nuevafecha);
             }
             return new SimpleStringProperty(fechaformato);
 

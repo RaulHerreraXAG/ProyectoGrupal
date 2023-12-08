@@ -40,7 +40,7 @@ public class Alumno implements Serializable {
     @Column(name = "Email")
     private String email;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "Empresa",referencedColumnName = "ID_Empresa")
     private Empresa empresa;
 
@@ -64,7 +64,7 @@ public class Alumno implements Serializable {
     private Integer telefono;
 
 
-    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
     public static void merge(Alumno origen, Alumno destino) {

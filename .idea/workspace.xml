@@ -5,18 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="interfazalumno terminado, añadirobservaciondealumno terminado.&#10;La actividad se agrega a la tabla del alumno y se guarda en la base de datos.&#10;Diseño de ambas ventanas terminado">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarActividadDeAlumno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumEditActi.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/Actividad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/Actividad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirObservacionDeAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirActividadDeAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/AlumnoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/AlumnoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/DatosYEditarAlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/DatosYEditarAlumnoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarActividadDeAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarActividadDeAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarEmpresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InformacionEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InformacionEmpresa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistrarAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistrarAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistroEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistroEmpresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/Empresa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/EmpresaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/EmpresaDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/frans/IdeaProjects/ProyectoGrupal/src/main/resources/com/example/proyectogrupal/views",
+    "last_opened_file_path": "D:/Users/PC/Desktop/ProyectoGrupal3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,6 +115,7 @@
       <workItem from="1702034207488" duration="670000" />
       <workItem from="1702037438378" duration="472000" />
       <workItem from="1702040460418" duration="12230000" />
+      <workItem from="1702055068093" duration="11318000" />
     </task>
     <task id="LOCAL-00001" summary="hecho el boceto de registrar alumno">
       <option name="closed" value="true" />

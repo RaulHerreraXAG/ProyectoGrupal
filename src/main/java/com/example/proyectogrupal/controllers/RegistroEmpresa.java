@@ -89,6 +89,8 @@ public class RegistroEmpresa {
             empresaDAO.save(e);
         }
 
+        App.changeScene("InformacionEmpresa.fxml", "Empresas");
+
 /*
         Session.getCurrentProfesor().getAlumnos().clear();
         Session.getCurrentProfesor().getAlumnos().addAll(alumnoDAO.getAlumnosPorProfesor(Session.getCurrentProfesor()));
