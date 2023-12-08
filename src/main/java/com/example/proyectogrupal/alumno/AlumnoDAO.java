@@ -1,5 +1,6 @@
 package com.example.proyectogrupal.alumno;
 
+import com.example.proyectogrupal.actividad.Actividad;
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
 import com.example.proyectogrupal.profesor.Profesor;
@@ -73,8 +74,17 @@ public class AlumnoDAO implements DAO<Alumno> {
     public void delete(Alumno data) {
         HibernateUtil.getSessionFactory().inTransaction((session -> {
             Alumno alumno = session.get(Alumno.class, data.getID_Alumno());
+
+            // Obtener y eliminar las actividades asociadas al alumno
+            List<Actividad> actividades = alumno.getActividad_diaria();
+            for (Actividad actividad : actividades) {
+                session.remove(actividad);
+            }
+
+            // Eliminar al alumno
             session.remove(alumno);
         }));
+
 
     }
 

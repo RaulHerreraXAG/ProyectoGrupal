@@ -32,8 +32,9 @@ public class Empresa implements Serializable{
     @Column(name = "Observaciones")
     private String observaciones;
 
-   @OneToMany(mappedBy = "empresa" , fetch = FetchType.EAGER)
+   @OneToMany(mappedBy = "empresa" , fetch = FetchType.EAGER,cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Alumno> alumnos = new ArrayList<>();
+
 
     @Override
     public String toString() {
@@ -46,5 +47,12 @@ public class Empresa implements Serializable{
                 ", observaciones='" + observaciones + '\'' +
                 //", alumnos=" + alumnos +
                 '}';
+    }
+    public static void merge(Empresa origen, Empresa destino) {
+        destino.setNombre(origen.getNombre());
+        destino.setEmail(origen.getEmail());
+        destino.setTelefono(origen.getTelefono());
+        destino.setResponsable(origen.getResponsable());
+        destino.setObservaciones(origen.getObservaciones());
     }
 }

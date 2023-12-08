@@ -39,6 +39,11 @@ public class EditarEmpresa
 
     @javafx.fxml.FXML
     public void initialize()  {
+        txtNombre.setText(Session.getCurrentEmpresa().getNombre());
+        txtEmail.setText(Session.getCurrentEmpresa().getEmail());
+        txtTelefono.setText(String.valueOf(Session.getCurrentEmpresa().getTelefono()));
+        txtResponsable.setText(Session.getCurrentEmpresa().getResponsable());
+        txtObservaciones.setText(Session.getCurrentEmpresa().getObservaciones());
     }
 
     @javafx.fxml.FXML
@@ -91,9 +96,7 @@ public class EditarEmpresa
             empresaDAO.save(e);
         }
 
-       Session.getCurrentEmpresa().clear();
-        Session.getCurrentProfesor().getAlumnos().addAll(alumnoDAO.getAlumnosPorProfesor(Session.getCurrentProfesor()));
-        App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
+        App.changeScene("InformacionEmpresa.fxml","Empresas");
     }
 
 
@@ -104,7 +107,7 @@ public class EditarEmpresa
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Confirmación de eliminación");
-        alert.setHeaderText("¿Está seguro de que desea eliminar a la empresa?");
+        alert.setHeaderText("¿Está seguro de que desea eliminar la empresa?");
         alert.setContentText(Session.getCurrentEmpresa().getNombre());
 
         // Obtener el resultado del cuadro de diálogo
@@ -112,18 +115,20 @@ public class EditarEmpresa
 
         // Verificar si el usuario hizo clic en OK
         if (result.isPresent() && result.get() == ButtonType.OK) {
-            // Usuario confirmó la eliminación, procede con la eliminación
+            // Usuario confirmó la eliminación, procede con la eliminación de la empresa y actualización de actividades
             EmpresaDAO empresaDAO = new EmpresaDAO();
             empresaDAO.delete(Session.getCurrentEmpresa());
 
+            // Luego, actualiza las actividades asociadas a la empresa eliminada
+            empresaDAO.actualizarActividadesPorEmpresa(Session.getCurrentEmpresa());
 
             try {
                 App.changeScene("InformacionEmpresa.fxml", "Información de las empresas");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }else{
-            //Si cancelamos volvemos a la tabla del alumno
+        } else {
+            // Si cancelamos volvemos a la tabla del alumno
             Stage currentStage = (Stage) btnActualizar.getScene().getWindow();
             currentStage.setScene(currentScene);
         }

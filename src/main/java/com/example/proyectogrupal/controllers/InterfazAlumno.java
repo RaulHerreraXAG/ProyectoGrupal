@@ -94,10 +94,17 @@ public class InterfazAlumno implements Initializable {
         });
 
         //cargamos los datos en la tabla
-        observableList = FXCollections.observableArrayList();
-        Session.setCurrentAlumno(new AlumnoDAO().get(Session.getCurrentAlumno().getID_Alumno()));
-        observableList.setAll(Session.getCurrentAlumno().getActividad_diaria());
-        TvActividades.setItems(observableList);
+        Alumno currentAlumno = Session.getCurrentAlumno();
+
+        if (currentAlumno != null) {
+            if (currentAlumno.getActividad_diaria() != null) {
+                observableList = FXCollections.observableArrayList(currentAlumno.getActividad_diaria());
+            } else {
+                observableList = FXCollections.observableArrayList();
+            }
+
+            TvActividades.setItems(observableList);
+        }
 
         labelNombreAlumno.setText("Bienvenido/a " + Session.getCurrentAlumno().getNombre());
         textDNI.setText(Session.getCurrentAlumno().getDNI());
