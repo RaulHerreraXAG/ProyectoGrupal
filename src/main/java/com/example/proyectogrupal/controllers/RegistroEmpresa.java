@@ -1,6 +1,7 @@
 package com.example.proyectogrupal.controllers;
 
 import com.example.proyectogrupal.App;
+import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.empresa.Empresa;
 import com.example.proyectogrupal.empresa.EmpresaDAO;
 import javafx.event.ActionEvent;
@@ -44,15 +45,35 @@ public class RegistroEmpresa {
 
         if (txtNombre.getText().length() > 1) {
             e.setNombre(txtNombre.getText());
+        }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Escriba el nombre correspondiente de la empresa.");
+                alert.showAndWait();
         }
         if (txtEmail.getText().length() > 1) {
             e.setEmail(txtEmail.getText());
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Escriba el correo correspondiente de la empresa");
+            alert.showAndWait();
         }
         if (txtResponsable.getText().length() > 1) {
             e.setResponsable(txtResponsable.getText());
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Escriba el responsable correspondiente de la empresa");
+            alert.showAndWait();
         }
         if (txtTelefono.getText().length()>1){
             e.setTelefono(Integer.valueOf(txtTelefono.getText()));
+        }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Escriba el telefono correspondiente de la empresa");
+                alert.showAndWait();
         }
         if (txtObservaciones.getText() != null){
             e.setObservaciones(txtObservaciones.getText());
@@ -68,44 +89,11 @@ public class RegistroEmpresa {
             empresaDAO.save(e);
         }
 
-        if(txtNombre == null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Escriba el nombre correspondiente de la empresa.");
-            alert.showAndWait();
-        }else{
-            App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
-        }
-
-        if(txtResponsable == null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Escriba el responsable correspondiente de la empresa");
-            alert.showAndWait();
-        }else{
-            App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
-        }
-
-        if(txtEmail == null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Escriba el correo correspondiente de la empresa");
-            alert.showAndWait();
-        }else{
-            App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
-        }
-
-        if(txtTelefono == null){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Escriba el telefono correspondiente de la empresa");
-            alert.showAndWait();
-        }else{
-            App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
-        }
-
-
-
+/*
+        Session.getCurrentProfesor().getAlumnos().clear();
+        Session.getCurrentProfesor().getAlumnos().addAll(alumnoDAO.getAlumnosPorProfesor(Session.getCurrentProfesor()));
+        App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
+        */
 
     }
 }
