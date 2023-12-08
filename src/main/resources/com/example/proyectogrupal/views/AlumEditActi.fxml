@@ -128,11 +128,19 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#btnActualizar" prefHeight="49.0" prefWidth="146.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Actualizar" textFill="WHITE">
+                  <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#btnActualizar" prefHeight="45.0" prefWidth="130.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Actualizar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font></Button>
-                  <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="49.0" prefWidth="146.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="45.0" prefWidth="130.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Eliminar" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button fx:id="btnCancelar1" mnemonicParsing="false" onAction="#cancelar" prefHeight="45.0" prefWidth="130.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
