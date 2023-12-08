@@ -22,6 +22,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class InterfazAlumno implements Initializable {
@@ -58,6 +59,10 @@ public class InterfazAlumno implements Initializable {
     private ActividadDAO actividadDAO = new ActividadDAO();
     @javafx.fxml.FXML
     private TextField textTelefono;
+    @javafx.fxml.FXML
+    private TextField textHorasRealizadas;
+    @javafx.fxml.FXML
+    private TextField textHorasRestantes;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -113,6 +118,9 @@ public class InterfazAlumno implements Initializable {
         textProfesor.setText(String.valueOf(Session.getCurrentAlumno().getTutor().getNombre()));
         textTelefono.setText(String.valueOf(Session.getCurrentAlumno().getTelefono()));
         textFechaNac.setText(String.valueOf(Session.getCurrentAlumno().getNacimiento()));
+
+        //TODO falta mostrar en los textfield las horas totales y las horas restantes e investigar por que no se elimina.
+
 
         TvActividades.setOnMouseClicked(event -> {
             if(event.getClickCount()==1){
