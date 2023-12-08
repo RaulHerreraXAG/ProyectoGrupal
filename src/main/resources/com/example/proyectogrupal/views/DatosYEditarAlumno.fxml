@@ -19,7 +19,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="vBoxFondo" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.DatosYEditarAlumnoController">
+<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.DatosYEditarAlumnoController">
    <top>
       <Label fx:id="labelnombre" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
@@ -33,23 +33,32 @@
    <bottom>
       <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" prefHeight="37.0" prefWidth="88.0" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="CANCELAR" />
-            <Button fx:id="btnBorrar" mnemonicParsing="false" onAction="#eliminar" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="BORRAR">
+            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="CANCELAR" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="btnBorrar" mnemonicParsing="false" onAction="#eliminar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="BORRAR" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../images/eliminar%20(1).png" />
+                        <Image url="@../../../../images/eliminar (1).png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
-            <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizar" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="ACTUALIZAR">
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizar" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="ACTUALIZAR" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../images/guardar-el-archivo.png" />
                      </image>
                   </ImageView>
-               </graphic></Button>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -155,7 +164,7 @@
                         <Insets top="10.0" />
                      </GridPane.margin></TextArea>
                   <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="5" GridPane.rowIndex="1" />
+                  <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" GridPane.rowIndex="1" />
                   <TextField fx:id="txtHorasPorRealizar" GridPane.columnIndex="5" GridPane.rowIndex="2" />
                   <TextField fx:id="txtContraseña" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>

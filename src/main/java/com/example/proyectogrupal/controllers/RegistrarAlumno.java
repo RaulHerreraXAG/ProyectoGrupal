@@ -102,7 +102,7 @@ public class RegistrarAlumno implements Initializable
             a.setTelefono(Integer.valueOf(txttelefono.getText()));
         }
 
-        if(comboEmpresa.getValue().length()>1){
+        if(comboEmpresa.getValue() != null){
             String nombreEmpresaSeleccionada = comboEmpresa.getValue();
             Empresa empresaSeleccionada = empresaDAO.buscarEmpresaPorNombre(nombreEmpresaSeleccionada);
             a.setEmpresa(empresaSeleccionada);

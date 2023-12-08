@@ -3,6 +3,7 @@ package com.example.proyectogrupal.controllers;
 import com.example.proyectogrupal.App;
 import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.actividad.Actividad;
+import com.example.proyectogrupal.actividad.ActividadDAO;
 import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.alumno.AlumnoDAO;
 import com.example.proyectogrupal.empresa.Empresa;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -82,6 +84,14 @@ public class DatosYEditarAlumnoController implements Initializable {
         txtContraseña.setText(Session.getCurrentAlumno().getContrasenya());
         txtDNI.setText(Session.getCurrentAlumno().getDNI());
 
+        ActividadDAO actividadDAO=new ActividadDAO();
+        List<Actividad> actividades = Session.getCurrentAlumno().getActividad_diaria();
+        int horasTotales = actividadDAO.calcularTotalHoras(actividades);
+        txtHorasRealizadas.setText(String.valueOf(horasTotales));
+
+        int horasRestantes= (700-horasTotales);
+        txtHorasPorRealizar.setText(String.valueOf(horasRestantes));
+
         //Esto es para poder pasar un DataPicker a otro sino no deja pasar los datos
         LocalDate fechana = Session.getCurrentAlumno().getNacimiento();
         txtFecha.setValue(fechana);
@@ -119,8 +129,8 @@ public class DatosYEditarAlumnoController implements Initializable {
             String fechaformato= "";
 
             if(fecha != null){
-                SimpleDateFormat nuevafecha = new SimpleDateFormat("dd-MM-yyyy");
-                fechaformato = nuevafecha.format(fecha);
+                DateTimeFormatter nuevafecha = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                fechaformato = fecha.format(nuevafecha);
             }
             return new SimpleStringProperty(fechaformato);
 

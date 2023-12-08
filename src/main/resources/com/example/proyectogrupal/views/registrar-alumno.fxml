@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.RegistrarAlumno">
+<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.RegistrarAlumno">
    <center>
       <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -34,7 +34,7 @@
          <children>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label text="Nombre">
+                  <Label text="Nombre" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -47,7 +47,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
                <children>
-                  <Label text="Apellidos">
+                  <Label text="Apellidos" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -60,7 +60,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
                <children>
-                  <Label text="Contraseña de acceso">
+                  <Label text="Contraseña de acceso" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -73,7 +73,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                <children>
-                  <Label text="DNI">
+                  <Label text="DNI" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -86,7 +86,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label text="Fecha de nacimiento">
+                  <Label text="Fecha de nacimiento" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -99,7 +99,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <Label text="Email">
+                  <Label text="Email" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -112,7 +112,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
                <children>
-                  <Label text="Teléfono de contacto">
+                  <Label text="Teléfono de contacto" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -125,7 +125,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Label text="Empresa">
+                  <Label text="Empresa" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -138,7 +138,7 @@
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                <children>
-                  <Label text="Tutor asignado">
+                  <Label text="Tutor asignado" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -154,7 +154,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
                <children>
-                  <Label prefHeight="35.0" prefWidth="181.0" text="HorasDual">
+                  <Label prefHeight="35.0" prefWidth="181.0" text="Horas Dual" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -167,7 +167,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
                <children>
-                  <Label prefHeight="35.0" prefWidth="124.0" text="HorasFCT">
+                  <Label prefHeight="35.0" prefWidth="124.0" text="Horas FCT" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -180,7 +180,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
                <children>
-                  <Label prefHeight="35.0" prefWidth="176.0" text="Observaciones">
+                  <Label prefHeight="35.0" prefWidth="176.0" text="Observaciones" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -197,13 +197,19 @@
    <bottom>
       <FlowPane alignment="CENTER" hgap="20.0" rowValignment="TOP" BorderPane.alignment="TOP_RIGHT">
          <children>
-            <Button fx:id="btncancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="CANCELAR" />
-            <Button fx:id="btnregistrar" mnemonicParsing="false" onAction="#registrarAlumno" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="REGISTRAR" />
+            <Button fx:id="btncancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="CANCELAR" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <Button fx:id="btnregistrar" mnemonicParsing="false" onAction="#registrarAlumno" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="REGISTRAR" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
       </FlowPane>
    </bottom>
    <top>
-      <Label text="Registrar nuevo alumn@" BorderPane.alignment="CENTER">
+      <Label text="Registrar nuevo alumn@" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>

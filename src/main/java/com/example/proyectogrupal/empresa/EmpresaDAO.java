@@ -61,29 +61,13 @@ public class EmpresaDAO implements DAO<Empresa> {
 
     @Override
     public void update(Empresa data) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = null;
+        try( org.hibernate.Session s = HibernateUtil.getSessionFactory().openSession()){
+            Transaction t = s.beginTransaction();
 
-        try {
-            // Comienza la transacción.
-            transaction = session.beginTransaction();
-
-            // Actualiza el pedido en la Base de Datos.
-            session.update(data);
-
-            // Commit de la transacción.
-            transaction.commit();
-        } catch (Exception e) {
-            // Maneja cualquier excepción que pueda ocurrir durante la transacción.
-            if (transaction != null) {
-                transaction.rollback();
-            }
-            e.printStackTrace();
-        } finally {
-            session.close();
+            Empresa g = s.get(Empresa.class, data.getID_Empresa());
+            Empresa.merge(data, g);
+            t.commit();
         }
-
-
     }
 
     @Override
@@ -115,6 +99,22 @@ public class EmpresaDAO implements DAO<Empresa> {
             return null;
         }
     }
+
+    public void actualizarActividadesPorEmpresa(Empresa empresa) {
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Transaction transaction = session.beginTransaction();
+
+            // Actualiza las actividades asociadas a la empresa
+            Query<?> query = session.createQuery("update Actividad set Alumno = null where Alumno.empresa = :empresa");
+            query.setParameter("empresa", empresa);
+            query.executeUpdate();
+
+            transaction.commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+
 
 
