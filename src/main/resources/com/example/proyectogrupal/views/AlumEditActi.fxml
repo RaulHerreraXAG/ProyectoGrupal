@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.AnadirActividadDeAlumno">
+<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.EditarActividadDeAlumno">
    <center>
       <GridPane prefWidth="1200.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -128,7 +128,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button fx:id="btnAñadir" mnemonicParsing="false" onAction="#btnAnadir" prefHeight="49.0" prefWidth="146.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Añadir" textFill="WHITE">
+                  <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#btnActualizar" prefHeight="49.0" prefWidth="146.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Actualizar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font></Button>

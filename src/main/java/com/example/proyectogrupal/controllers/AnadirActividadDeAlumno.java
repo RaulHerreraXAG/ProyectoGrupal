@@ -6,17 +6,17 @@ import com.example.proyectogrupal.actividad.Actividad;
 import com.example.proyectogrupal.actividad.ActividadDAO;
 import com.example.proyectogrupal.actividad.Tips;
 import com.example.proyectogrupal.alumno.Alumno;
-import com.example.proyectogrupal.alumno.AlumnoDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class AnadirObservacionDeAlumno implements Initializable {
+public class AnadirActividadDeAlumno implements Initializable {
     @javafx.fxml.FXML
     private DatePicker DatePickerFecha;
     @javafx.fxml.FXML
@@ -33,22 +33,22 @@ public class AnadirObservacionDeAlumno implements Initializable {
     private Label labelNombre;
     @javafx.fxml.FXML
     private Button btnAñadir;
-    private final ActividadDAO actividadDAO = new ActividadDAO();
-    private final ToggleGroup toggleGroup = new ToggleGroup();
     @javafx.fxml.FXML
     private Button btnCancelar;
-
-
+    private final ToggleGroup toggleGroup = new ToggleGroup();
+    private final ActividadDAO actividadDAO = new ActividadDAO();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         labelNombre.setText("Bienvenido/a " + Session.getCurrentAlumno().getNombre());
-        spinnerHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory.IntegerSpinnerValueFactory(0, 700, 1, 1));
+        spinnerHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory.IntegerSpinnerValueFactory(0, 8, 1, 1));
 
         rbDual.setToggleGroup(toggleGroup);
         rbFCT.setToggleGroup(toggleGroup);
 
     }
+
+
     @javafx.fxml.FXML
     public void btnAnadir(ActionEvent actionEvent) throws IOException {
         Alumno alumnoAsociado = Session.getCurrentAlumno();
@@ -68,7 +68,7 @@ public class AnadirObservacionDeAlumno implements Initializable {
         LocalDate fechaseleccionada = DatePickerFecha.getValue();
 
         if (fechaseleccionada != null) {
-            java.sql.Date fechaSQL = java.sql.Date.valueOf(fechaseleccionada);
+            LocalDate fechaSQL = (fechaseleccionada);
             actividad.setFecha(fechaSQL);
         } else {
             System.out.println("Error: Debes seleccionar una fecha.");
@@ -76,7 +76,7 @@ public class AnadirObservacionDeAlumno implements Initializable {
         }
 
 
-        // ontener el tipo de practica.
+        // obtener el tipo de practica.
         RadioButton seleccion = (RadioButton) toggleGroup.getSelectedToggle();
         if (seleccion != null) {
             if (seleccion == rbDual) {
@@ -92,9 +92,10 @@ public class AnadirObservacionDeAlumno implements Initializable {
     @javafx.fxml.FXML
     public void cancelar(ActionEvent actionEvent) {
         try {
-            App.changeScene("PaginaAlumno.fxml","Pagina Alumno");
+            App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
 }

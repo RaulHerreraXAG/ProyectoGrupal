@@ -115,7 +115,7 @@ public class DatosYEditarAlumnoController implements Initializable {
         //TODO Tabla de actividades
 
         cFecha.setCellValueFactory((fila) ->{
-            Date fecha = fila.getValue().getFecha();
+            LocalDate fecha = fila.getValue().getFecha();
             String fechaformato= "";
 
             if(fecha != null){

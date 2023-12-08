@@ -62,16 +62,17 @@ public class InterfazAlumno implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //Mostramos los datos en las columnas.
+        // Mostramos los datos en las columnas.
         cFecha.setCellValueFactory((fila) -> {
-            Date fecha = fila.getValue().getFecha();
-            String fechaformato= "";
+            LocalDate fecha = fila.getValue().getFecha();
+            String fechaFormato = "";
 
-            if(fecha != null){
-                SimpleDateFormat nuevafecha = new SimpleDateFormat("dd-MM-yyyy");
-                fechaformato = nuevafecha.format(fecha);
+            if (fecha != null) {
+                DateTimeFormatter nuevoFormato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+                fechaFormato = fecha.format(nuevoFormato);
             }
-            return new SimpleStringProperty(fechaformato);
+
+            return new SimpleStringProperty(fechaFormato);
         });
 
         cTipoPractica.setCellValueFactory((fila) -> {
@@ -98,8 +99,6 @@ public class InterfazAlumno implements Initializable {
         observableList.setAll(Session.getCurrentAlumno().getActividad_diaria());
         TvActividades.setItems(observableList);
 
-
-
         labelNombreAlumno.setText("Bienvenido/a " + Session.getCurrentAlumno().getNombre());
         textDNI.setText(Session.getCurrentAlumno().getDNI());
         textEmail.setText(Session.getCurrentAlumno().getEmail());
@@ -108,8 +107,21 @@ public class InterfazAlumno implements Initializable {
         textTelefono.setText(String.valueOf(Session.getCurrentAlumno().getTelefono()));
         textFechaNac.setText(String.valueOf(Session.getCurrentAlumno().getNacimiento()));
 
-    }
+        TvActividades.setOnMouseClicked(event -> {
+            if(event.getClickCount()==1){
+                Actividad actividad = (Actividad) TvActividades.getSelectionModel().getSelectedItem();
+                if (actividad != null){
+                    Session.setCurrentActividad(actividad);
+                    try {
+                        App.changeScene("AlumEditActi.fxml", "Editar actividad");
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            }
+        });
 
+    }
 
     @javafx.fxml.FXML
     public void añadirActividad(ActionEvent actionEvent) {
