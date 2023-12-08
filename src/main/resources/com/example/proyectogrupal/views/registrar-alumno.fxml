@@ -197,11 +197,11 @@
    <bottom>
       <FlowPane alignment="CENTER" hgap="20.0" rowValignment="TOP" BorderPane.alignment="TOP_RIGHT">
          <children>
-            <Button fx:id="btncancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="CANCELAR" textFill="WHITE">
+            <Button fx:id="btncancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Button>
-            <Button fx:id="btnregistrar" mnemonicParsing="false" onAction="#registrarAlumno" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="REGISTRAR" textFill="WHITE">
+            <Button fx:id="btnregistrar" mnemonicParsing="false" onAction="#registrarAlumno" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Registrar" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font></Button>

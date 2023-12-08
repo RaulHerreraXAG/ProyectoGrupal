@@ -21,7 +21,7 @@
       </Label>
    </top>
    <center>
-      <TableView fx:id="tvEmpresa" maxHeight="400.0" minHeight="400.0" prefHeight="400.0" prefWidth="1220.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="tvEmpresa" maxHeight="400.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="cNombre" prefWidth="75.0" text="Nombre" />
           <TableColumn fx:id="cEmail" prefWidth="75.0" text="Email" />
@@ -33,14 +33,17 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
          <BorderPane.margin>
-            <Insets left="60.0" right="60.0" top="40.0" />
+            <Insets left="60.0" right="60.0" />
          </BorderPane.margin>
       </TableView>
    </center>
    <bottom>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnVolver" alignment="CENTER" mnemonicParsing="false" onAction="#volver" prefHeight="39.0" prefWidth="95.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Volver" textFill="WHITE" />
+            <Button fx:id="btnVolver" alignment="CENTER" mnemonicParsing="false" onAction="#volver" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Volver" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
          </children>
       </HBox>
    </bottom>

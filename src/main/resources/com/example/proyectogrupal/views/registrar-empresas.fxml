@@ -91,15 +91,15 @@
                <children>
                   <Button fx:id="btncancelar" mnemonicParsing="false" onAction="#Cancelar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btnRegistrar" alignment="CENTER" mnemonicParsing="false" onAction="#Registrar" styleClass="buttonMenu" stylesheets="@../../../../Style.css" text="Registrar">
+                  <Button fx:id="btnRegistrar" alignment="CENTER" mnemonicParsing="false" onAction="#Registrar" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Registrar" textFill="WHITE">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                      <HBox.margin>
                         <Insets left="20.0" />
