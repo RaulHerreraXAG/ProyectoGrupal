@@ -91,7 +91,7 @@ public class EditarEmpresa
             empresaDAO.save(e);
         }
 
-        Session.getCurrentEmpresa().clear();
+       Session.getCurrentEmpresa().clear();
         Session.getCurrentProfesor().getAlumnos().addAll(alumnoDAO.getAlumnosPorProfesor(Session.getCurrentProfesor()));
         App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
     }

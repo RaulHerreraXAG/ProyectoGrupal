@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ActividadDAO  implements DAO<Actividad> {
     @Override
@@ -86,5 +87,12 @@ public class ActividadDAO  implements DAO<Actividad> {
             session.remove(actividad);
         });
 
+    }
+    public int calcularTotalHoras(List<Actividad> horas){
+        int totalHoras = 0;
+        for (Actividad actividad : horas) {
+            totalHoras += actividad.getHoras();
+        }
+        return totalHoras;
     }
 }
