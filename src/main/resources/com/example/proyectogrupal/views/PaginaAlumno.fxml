@@ -37,104 +37,155 @@
       </VBox>
    </bottom>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane prefHeight="119.0" prefWidth="1240.0">
+            <GridPane prefHeight="204.0" prefWidth="1240.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.0" minWidth="10.0" prefWidth="95.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="948.0" minWidth="0.0" prefWidth="208.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="202.0" minWidth="10.0" prefWidth="107.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="235.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="0.0" prefWidth="183.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="652.0" minWidth="10.0" prefWidth="180.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="652.0" minWidth="10.0" prefWidth="187.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="652.0" minWidth="10.0" prefWidth="120.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="948.0" minWidth="0.0" prefWidth="222.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="181.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="205.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="0.0" prefWidth="111.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="652.0" minWidth="10.0" prefWidth="172.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="101.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="115.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="115.0" minHeight="0.0" prefHeight="52.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="DNI:" textFill="WHITE">
+                  <Label text="DNI:" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label text="Fecha de nacimiento:" textFill="WHITE" GridPane.columnIndex="4">
+                  <Label prefHeight="27.0" prefWidth="170.0" text="Fecha de nacimiento:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label text="Empresa:" textFill="WHITE" GridPane.rowIndex="1">
+                  <Label text="Empresa:" textFill="WHITE" GridPane.rowIndex="4">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label text="Profesor asignado:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                  <Label text="Profesor asignado:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label text="Email:" textFill="WHITE" GridPane.columnIndex="2">
+                  <Label text="Email:" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="textDNI" editable="false" prefHeight="25.0" prefWidth="332.0" GridPane.columnIndex="1">
+                  <TextField fx:id="textDNI" editable="false" prefHeight="25.0" prefWidth="332.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets right="40.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="textEmpresa" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="textEmpresa" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <GridPane.margin>
-                        <Insets right="40.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="textFechaNac" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="5">
+                  <TextField fx:id="textFechaNac" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <GridPane.margin>
-                        <Insets right="30.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="textProfesor" editable="false" prefHeight="25.0" prefWidth="651.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                  <TextField fx:id="textProfesor" editable="false" prefHeight="25.0" prefWidth="651.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <GridPane.margin>
-                        <Insets right="30.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="textEmail" editable="false" prefHeight="25.0" prefWidth="156.0" GridPane.columnIndex="3">
+                  <TextField fx:id="textEmail" editable="false" prefHeight="25.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <GridPane.margin>
-                        <Insets right="40.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Teléfono:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <Label text="Teléfono:" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="textTelefono" editable="false" prefHeight="25.0" prefWidth="301.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <TextField fx:id="textTelefono" editable="false" prefHeight="25.0" prefWidth="301.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <GridPane.margin>
-                        <Insets right="40.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <Label text="Total horas realizadas:" textFill="WHITE" GridPane.columnIndex="6">
+                  <Label text="Total horas realizadas:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label text="Total horas restantes:" textFill="WHITE" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                  <Label text="Total horas restantes:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="textHorasRealizadas" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="7">
+                  <TextField fx:id="textHorasRealizadas" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <GridPane.margin>
-                        <Insets right="8.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
-                  <TextField fx:id="textHorasRestantes" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                  <TextField fx:id="textHorasRestantes" editable="false" prefHeight="25.0" prefWidth="180.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <GridPane.margin>
-                        <Insets right="8.0" />
+                        <Insets right="10.0" />
                      </GridPane.margin>
                   </TextField>
+                  <TextField fx:id="textNombreEmpresa" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="textResponsableEmpresa" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="textEmailEmpresa" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <TextField fx:id="textTelefonoEmpresa" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Nombre:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Responsable:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Email:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="Teléfono:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="DATOS PERSONALES" textFill="WHITE" GridPane.columnIndex="1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label text="DATOS EMPRESA" textFill="WHITE" GridPane.columnIndex="5">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
                </children>
             </GridPane>
             <TableView fx:id="TvActividades" prefHeight="327.0" prefWidth="1240.0">

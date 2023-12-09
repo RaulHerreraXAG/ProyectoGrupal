@@ -135,9 +135,9 @@ public class EditarActividadDeAlumno implements Initializable {
 
     @javafx.fxml.FXML
     public void eliminar(ActionEvent actionEvent) throws IOException {
-        // Obtener la actividad actual seleccionada
-        Actividad actividadSeleccionada = Session.getCurrentActividad();
+
         ActividadDAO actividadDAO = new ActividadDAO();
+        Actividad actividadseleccionada = Session.getCurrentActividad();
 
         // Crear un cuadro de diálogo de confirmación
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -150,10 +150,13 @@ public class EditarActividadDeAlumno implements Initializable {
 
         // Verificar la respuesta del usuario
         if (result.isPresent() && result.get() == ButtonType.OK) {
+            actividadDAO.delete(actividadseleccionada);
 
-            actividadDAO.delete(actividadSeleccionada);
+            Session.getCurrentAlumno().getActividad_diaria().clear();
+            Session.getCurrentAlumno().getActividad_diaria().addAll(actividadDAO.getActividadAlumno(Session.getCurrentAlumno()));
         }
         try{
+
             App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
         } catch (IOException e) {
             throw new RuntimeException(e);

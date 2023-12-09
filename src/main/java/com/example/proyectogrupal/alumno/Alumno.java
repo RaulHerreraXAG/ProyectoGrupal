@@ -64,7 +64,7 @@ public class Alumno implements Serializable {
     private Integer telefono;
 
 
-    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
     public static void merge(Alumno origen, Alumno destino) {

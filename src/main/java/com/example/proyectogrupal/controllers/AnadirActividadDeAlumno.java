@@ -6,6 +6,7 @@ import com.example.proyectogrupal.actividad.Actividad;
 import com.example.proyectogrupal.actividad.ActividadDAO;
 import com.example.proyectogrupal.actividad.Tips;
 import com.example.proyectogrupal.alumno.Alumno;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AnadirActividadDeAlumno implements Initializable {
@@ -85,8 +87,23 @@ public class AnadirActividadDeAlumno implements Initializable {
                 actividad.setTipo(Tips.FCT);
             }
         }
-        actividadDAO.save(actividad);
-        App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
+
+        if (actividad.getID_Actividad() != null){
+            actividadDAO.update(actividad);
+        } else {
+            actividadDAO.save(actividad);
+        }
+
+        Session.getCurrentAlumno().getActividad_diaria().clear();
+        Session.getCurrentAlumno().getActividad_diaria().addAll(actividadDAO.getActividadAlumno(Session.getCurrentAlumno()));
+
+        try{
+            App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
+        } catch (IOException e){
+            throw new IOException(e);
+        }
+
+
     }
 
     @javafx.fxml.FXML
