@@ -7,6 +7,8 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -128,19 +130,33 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#btnActualizar" prefHeight="45.0" prefWidth="130.0" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Actualizar" textFill="WHITE">
+                  <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#btnActualizar" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Actualizar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
-                     </font></Button>
-                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" prefHeight="45.0" prefWidth="130.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Eliminar" textFill="WHITE">
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../images/guardar-el-archivo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="btnEliminar" mnemonicParsing="false" onAction="#eliminar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Eliminar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../images/eliminar%20(1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </Button>
-                  <Button fx:id="btnCancelar1" mnemonicParsing="false" onAction="#cancelar" prefHeight="45.0" prefWidth="130.0" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
+                  <Button fx:id="btnCancelar1" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>

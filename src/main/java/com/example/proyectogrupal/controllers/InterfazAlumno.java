@@ -7,6 +7,8 @@ import com.example.proyectogrupal.actividad.ActividadDAO;
 import com.example.proyectogrupal.actividad.Tips;
 import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.alumno.AlumnoDAO;
+import com.example.proyectogrupal.empresa.Empresa;
+import com.example.proyectogrupal.empresa.EmpresaDAO;
 import javafx.beans.Observable;
 import javafx.beans.property.SimpleSetProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,6 +24,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class InterfazAlumno implements Initializable {
@@ -58,6 +61,18 @@ public class InterfazAlumno implements Initializable {
     private ActividadDAO actividadDAO = new ActividadDAO();
     @javafx.fxml.FXML
     private TextField textTelefono;
+    @javafx.fxml.FXML
+    private TextField textHorasRealizadas;
+    @javafx.fxml.FXML
+    private TextField textHorasRestantes;
+    @javafx.fxml.FXML
+    private TextField textNombreEmpresa;
+    @javafx.fxml.FXML
+    private TextField textResponsableEmpresa;
+    @javafx.fxml.FXML
+    private TextField textEmailEmpresa;
+    @javafx.fxml.FXML
+    private TextField textTelefonoEmpresa;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -114,6 +129,25 @@ public class InterfazAlumno implements Initializable {
         textTelefono.setText(String.valueOf(Session.getCurrentAlumno().getTelefono()));
         textFechaNac.setText(String.valueOf(Session.getCurrentAlumno().getNacimiento()));
 
+
+        EmpresaDAO empresaDAO = new EmpresaDAO();
+
+        textNombreEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getNombre());
+        textResponsableEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getResponsable());
+        textEmailEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getEmail());
+        textTelefonoEmpresa.setText(String.valueOf(Session.getCurrentAlumno().getEmpresa().getTelefono()));
+
+
+        //TODO falta mostrar en los textfield las horas totales y las horas restantes e investigar por que no se elimina.
+        ActividadDAO actividadDAO=new ActividadDAO();
+        List<Actividad> actividades = Session.getCurrentAlumno().getActividad_diaria();
+        int horasTotales = actividadDAO.calcularTotalHoras(actividades);
+        textHorasRealizadas.setText(String.valueOf(horasTotales));
+
+        int horasRestantes= (700-horasTotales);
+        textHorasRestantes.setText(String.valueOf(horasRestantes));
+
+
         TvActividades.setOnMouseClicked(event -> {
             if(event.getClickCount()==1){
                 Actividad actividad = (Actividad) TvActividades.getSelectionModel().getSelectedItem();
@@ -132,6 +166,7 @@ public class InterfazAlumno implements Initializable {
 
     @javafx.fxml.FXML
     public void añadirActividad(ActionEvent actionEvent) {
+
         try {
             App.changeScene("AlumAñadeActi.fxml", "Página Alumno");
         } catch (IOException e) {

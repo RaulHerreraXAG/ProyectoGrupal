@@ -10,7 +10,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -42,6 +44,7 @@ public class Actividad implements Serializable {
     @JoinColumn(name = "Alumno", referencedColumnName = "ID_Alumno")
     private Alumno alumno;
 
+
     @Override
     public String toString() {
         return "Actividad{" +
@@ -53,5 +56,14 @@ public class Actividad implements Serializable {
                 ", observaciones='" + observaciones + '\'' +
                 ", alumno=" + alumno.getID_Alumno() +
                 '}';
+    }
+
+    public static void merge(Actividad origen, Actividad destino) {
+        destino.setActividad(origen.getActividad());
+        destino.setTipo(origen.getTipo());
+        destino.setAlumno(origen.getAlumno());
+        destino.setHoras(origen.getHoras());
+        destino.setFecha(origen.getFecha());
+        destino.setObservaciones(origen.getObservaciones());
     }
 }
