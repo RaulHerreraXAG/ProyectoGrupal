@@ -7,22 +7,10 @@
     <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="Antes eliminaba alumnos al borrar una empresa, ahora al eliminar una empresa se borra el combo de la empresa del alumno.">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirActividadDeAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirActividadDeAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/DatosYEditarAlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/DatosYEditarAlumnoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarActividadDeAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarActividadDeAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarEmpresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InformacionEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InformacionEmpresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazProfesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazProfesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistrarAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistrarAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistroEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistroEmpresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaProfesor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaProfesor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-empresas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-empresas.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,30 +41,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Users/PC/Desktop/ProyectoGrupal4",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Users/PC/Desktop/ProyectoGrupal4&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\frans\IdeaProjects\ProyectoGrupal\src\main\resources\com\example\proyectogrupal\views" />
