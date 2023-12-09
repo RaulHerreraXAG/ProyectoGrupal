@@ -11,6 +11,9 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+/**
+ * Controlador para la ventana de registro de empresas.
+ */
 public class RegistroEmpresa {
     @javafx.fxml.FXML
     private TextField txtEmail;
@@ -27,16 +30,33 @@ public class RegistroEmpresa {
     @javafx.fxml.FXML
     private Button btnRegistrar;
 
+    /**
+     * Método de inicialización del controlador.
+     */
     @javafx.fxml.FXML
     public void initialize() {
     }
 
+
+    /**
+     * Método que maneja el evento de cancelar el registro de una empresa.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     * @throws IOException Excepción de entrada/salida.
+     */
     @javafx.fxml.FXML
     public void Cancelar(ActionEvent actionEvent) throws IOException {
         // Volvemos a la pagina principal del profesor
         App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
     }
 
+
+    /**
+     * Método que maneja el evento de registrar una empresa.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     * @throws IOException Excepción de entrada/salida.
+     */
     @javafx.fxml.FXML
     public void Registrar(ActionEvent actionEvent) throws IOException {
         Empresa e = new Empresa();
@@ -91,11 +111,6 @@ public class RegistroEmpresa {
 
         App.changeScene("InformacionEmpresa.fxml", "Empresas");
 
-/*
-        Session.getCurrentProfesor().getAlumnos().clear();
-        Session.getCurrentProfesor().getAlumnos().addAll(alumnoDAO.getAlumnosPorProfesor(Session.getCurrentProfesor()));
-        App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
-        */
 
     }
 }

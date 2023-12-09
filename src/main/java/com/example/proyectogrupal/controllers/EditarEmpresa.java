@@ -16,8 +16,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.util.Optional;
 
+/**
+ * Controlador para editar los detalles de una empresa.
+ */
+
 public class EditarEmpresa
 {
+    // Declaraciones de campos de la interfaz gráfica y DAOs
+
     @javafx.fxml.FXML
     private TextField txtTelefono;
     @javafx.fxml.FXML
@@ -37,8 +43,13 @@ public class EditarEmpresa
 
     private final EmpresaDAO empresaDAO = new EmpresaDAO();
 
+
+    /**
+     * Método de inicialización que establece los campos de texto con los detalles de la empresa actual.
+     */
     @javafx.fxml.FXML
     public void initialize()  {
+        // Lógica para inicializar la ventana con los datos de la empresa actual
         txtNombre.setText(Session.getCurrentEmpresa().getNombre());
         txtEmail.setText(Session.getCurrentEmpresa().getEmail());
         txtTelefono.setText(String.valueOf(Session.getCurrentEmpresa().getTelefono()));
@@ -46,8 +57,15 @@ public class EditarEmpresa
         txtObservaciones.setText(Session.getCurrentEmpresa().getObservaciones());
     }
 
+    /**
+     * Método llamado al hacer clic en el botón de actualización de la empresa.
+     * @param actionEvent El evento de acción del botón.
+     * @throws IOException Si ocurre un error de E/S.
+     */
+
     @javafx.fxml.FXML
     public void Actualizar(ActionEvent actionEvent) throws IOException {
+        // Lógica para actualizar los detalles de la empresa
         Empresa e = Session.getCurrentEmpresa();
 
         if (txtNombre.getText().length() > 1) {
@@ -99,9 +117,15 @@ public class EditarEmpresa
         App.changeScene("InformacionEmpresa.fxml","Empresas");
     }
 
-
+    /**
+     * Método llamado al hacer clic en el botón de eliminación de la empresa.
+     * @param actionEvent El evento de acción del botón.
+     */
     @javafx.fxml.FXML
     public void Eliminar(ActionEvent actionEvent) {
+
+        // Lógica para eliminar la empresa
+
         //Con esto mantenemos la pantalla para en caso de cancelar quedarnos donde estabamos
         Scene currentScene = btnActualizar.getScene();
 
@@ -132,9 +156,13 @@ public class EditarEmpresa
         }
     }
 
-
+    /**
+     * Método llamado al hacer clic en el botón de cancelar.
+     * @param actionEvent El evento de acción del botón.
+     */
     @javafx.fxml.FXML
     public void Cancelar(ActionEvent actionEvent) {
+        // Lógica para cancelar y volver a la información de las empresas
         try {
             App.changeScene("InformacionEmpresa.fxml","Información de las empresas");
         } catch (IOException e) {

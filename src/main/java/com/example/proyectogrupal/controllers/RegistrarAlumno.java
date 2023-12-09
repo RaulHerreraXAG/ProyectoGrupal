@@ -15,7 +15,10 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/**
+ * Controlador para la ventana de registro de alumnos por parte de un profesor.
+ * Implementa la interfaz Initializable de JavaFX para la inicialización de componentes.
+ */
 public class RegistrarAlumno implements Initializable
 {
     @javafx.fxml.FXML
@@ -51,6 +54,13 @@ public class RegistrarAlumno implements Initializable
     @javafx.fxml.FXML
     private TextField txtProfesor;
 
+
+    /**
+     * Método de inicialización del controlador.
+     *
+     * @param url             URL de la ubicación del objeto.
+     * @param resourceBundle  ResourceBundle que contiene los recursos específicos del local.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -66,14 +76,25 @@ public class RegistrarAlumno implements Initializable
     }
 
 
-
+    /**
+     * Método que maneja el evento de cancelar el registro de un alumno.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     * @throws IOException Excepción de entrada/salida.
+     */
     @javafx.fxml.FXML
     public void cancelar(ActionEvent actionEvent) throws IOException {
         App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
     }
 
 
-    //TODO Cambiar empresa y tutor de tipo varchar porque estan en INT
+    /**
+     * Método que maneja el evento de registrar un alumno.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     * @throws IOException Excepción de entrada/salida.
+     */
+
 
     @javafx.fxml.FXML
     public void registrarAlumno(ActionEvent actionEvent) throws IOException {

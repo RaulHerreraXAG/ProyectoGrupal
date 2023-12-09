@@ -16,7 +16,15 @@ import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para editar la actividad de un alumno.
+ * Implementa la interfaz Initializable de JavaFX para inicializar la ventana.
+ */
+
 public class EditarActividadDeAlumno implements Initializable {
+
+
+    // Declaraciones de elementos de la interfaz gráfica y otros campos omitidos
 
     @javafx.fxml.FXML
     private DatePicker DatePickerFecha;
@@ -41,8 +49,16 @@ public class EditarActividadDeAlumno implements Initializable {
     @javafx.fxml.FXML
     private Button btnCancelar1;
 
+    /**
+     * Método de inicialización al cargar la interfaz.
+     * @param url La ubicación relativa al archivo FXML.
+     * @param resourceBundle El recurso de objetos específico del locale.
+     */
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // Lógica para inicializar la ventana con los datos de la actividad actual del alumno
 
         labelNombre.setText("Bienvenido/a " + Session.getCurrentAlumno().getNombre());
         txtActividad.setText(Session.getCurrentActividad().getActividad());
@@ -74,6 +90,10 @@ public class EditarActividadDeAlumno implements Initializable {
     }
 
 
+    /**
+     * Método llamado al hacer clic en el botón de cancelar.
+     * @param actionEvent El evento de acción del botón.
+     */
     @javafx.fxml.FXML
     public void cancelar(ActionEvent actionEvent) {
         try {
@@ -83,9 +103,15 @@ public class EditarActividadDeAlumno implements Initializable {
         }
     }
 
-
+    /**
+     * Método llamado al hacer clic en el botón de actualizar la actividad.
+     * @param actionEvent El evento de acción del botón.
+     * @throws IOException Si ocurre un error de E/S.
+     */
     @javafx.fxml.FXML
     public void btnActualizar(ActionEvent actionEvent) throws IOException {
+        // Lógica para actualizar la actividad del alumno
+
         // Obtener la instancia de la actividad actual
         Actividad actividad = Session.getCurrentActividad();
 
@@ -133,8 +159,16 @@ public class EditarActividadDeAlumno implements Initializable {
         }
     }
 
+    /**
+     * Método llamado al hacer clic en el botón de eliminar la actividad.
+     * @param actionEvent El evento de acción del botón.
+     * @throws IOException Si ocurre un error de E/S.
+     */
+
     @javafx.fxml.FXML
     public void eliminar(ActionEvent actionEvent) throws IOException {
+
+        // Lógica para eliminar la actividad del alumno
 
         ActividadDAO actividadDAO = new ActividadDAO();
         Actividad actividadseleccionada = Session.getCurrentActividad();

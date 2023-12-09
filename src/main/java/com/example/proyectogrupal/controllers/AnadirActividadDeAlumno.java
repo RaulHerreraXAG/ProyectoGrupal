@@ -18,6 +18,12 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
 
+
+/**
+ * Controlador para la interfaz de añadir actividad de un alumno.
+ * Implementa la interfaz Initializable de JavaFX para inicializar la ventana.
+ */
+
 public class AnadirActividadDeAlumno implements Initializable {
     @javafx.fxml.FXML
     private DatePicker DatePickerFecha;
@@ -39,8 +45,16 @@ public class AnadirActividadDeAlumno implements Initializable {
     private Button btnCancelar;
     private final ToggleGroup toggleGroup = new ToggleGroup();
     private final ActividadDAO actividadDAO = new ActividadDAO();
+
+    /**
+     * Método de inicialización al cargar la interfaz.
+     * @param url La ubicación relativa al archivo FXML.
+     * @param resourceBundle El recurso de objetos específico del locale.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // Inicialización de la ventana, asignación de eventos, etc.
 
         labelNombre.setText("Bienvenido/a " + Session.getCurrentAlumno().getNombre());
         spinnerHoras.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory.IntegerSpinnerValueFactory(0, 8, 1, 1));
@@ -50,9 +64,14 @@ public class AnadirActividadDeAlumno implements Initializable {
 
     }
 
-
+    /**
+     * Método llamado al hacer clic en el botón de añadir actividad.
+     * @param actionEvent El evento de acción del botón.
+     * @throws IOException Si ocurre un error de E/S.
+     */
     @javafx.fxml.FXML
     public void btnAnadir(ActionEvent actionEvent) throws IOException {
+        // Lógica para añadir una actividad al alumno
         Alumno alumnoAsociado = Session.getCurrentAlumno();
         Actividad actividad = new Actividad();
         actividad.setAlumno(alumnoAsociado);
@@ -106,8 +125,14 @@ public class AnadirActividadDeAlumno implements Initializable {
 
     }
 
+    /**
+     * Método llamado al hacer clic en el botón de cancelar.
+     * @param actionEvent El evento de acción del botón.
+     */
+
     @javafx.fxml.FXML
     public void cancelar(ActionEvent actionEvent) {
+        // Lógica para cancelar la operación y volver a la página del alumno
         try {
             App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
         } catch (IOException e) {

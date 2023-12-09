@@ -18,6 +18,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la ventana de inicio de sesión.
+ * Implementa la interfaz Initializable de JavaFX para la inicialización de componentes.
+ */
+
 public class LoginController implements Initializable
 {
     @javafx.fxml.FXML
@@ -30,7 +35,12 @@ public class LoginController implements Initializable
     private Button btnInciarSesion;
 
 
-
+    /**
+     * Método que maneja el evento de inicio de sesión.
+     * Valida el usuario (alumno o profesor) con el correo electrónico y contraseña proporcionados.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     */
     @javafx.fxml.FXML
     public void SignIn(ActionEvent actionEvent) {
         String email = txtCorreo.getText();
@@ -69,7 +79,12 @@ public class LoginController implements Initializable
         }
 
     }
-
+    /**
+     * Método de inicialización del controlador.
+     *
+     * @param url             URL de la ubicación del objeto.
+     * @param resourceBundle  ResourceBundle que contiene los recursos específicos del local.
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
