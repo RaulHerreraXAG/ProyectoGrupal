@@ -6,6 +6,7 @@ import com.example.proyectogrupal.profesor.Profesor;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
@@ -40,7 +41,8 @@ public class Alumno implements Serializable {
     @Column(name = "Email")
     private String email;
 
-    @ManyToOne(cascade = CascadeType.REMOVE)
+    @Getter
+    @ManyToOne
     @JoinColumn(name = "Empresa",referencedColumnName = "ID_Empresa")
     private Empresa empresa;
 
@@ -64,7 +66,7 @@ public class Alumno implements Serializable {
     private Integer telefono;
 
 
-    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "alumno",fetch = FetchType.EAGER)
     private List<Actividad> actividad_diaria = new ArrayList<>();
 
     public static void merge(Alumno origen, Alumno destino) {
@@ -101,5 +103,6 @@ public class Alumno implements Serializable {
                 ", actividad_diaria=" + actividad_diaria +
                 '}';
     }
+
 }
 

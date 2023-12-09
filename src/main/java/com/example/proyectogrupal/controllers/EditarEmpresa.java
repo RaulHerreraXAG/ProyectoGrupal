@@ -119,8 +119,6 @@ public class EditarEmpresa
             EmpresaDAO empresaDAO = new EmpresaDAO();
             empresaDAO.delete(Session.getCurrentEmpresa());
 
-            // Luego, actualiza las actividades asociadas a la empresa eliminada
-            empresaDAO.actualizarEmpresa(Session.getCurrentEmpresa());
 
             try {
                 App.changeScene("InformacionEmpresa.fxml", "Información de las empresas");

@@ -153,6 +153,7 @@ public class EditarActividadDeAlumno implements Initializable {
 
             actividadDAO.delete(actividadSeleccionada);
         }
+
         try{
             App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
         } catch (IOException e) {

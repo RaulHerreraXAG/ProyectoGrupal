@@ -100,20 +100,6 @@ public class EmpresaDAO implements DAO<Empresa> {
         }
     }
 
-    public void actualizarEmpresa(Empresa empresa) {
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            Transaction transaction = session.beginTransaction();
-
-            // Actualiza las actividades asociadas a la empresa estableciendo a null el campo empresa en los alumnos
-            Query<?> query = session.createQuery("update Actividad set Alumno.empresa = null where Alumno.empresa = :empresa");
-            query.setParameter("empresa", empresa);
-            query.executeUpdate();
-
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
 
 
