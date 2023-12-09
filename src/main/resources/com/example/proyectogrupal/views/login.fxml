@@ -25,12 +25,12 @@
                   </ImageView>
                   <Label alignment="CENTER" prefHeight="59.0" prefWidth="487.0" text="Bienvenido a Cesur" textAlignment="CENTER">
                      <font>
-                        <Font name="Gabriola" size="36.0" />
+                        <Font size="36.0" />
                      </font>
                   </Label>
                   <TextField fx:id="txtCorreo" alignment="TOP_LEFT" maxWidth="429.0" minWidth="200.0" prefHeight="37.0" prefWidth="429.0" promptText="Introduzca su correo escolar" styleClass="textfied">
                      <font>
-                        <Font name="Gabriola" size="23.0" />
+                        <Font size="23.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="40.0" top="30.0" />
@@ -38,12 +38,12 @@
                   </TextField>
                   <PasswordField fx:id="txtPassword" maxHeight="37.0" maxWidth="429.0" minHeight="37.0" minWidth="429.0" prefHeight="37.0" prefWidth="429.0" promptText="Introduzca la contraseña" styleClass="textfied">
                      <font>
-                        <Font name="Gabriola" size="23.0" />
+                        <Font size="23.0" />
                      </font>
                   </PasswordField>
                   <Button fx:id="btnInciarSesion" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#SignIn" prefHeight="40.0" prefWidth="172.0" styleClass="buttonIS" text="Iniciar Sesión" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font name="Gabriola" size="24.0" />
+                        <Font size="24.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="40.0" />
