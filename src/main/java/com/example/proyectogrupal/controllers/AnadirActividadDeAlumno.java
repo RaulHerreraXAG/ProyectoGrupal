@@ -78,9 +78,19 @@ public class AnadirActividadDeAlumno implements Initializable {
 
         if (txtActividad.getText().length() > 1){
             actividad.setActividad(txtActividad.getText());
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("El campo Actividad no puede estar vacío");
+            alert.showAndWait();
         }
         if (txtObservaciones.getText().length() > 1){
             actividad.setObservaciones(txtObservaciones.getText());
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("El campo Observaciones no puede estar vacío");
+            alert.showAndWait();
         }
 
         actividad.setHoras((Integer) spinnerHoras.getValue());
@@ -92,8 +102,11 @@ public class AnadirActividadDeAlumno implements Initializable {
             LocalDate fechaSQL = (fechaseleccionada);
             actividad.setFecha(fechaSQL);
         } else {
-            System.out.println("Error: Debes seleccionar una fecha.");
-            return;
+            //alert
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("El campo Fecha no puede estar vacío");
+            alert.showAndWait();
         }
 
 
@@ -104,6 +117,11 @@ public class AnadirActividadDeAlumno implements Initializable {
                 actividad.setTipo(Tips.DUAL);
             } else if (seleccion == rbFCT) {
                 actividad.setTipo(Tips.FCT);
+            }else{
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("El campo Tipo no puede estar vacío");
+                alert.showAndWait();
             }
         }
 

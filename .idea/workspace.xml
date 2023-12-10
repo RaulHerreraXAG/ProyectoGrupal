@@ -7,10 +7,10 @@
     <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="Antes eliminaba alumnos al borrar una empresa, ahora al eliminar una empresa se borra el combo de la empresa del alumno.">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a/storage_v2/_src_/schema/cesurbd.cNftJw.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirActividadDeAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirActividadDeAlumno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +110,7 @@
       <workItem from="1702040460418" duration="21884000" />
       <workItem from="1702067889182" duration="2201000" />
       <workItem from="1702134250914" duration="10969000" />
+      <workItem from="1702164132074" duration="1965000" />
     </task>
     <task id="LOCAL-00001" summary="hecho el boceto de registrar alumno">
       <option name="closed" value="true" />

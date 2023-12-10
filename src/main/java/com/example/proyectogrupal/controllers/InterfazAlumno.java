@@ -62,9 +62,6 @@ public class InterfazAlumno implements Initializable {
     private TextField textEmail;
     @javafx.fxml.FXML
     private Label labelNombreAlumno;
-    private ObservableList<Actividad> observableList;
-
-    private ActividadDAO actividadDAO = new ActividadDAO();
     @javafx.fxml.FXML
     private TextField textTelefono;
     @javafx.fxml.FXML
@@ -79,7 +76,9 @@ public class InterfazAlumno implements Initializable {
     private TextField textEmailEmpresa;
     @javafx.fxml.FXML
     private TextField textTelefonoEmpresa;
+    private ObservableList<Actividad> observableList;
 
+    private ActividadDAO actividadDAO = new ActividadDAO();
 
     /**
      * Inicializa la interfaz de usuario con datos del alumno y configuración de la tabla de actividades.
@@ -137,21 +136,21 @@ public class InterfazAlumno implements Initializable {
         labelNombreAlumno.setText("Bienvenido/a " + Session.getCurrentAlumno().getNombre());
         textDNI.setText(Session.getCurrentAlumno().getDNI());
         textEmail.setText(Session.getCurrentAlumno().getEmail());
-        textEmpresa.setText(String.valueOf(Session.getCurrentAlumno().getEmpresa().getNombre()));
+        Empresa empresa = currentAlumno.getEmpresa();
+        if (empresa != null) {
+            // La empresa no es null, puedes acceder al nombre de la empresa
+            textEmpresa.setText(String.valueOf(empresa.getNombre()));
+            textNombreEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getNombre());
+            textResponsableEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getResponsable());
+            textEmailEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getEmail());
+            textTelefonoEmpresa.setText(String.valueOf(Session.getCurrentAlumno().getEmpresa().getTelefono()));
+             }
         textProfesor.setText(String.valueOf(Session.getCurrentAlumno().getTutor().getNombre()));
         textTelefono.setText(String.valueOf(Session.getCurrentAlumno().getTelefono()));
         textFechaNac.setText(String.valueOf(Session.getCurrentAlumno().getNacimiento()));
 
-
         EmpresaDAO empresaDAO = new EmpresaDAO();
 
-        textNombreEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getNombre());
-        textResponsableEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getResponsable());
-        textEmailEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getEmail());
-        textTelefonoEmpresa.setText(String.valueOf(Session.getCurrentAlumno().getEmpresa().getTelefono()));
-
-
-        //TODO falta mostrar en los textfield las horas totales y las horas restantes e investigar por que no se elimina.
         ActividadDAO actividadDAO=new ActividadDAO();
         List<Actividad> actividades = Session.getCurrentAlumno().getActividad_diaria();
         int horasTotales = actividadDAO.calcularTotalHoras(actividades);
