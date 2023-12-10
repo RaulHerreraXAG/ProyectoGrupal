@@ -3,6 +3,7 @@ package com.example.proyectogrupal.profesor;
 import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
+import jakarta.persistence.NoResultException;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -125,5 +126,35 @@ public class ProfesorDAO implements DAO<Profesor> {
             e.printStackTrace();
             return null;
         }
+    }
+
+    /**
+     * Obtiene un profesor basado en su dirección de correo electrónico.
+     *
+     * Este método busca y devuelve un objeto Profesor asociado a la dirección de correo electrónico proporcionada.
+     *
+     * @param email La dirección de correo electrónico del profesor a buscar.
+     * @return Un objeto Profesor si se encuentra, o null si no se encuentra ningún profesor con el correo electrónico dado.
+     * @throws HibernateException Si hay algún problema con la sesión de Hibernate.
+     *
+     * @see Profesor
+     */
+    public Profesor getProfesorByEmail(String email) {
+        Profesor result = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Profesor> query = session.createQuery("from Profesor where email=:e", Profesor.class);
+            query.setParameter("e", email);
+
+            try {
+                result = query.getSingleResult();
+            } catch (NoResultException e) {
+                // No se encontró ningún usuario con ese correo electrónico
+                System.out.println("Usuario no encontrado para el correo electrónico: " + email);
+            } catch (Exception e) {
+                // Otra excepción
+                System.out.println("Error al buscar usuario por correo electrónico: " + e.getMessage());
+            }
+        }
+        return result;
     }
 }

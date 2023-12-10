@@ -4,6 +4,7 @@ import com.example.proyectogrupal.actividad.Actividad;
 import com.example.proyectogrupal.domain.DAO;
 import com.example.proyectogrupal.domain.HibernateUtil;
 import com.example.proyectogrupal.profesor.Profesor;
+import jakarta.persistence.NoResultException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -113,5 +114,35 @@ public class AlumnoDAO implements DAO<Alumno> {
             alumnos = query.getResultList();
         }
         return alumnos;
+    }
+
+    /**
+     * Obtiene un alumno basado en su dirección de correo electrónico.
+     *
+     * Este método busca y devuelve un objeto Alumno asociado a la dirección de correo electrónico proporcionada.
+     *
+     * @param email La dirección de correo electrónico del alumno a buscar.
+     * @return Un objeto Alumno si se encuentra, o null si no se encuentra ningún alumno con el correo electrónico dado.
+     *         HibernateException Si hay algún problema con la sesión de Hibernate.
+     *
+     * @see Alumno
+     */
+    public Alumno getAlumnoByEmail(String email) {
+        Alumno result = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Alumno> query = session.createQuery("from Alumno where email=:e", Alumno.class);
+            query.setParameter("e", email);
+
+            try {
+                result = query.getSingleResult();
+            } catch (NoResultException e) {
+                // No se encontró ningún usuario con ese correo electrónico
+                System.out.println("Usuario no encontrado para el correo electrónico: " + email);
+            } catch (Exception e) {
+                // Otra excepción
+                System.out.println("Error al buscar usuario por correo electrónico: " + e.getMessage());
+            }
+        }
+        return result;
     }
 }
