@@ -7,15 +7,15 @@ import com.example.proyectogrupal.alumno.AlumnoDAO;
 import com.example.proyectogrupal.profesor.Profesor;
 import com.example.proyectogrupal.profesor.ProfesorDAO;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable
@@ -71,8 +71,89 @@ public class LoginController implements Initializable
     }
 
 
+    /**
+     * Inicializa el controlador después de que su elemento raíz haya sido completamente procesado.
+     *
+     * Este método configura un listener para el evento de presionar tecla en el campo de contraseña (`txtPassword`).
+     * Cuando se presiona la tecla "Enter", simula el clic en el botón de inicio de sesión (`btnInciarSesion`).
+     * Esto proporciona una forma conveniente de iniciar sesión al presionar "Enter" en el campo de contraseña.
+     *
+     * @param url            La ubicación relativa del recurso raíz, o {@code null} si no se ha utilizado una ubicación relativa.
+     * @param resourceBundle El paquete de recursos, o {@code null} si no hay paquete de recursos.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        txtPassword.setOnKeyPressed(event -> {
+            if (event.getCode() == KeyCode.ENTER) {
+                // Simular el clic en el botón de inicio de sesión
+                btnInciarSesion.fire();
+            }
+        });
+    }
 
+
+    /**
+     * Maneja el evento de "Olvidé mi contraseña", permitiendo a los usuarios restablecer sus contraseñas.
+     *
+     * Este método muestra un cuadro de diálogo para que el usuario ingrese su dirección de correo electrónico.
+     * Luego, intenta buscar un Alumno o Profesor asociado a esa dirección de correo electrónico y, si se encuentra,
+     * establece la sesión correspondiente y cambia a la escena de cambio de contraseña.
+     *
+     * @param event El evento que desencadenó la invocación de este método.
+     *
+     */
+    public void clickolvidar(Event event) {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Olvidé mi contraseña");
+        dialog.setHeaderText("Ingrese su correo electrónico en el cuadro de texto:");
+        dialog.setContentText("Correo: ");
+
+        Optional<String> result = dialog.showAndWait();
+
+        result.ifPresent(email -> {
+            AlumnoDAO alumnoDAO = new AlumnoDAO();
+            ProfesorDAO profesorDAO = new ProfesorDAO();
+
+            // Intentar obtener un alumno por correo electrónico
+            Alumno alumno = alumnoDAO.getAlumnoByEmail(email);
+            if (alumno != null) {
+                Session.setCurrentAlumno(alumno);
+                try {
+                    App.changeScene("cambio-contraseña.fxml", "Cambiar Contraseña Alumno");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                return;
+            }
+
+            // Intentar obtener un profesor por correo electrónico
+            Profesor profesor = profesorDAO.getProfesorByEmail(email);
+            if (profesor != null) {
+                Session.setCurrentProfesor(profesor);
+                try {
+                    App.changeScene("cambio-contraseña.fxml", "Cambiar Contraseña Profesor");
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                return;
+            }
+
+            // Si no se encuentra ni alumno ni profesor, mostrar un mensaje de error
+            mostrarAlerta("Error", "Correo electrónico no válido", Alert.AlertType.ERROR);
+        });
+    }
+
+    /**
+     * Muestra una alerta con el título, mensaje y tipo de alerta dados.
+     *
+     * @param titulo El título de la alerta.
+     * @param mensaje El mensaje a mostrar en la alerta.
+     * @param tipo El tipo de alerta (por ejemplo, AlertType.ERROR, AlertType.INFORMATION).
+     */
+    private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
 }
