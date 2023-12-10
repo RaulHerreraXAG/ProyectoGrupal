@@ -4,48 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="Antes eliminaba alumnos al borrar una empresa, ahora al eliminar una empresa se borra el combo de la empresa del alumno.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6ff00020-5f96-4b01-b7d5-4dde0592320a.xml" afterDir="false" />
+    <list default="true" id="acf0165c-6720-4391-8ace-54b5fe962e9c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/Actividad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/Actividad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/ActividadDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/ActividadDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/Tips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/actividad/Tips.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/Alumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/Alumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/AlumnoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/alumno/AlumnoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirActividadDeAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/AnadirActividadDeAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/DatosYEditarAlumnoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/DatosYEditarAlumnoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarActividadDeAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarActividadDeAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/EditarEmpresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InformacionEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InformacionEmpresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazProfesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/InterfazProfesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistrarAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistrarAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistroEmpresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/RegistroEmpresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/cambiocontraseña.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/controllers/CambioContraseña.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/domain/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/domain/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/Empresa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/Empresa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/EmpresaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/empresa/EmpresaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/profesor/Profesor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/profesor/Profesor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/profesor/ProfesorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/proyectogrupal/profesor/ProfesorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumAñadeActi.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumEditActi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/AlumEditActi.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/DatosYEditarAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/DatosYEditarAlumno.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/EditarEmpresa.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/EditarEmpresa.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/InformacionEmpresa.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/InformacionEmpresa.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaAlumno.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaProfesor.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/PaginaProfesor.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/cambio-contraseña.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/cambio-contraseña.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-alumno.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-alumno.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-empresas.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/proyectogrupal/views/registrar-empresas.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,29 +38,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/karme/IdeaProjects/ProyectoGrupal3",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "AndroidSdkUpdater",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/karme/IdeaProjects/GestorPedidos3&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\frans\IdeaProjects\ProyectoGrupal\src\main\resources\com\example\proyectogrupal\views" />
@@ -144,7 +106,8 @@
       <workItem from="1702040460418" duration="21884000" />
       <workItem from="1702067889182" duration="2201000" />
       <workItem from="1702134250914" duration="10969000" />
-      <workItem from="1702167461802" duration="345000" />
+      <workItem from="1702167461802" duration="1079000" />
+      <workItem from="1702224765823" duration="2720000" />
     </task>
     <task id="LOCAL-00001" summary="hecho el boceto de registrar alumno">
       <option name="closed" value="true" />
@@ -202,7 +165,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702068569666</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="hecho el javadoc">
+      <option name="closed" value="true" />
+      <created>1702167874634</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702167874634</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +196,8 @@
     <MESSAGE value="interfazalumno terminado, añadirobservaciondealumno terminado.&#10;La actividad se agrega a la tabla del alumno y se guarda en la base de datos.&#10;Diseño de ambas ventanas terminado" />
     <MESSAGE value="mostrar los datos en editar actividad alumno.&#10;incompleto" />
     <MESSAGE value="Antes eliminaba alumnos al borrar una empresa, ahora al eliminar una empresa se borra el combo de la empresa del alumno." />
-    <option name="LAST_COMMIT_MESSAGE" value="Antes eliminaba alumnos al borrar una empresa, ahora al eliminar una empresa se borra el combo de la empresa del alumno." />
+    <MESSAGE value="hecho el javadoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="hecho el javadoc" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
