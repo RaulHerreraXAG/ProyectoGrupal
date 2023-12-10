@@ -23,8 +23,7 @@ import java.util.ResourceBundle;
  * Implementa la interfaz Initializable de JavaFX para la inicialización de componentes.
  */
 
-public class LoginController implements Initializable
-{
+public class LoginController implements Initializable {
     @javafx.fxml.FXML
     private VBox vBoxFondo2;
     @javafx.fxml.FXML
@@ -59,7 +58,7 @@ public class LoginController implements Initializable
                 throw new RuntimeException(e);
             }
         }
-        if (p!=null){
+        if (p != null) {
             try {
                 Session.setCurrentProfesor(p);
                 App.changeScene("PaginaProfesor.fxml", "Página Profesor");
@@ -68,7 +67,7 @@ public class LoginController implements Initializable
             }
         }
 
-        if (a==null && p==null){
+        if (a == null && p == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Email o contraseña incorrecto.");
@@ -88,7 +87,7 @@ public class LoginController implements Initializable
 
     /**
      * Inicializa el controlador después de que su elemento raíz haya sido completamente procesado.
-     *
+     * <p>
      * Este método configura un listener para el evento de presionar tecla en el campo de contraseña (`txtPassword`).
      * Cuando se presiona la tecla "Enter", simula el clic en el botón de inicio de sesión (`btnInciarSesion`).
      * Esto proporciona una forma conveniente de iniciar sesión al presionar "Enter" en el campo de contraseña.
@@ -109,13 +108,12 @@ public class LoginController implements Initializable
 
     /**
      * Maneja el evento de "Olvidé mi contraseña", permitiendo a los usuarios restablecer sus contraseñas.
-     *
+     * <p>
      * Este método muestra un cuadro de diálogo para que el usuario ingrese su dirección de correo electrónico.
      * Luego, intenta buscar un Alumno o Profesor asociado a esa dirección de correo electrónico y, si se encuentra,
      * establece la sesión correspondiente y cambia a la escena de cambio de contraseña.
      *
      * @param event El evento que desencadenó la invocación de este método.
-     *
      */
     public void clickolvidar(Event event) {
         TextInputDialog dialog = new TextInputDialog();
@@ -161,9 +159,9 @@ public class LoginController implements Initializable
     /**
      * Muestra una alerta con el título, mensaje y tipo de alerta dados.
      *
-     * @param titulo El título de la alerta.
+     * @param titulo  El título de la alerta.
      * @param mensaje El mensaje a mostrar en la alerta.
-     * @param tipo El tipo de alerta (por ejemplo, AlertType.ERROR, AlertType.INFORMATION).
+     * @param tipo    El tipo de alerta (por ejemplo, AlertType.ERROR, AlertType.INFORMATION).
      */
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alert = new Alert(tipo);

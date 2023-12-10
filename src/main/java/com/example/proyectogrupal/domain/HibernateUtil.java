@@ -10,7 +10,9 @@ import org.hibernate.cfg.Configuration;
 @Log
 public class HibernateUtil {
 
-    /** Fábrica de sesiones de Hibernate */
+    /**
+     * Fábrica de sesiones de Hibernate
+     */
     private static SessionFactory sf = null;
 
     static {

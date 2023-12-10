@@ -2,7 +2,6 @@ package com.example.proyectogrupal.controllers;
 
 import com.example.proyectogrupal.App;
 import com.example.proyectogrupal.Session;
-import com.example.proyectogrupal.alumno.AlumnoDAO;
 import com.example.proyectogrupal.empresa.Empresa;
 import com.example.proyectogrupal.empresa.EmpresaDAO;
 import javafx.event.ActionEvent;
@@ -20,8 +19,7 @@ import java.util.Optional;
  * Controlador para editar los detalles de una empresa.
  */
 
-public class EditarEmpresa
-{
+public class EditarEmpresa {
     // Declaraciones de campos de la interfaz gráfica y DAOs
 
     @javafx.fxml.FXML
@@ -48,7 +46,7 @@ public class EditarEmpresa
      * Método de inicialización que establece los campos de texto con los detalles de la empresa actual.
      */
     @javafx.fxml.FXML
-    public void initialize()  {
+    public void initialize() {
         // Lógica para inicializar la ventana con los datos de la empresa actual
         txtNombre.setText(Session.getCurrentEmpresa().getNombre());
         txtEmail.setText(Session.getCurrentEmpresa().getEmail());
@@ -59,6 +57,7 @@ public class EditarEmpresa
 
     /**
      * Método llamado al hacer clic en el botón de actualización de la empresa.
+     *
      * @param actionEvent El evento de acción del botón.
      * @throws IOException Si ocurre un error de E/S.
      */
@@ -70,7 +69,7 @@ public class EditarEmpresa
 
         if (txtNombre.getText().length() > 1) {
             e.setNombre(txtNombre.getText());
-        }else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Escriba el nombre correspondiente de la empresa.");
@@ -78,7 +77,7 @@ public class EditarEmpresa
         }
         if (txtEmail.getText().length() > 1) {
             e.setEmail(txtEmail.getText());
-        }else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Escriba el correo correspondiente de la empresa");
@@ -86,39 +85,40 @@ public class EditarEmpresa
         }
         if (txtResponsable.getText().length() > 1) {
             e.setResponsable(txtResponsable.getText());
-        }else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Escriba el responsable correspondiente de la empresa");
             alert.showAndWait();
         }
-        if (txtTelefono.getText().length()>1){
+        if (txtTelefono.getText().length() > 1) {
             e.setTelefono(Integer.valueOf(txtTelefono.getText()));
-        }else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Escriba el telefono correspondiente de la empresa");
             alert.showAndWait();
         }
-        if (txtObservaciones.getText() != null){
+        if (txtObservaciones.getText() != null) {
             e.setObservaciones(txtObservaciones.getText());
         }
 
         EmpresaDAO empresaDAO = new EmpresaDAO();
 
-        if(e.getID_Empresa() != null){
+        if (e.getID_Empresa() != null) {
             // Si la empresa ya contiene una ID, existe en la base de datos y se actualiza
             empresaDAO.update(e);
-        }else{
+        } else {
             // Si la empresa no tiene id , se crea al ser nuevo
             empresaDAO.save(e);
         }
 
-        App.changeScene("InformacionEmpresa.fxml","Empresas");
+        App.changeScene("InformacionEmpresa.fxml", "Empresas");
     }
 
     /**
      * Método llamado al hacer clic en el botón de eliminación de la empresa.
+     *
      * @param actionEvent El evento de acción del botón.
      */
     @javafx.fxml.FXML
@@ -158,13 +158,14 @@ public class EditarEmpresa
 
     /**
      * Método llamado al hacer clic en el botón de cancelar.
+     *
      * @param actionEvent El evento de acción del botón.
      */
     @javafx.fxml.FXML
     public void Cancelar(ActionEvent actionEvent) {
         // Lógica para cancelar y volver a la información de las empresas
         try {
-            App.changeScene("InformacionEmpresa.fxml","Información de las empresas");
+            App.changeScene("InformacionEmpresa.fxml", "Información de las empresas");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

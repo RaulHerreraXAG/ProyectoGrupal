@@ -13,7 +13,6 @@ module com.example.proyectogrupal {
     opens com.example.proyectogrupal.profesor;
 
 
-
     opens com.example.proyectogrupal to javafx.fxml;
     exports com.example.proyectogrupal;
     exports com.example.proyectogrupal.controllers;

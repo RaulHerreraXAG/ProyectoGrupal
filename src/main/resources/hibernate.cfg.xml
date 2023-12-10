@@ -22,9 +22,6 @@
         <mapping class="com.example.proyectogrupal.profesor.Profesor"/>
 
 
-
-
-
     </session-factory>
 
 </hibernate-configuration>

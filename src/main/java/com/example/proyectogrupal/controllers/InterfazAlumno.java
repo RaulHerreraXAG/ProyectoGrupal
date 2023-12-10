@@ -4,13 +4,9 @@ import com.example.proyectogrupal.App;
 import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.actividad.Actividad;
 import com.example.proyectogrupal.actividad.ActividadDAO;
-import com.example.proyectogrupal.actividad.Tips;
 import com.example.proyectogrupal.alumno.Alumno;
-import com.example.proyectogrupal.alumno.AlumnoDAO;
 import com.example.proyectogrupal.empresa.Empresa;
 import com.example.proyectogrupal.empresa.EmpresaDAO;
-import javafx.beans.Observable;
-import javafx.beans.property.SimpleSetProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,10 +16,8 @@ import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -82,7 +76,8 @@ public class InterfazAlumno implements Initializable {
 
     /**
      * Inicializa la interfaz de usuario con datos del alumno y configuración de la tabla de actividades.
-     * @param url La URL base.
+     *
+     * @param url            La URL base.
      * @param resourceBundle El recurso bundle.
      */
 
@@ -144,26 +139,26 @@ public class InterfazAlumno implements Initializable {
             textResponsableEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getResponsable());
             textEmailEmpresa.setText(Session.getCurrentAlumno().getEmpresa().getEmail());
             textTelefonoEmpresa.setText(String.valueOf(Session.getCurrentAlumno().getEmpresa().getTelefono()));
-             }
+        }
         textProfesor.setText(String.valueOf(Session.getCurrentAlumno().getTutor().getNombre()));
         textTelefono.setText(String.valueOf(Session.getCurrentAlumno().getTelefono()));
         textFechaNac.setText(String.valueOf(Session.getCurrentAlumno().getNacimiento()));
 
         EmpresaDAO empresaDAO = new EmpresaDAO();
 
-        ActividadDAO actividadDAO=new ActividadDAO();
+        ActividadDAO actividadDAO = new ActividadDAO();
         List<Actividad> actividades = Session.getCurrentAlumno().getActividad_diaria();
         int horasTotales = actividadDAO.calcularTotalHoras(actividades);
         textHorasRealizadas.setText(String.valueOf(horasTotales));
 
-        int horasRestantes= (700-horasTotales);
+        int horasRestantes = (700 - horasTotales);
         textHorasRestantes.setText(String.valueOf(horasRestantes));
 
 
         TvActividades.setOnMouseClicked(event -> {
-            if(event.getClickCount()==1){
+            if (event.getClickCount() == 1) {
                 Actividad actividad = (Actividad) TvActividades.getSelectionModel().getSelectedItem();
-                if (actividad != null){
+                if (actividad != null) {
                     Session.setCurrentActividad(actividad);
                     try {
                         App.changeScene("AlumEditActi.fxml", "Editar actividad");
@@ -179,6 +174,7 @@ public class InterfazAlumno implements Initializable {
     /**
      * Maneja el evento de añadir una nueva actividad.
      * Cambia la escena a la página de añadir actividad para el alumno.
+     *
      * @param actionEvent El evento de acción.
      */
     @javafx.fxml.FXML
@@ -195,13 +191,14 @@ public class InterfazAlumno implements Initializable {
     /**
      * Maneja el evento de cerrar sesión.
      * Cambia la escena al inicio de sesión.
+     *
      * @param actionEvent El evento de acción.
      */
     @javafx.fxml.FXML
     public void cerrarsession(ActionEvent actionEvent) {
         // Código para cambiar a la escena de inicio de sesión...
         try {
-            App.changeScene("login.fxml","Login");
+            App.changeScene("login.fxml", "Login");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

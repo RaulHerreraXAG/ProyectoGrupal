@@ -12,7 +12,6 @@ import javafx.scene.control.*;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -51,7 +50,8 @@ public class EditarActividadDeAlumno implements Initializable {
 
     /**
      * Método de inicialización al cargar la interfaz.
-     * @param url La ubicación relativa al archivo FXML.
+     *
+     * @param url            La ubicación relativa al archivo FXML.
      * @param resourceBundle El recurso de objetos específico del locale.
      */
 
@@ -92,6 +92,7 @@ public class EditarActividadDeAlumno implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de cancelar.
+     *
      * @param actionEvent El evento de acción del botón.
      */
     @javafx.fxml.FXML
@@ -105,6 +106,7 @@ public class EditarActividadDeAlumno implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de actualizar la actividad.
+     *
      * @param actionEvent El evento de acción del botón.
      * @throws IOException Si ocurre un error de E/S.
      */
@@ -146,7 +148,7 @@ public class EditarActividadDeAlumno implements Initializable {
 
         ActividadDAO actividadDAO = new ActividadDAO();
 
-        if (actividad.getID_Actividad() != null){
+        if (actividad.getID_Actividad() != null) {
             actividadDAO.update(actividad);
         } else {
             actividadDAO.save(actividad);
@@ -161,6 +163,7 @@ public class EditarActividadDeAlumno implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de eliminar la actividad.
+     *
      * @param actionEvent El evento de acción del botón.
      * @throws IOException Si ocurre un error de E/S.
      */
@@ -190,7 +193,7 @@ public class EditarActividadDeAlumno implements Initializable {
             Session.getCurrentAlumno().getActividad_diaria().addAll(actividadDAO.getActividadAlumno(Session.getCurrentAlumno()));
         }
 
-        try{
+        try {
 
             App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
         } catch (IOException e) {

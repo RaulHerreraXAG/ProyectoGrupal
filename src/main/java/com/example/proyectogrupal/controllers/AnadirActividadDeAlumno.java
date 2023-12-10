@@ -6,16 +6,13 @@ import com.example.proyectogrupal.actividad.Actividad;
 import com.example.proyectogrupal.actividad.ActividadDAO;
 import com.example.proyectogrupal.actividad.Tips;
 import com.example.proyectogrupal.alumno.Alumno;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Date;
 import java.time.LocalDate;
-import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -48,7 +45,8 @@ public class AnadirActividadDeAlumno implements Initializable {
 
     /**
      * Método de inicialización al cargar la interfaz.
-     * @param url La ubicación relativa al archivo FXML.
+     *
+     * @param url            La ubicación relativa al archivo FXML.
      * @param resourceBundle El recurso de objetos específico del locale.
      */
     @Override
@@ -66,6 +64,7 @@ public class AnadirActividadDeAlumno implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de añadir actividad.
+     *
      * @param actionEvent El evento de acción del botón.
      * @throws IOException Si ocurre un error de E/S.
      */
@@ -76,17 +75,17 @@ public class AnadirActividadDeAlumno implements Initializable {
         Actividad actividad = new Actividad();
         actividad.setAlumno(alumnoAsociado);
 
-        if (txtActividad.getText().length() > 1){
+        if (txtActividad.getText().length() > 1) {
             actividad.setActividad(txtActividad.getText());
-        }else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("El campo Actividad no puede estar vacío");
             alert.showAndWait();
         }
-        if (txtObservaciones.getText().length() > 1){
+        if (txtObservaciones.getText().length() > 1) {
             actividad.setObservaciones(txtObservaciones.getText());
-        }else{
+        } else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("El campo Observaciones no puede estar vacío");
@@ -117,7 +116,7 @@ public class AnadirActividadDeAlumno implements Initializable {
                 actividad.setTipo(Tips.DUAL);
             } else if (seleccion == rbFCT) {
                 actividad.setTipo(Tips.FCT);
-            }else{
+            } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("El campo Tipo no puede estar vacío");
@@ -125,7 +124,7 @@ public class AnadirActividadDeAlumno implements Initializable {
             }
         }
 
-        if (actividad.getID_Actividad() != null){
+        if (actividad.getID_Actividad() != null) {
             actividadDAO.update(actividad);
         } else {
             actividadDAO.save(actividad);
@@ -134,9 +133,9 @@ public class AnadirActividadDeAlumno implements Initializable {
         Session.getCurrentAlumno().getActividad_diaria().clear();
         Session.getCurrentAlumno().getActividad_diaria().addAll(actividadDAO.getActividadAlumno(Session.getCurrentAlumno()));
 
-        try{
+        try {
             App.changeScene("PaginaAlumno.fxml", "Pagina Alumno");
-        } catch (IOException e){
+        } catch (IOException e) {
             throw new IOException(e);
         }
 
@@ -145,6 +144,7 @@ public class AnadirActividadDeAlumno implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de cancelar.
+     *
      * @param actionEvent El evento de acción del botón.
      */
 

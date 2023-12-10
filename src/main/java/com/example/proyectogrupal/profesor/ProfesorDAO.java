@@ -10,30 +10,43 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
-import java.util.List;
 
+/**
+ * Proporciona métodos para acceder y gestionar la información de los profesores en la base de datos.
+ */
 public class ProfesorDAO implements DAO<Profesor> {
 
 
+    /**
+     * @return Devuelve una lista con todos los profesores
+     */
     @Override
-        public ArrayList<Profesor> getAll() {
-            var salida = new ArrayList<Profesor>(0);
-            try(Session sesion = HibernateUtil.getSessionFactory().openSession()){
-                Query<Profesor> query = sesion.createQuery("from Profesor", Profesor.class);
-                salida = (ArrayList<Profesor>) query.getResultList();
-            }
-            return salida;
+    public ArrayList<Profesor> getAll() {
+        var salida = new ArrayList<Profesor>(0);
+        try (Session sesion = HibernateUtil.getSessionFactory().openSession()) {
+            Query<Profesor> query = sesion.createQuery("from Profesor", Profesor.class);
+            salida = (ArrayList<Profesor>) query.getResultList();
+        }
+        return salida;
     }
 
+    /**
+     * @param id Identificador del elemento a buscar.
+     * @return Devuelve el profesor según el ID proporcionado.
+     */
     @Override
     public Profesor get(Long id) {
         var salida = new Profesor();
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             salida = session.get(Profesor.class, id);
         }
         return salida;
     }
 
+    /**
+     * @param data Elemento del tipo T a guardar en la base de datos.
+     * @return Devuelve el profesor guardado.
+     */
     @Override
     public Profesor save(Profesor data) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -58,6 +71,11 @@ public class ProfesorDAO implements DAO<Profesor> {
         }
     }
 
+    /**
+     * Actualiza la información de un profesor en la base de datos.
+     *
+     * @param data Elemento del tipo T a actualizar en la base de datos.
+     */
     @Override
     public void update(Profesor data) {
         Session session = HibernateUtil.getSessionFactory().openSession();
@@ -82,6 +100,11 @@ public class ProfesorDAO implements DAO<Profesor> {
 
     }
 
+    /**
+     * Elimina un profesor de la base de datos.
+     *
+     * @param data Elemento del tipo T a eliminar de la base de datos.
+     */
     @Override
     public void delete(Profesor data) {
         HibernateUtil.getSessionFactory().inTransaction((session -> {
@@ -89,6 +112,12 @@ public class ProfesorDAO implements DAO<Profesor> {
             session.remove(alumno);
         }));
     }
+
+    /**
+     * @param email       Email del profesor.
+     * @param contrasenya Contraseña del profesor.
+     * @return Devuelve el profesor si sus credenciales son válidas.
+     */
     public Profesor validateUser(String email, String contrasenya) {
         Profesor result = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -102,21 +131,14 @@ public class ProfesorDAO implements DAO<Profesor> {
                 System.out.println(e.getMessage());
             }
         }
-        System.out.println("aquiiiiiiiii");
-        System.out.println(result);
+
         return result;
     }
 
-    public List<String> getnombreProfesor(){
-        ArrayList<String> result = new ArrayList<>();
-
-        try(Session s = HibernateUtil.getSessionFactory().openSession()){
-            Query<String> q = s.createQuery("select distinct(p.nombre) from Profesor p", String.class);
-            result = (ArrayList<String>) q.getResultList();
-        }
-        return result;
-    }
-
+    /**
+     * @param nombre Nombre del profesor a buscar.
+     * @return Devuelve el profesor según el nombre proporcionado.
+     */
     public Profesor buscarProfesorPorNombre(String nombre) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             Query<Profesor> query = session.createQuery("from Profesor where nombre = :nombre", Profesor.class);
@@ -130,13 +152,12 @@ public class ProfesorDAO implements DAO<Profesor> {
 
     /**
      * Obtiene un profesor basado en su dirección de correo electrónico.
-     *
+     * <p>
      * Este método busca y devuelve un objeto Profesor asociado a la dirección de correo electrónico proporcionada.
      *
      * @param email La dirección de correo electrónico del profesor a buscar.
      * @return Un objeto Profesor si se encuentra, o null si no se encuentra ningún profesor con el correo electrónico dado.
      * @throws HibernateException Si hay algún problema con la sesión de Hibernate.
-     *
      * @see Profesor
      */
     public Profesor getProfesorByEmail(String email) {
