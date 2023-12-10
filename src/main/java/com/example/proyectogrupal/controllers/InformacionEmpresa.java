@@ -19,7 +19,13 @@ import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para mostrar información sobre las empresas.
+ */
+
 public class InformacionEmpresa implements Initializable {
+
+    // Declaraciones de campos de la interfaz gráfica y observables
 
     @javafx.fxml.FXML
     private TableColumn<Empresa,String> cNombre;
@@ -38,8 +44,16 @@ public class InformacionEmpresa implements Initializable {
 
     private ObservableList<Empresa> observableList = FXCollections.observableArrayList();
 
+    /**
+     * Método de inicialización que configura las columnas y carga la información de las empresas en la tabla.
+     * @param url La URL de la ubicación del archivo FXML.
+     * @param resourceBundle Los recursos utilizados para localizar el archivo FXML.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // Lógica para inicializar la tabla con la información de las empresas
+
         cNombre.setCellValueFactory((fila)->{
             return new SimpleStringProperty(fila.getValue().getNombre());
         });
@@ -75,8 +89,15 @@ public class InformacionEmpresa implements Initializable {
         });
     }
 
+    /**
+     * Método llamado al hacer clic en el botón de volver.
+     * @param actionEvent El evento de acción del botón.
+     * @throws IOException Si ocurre un error de E/S al cambiar la escena.
+     */
+
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) throws IOException {
+        // Lógica para volver a la página del profesor
         App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
     }
 

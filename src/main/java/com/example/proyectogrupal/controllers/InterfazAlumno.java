@@ -27,6 +27,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Esta clase controla la interfaz de usuario de la vista del alumno en la aplicación.
+ * Muestra información del alumno, incluyendo actividades realizadas, detalles personales y más.
+ * Permite añadir nuevas actividades y cerrar sesión.
+ */
+
 public class InterfazAlumno implements Initializable {
     @javafx.fxml.FXML
     private Button btnCerrar;
@@ -73,6 +79,13 @@ public class InterfazAlumno implements Initializable {
     private TextField textEmailEmpresa;
     @javafx.fxml.FXML
     private TextField textTelefonoEmpresa;
+
+
+    /**
+     * Inicializa la interfaz de usuario con datos del alumno y configuración de la tabla de actividades.
+     * @param url La URL base.
+     * @param resourceBundle El recurso bundle.
+     */
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -164,9 +177,14 @@ public class InterfazAlumno implements Initializable {
 
     }
 
+    /**
+     * Maneja el evento de añadir una nueva actividad.
+     * Cambia la escena a la página de añadir actividad para el alumno.
+     * @param actionEvent El evento de acción.
+     */
     @javafx.fxml.FXML
     public void añadirActividad(ActionEvent actionEvent) {
-
+        // Código para cambiar a la escena de añadir actividad...
         try {
             App.changeScene("AlumAñadeActi.fxml", "Página Alumno");
         } catch (IOException e) {
@@ -174,8 +192,15 @@ public class InterfazAlumno implements Initializable {
         }
     }
 
+
+    /**
+     * Maneja el evento de cerrar sesión.
+     * Cambia la escena al inicio de sesión.
+     * @param actionEvent El evento de acción.
+     */
     @javafx.fxml.FXML
     public void cerrarsession(ActionEvent actionEvent) {
+        // Código para cambiar a la escena de inicio de sesión...
         try {
             App.changeScene("login.fxml","Login");
         } catch (IOException e) {

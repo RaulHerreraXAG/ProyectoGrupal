@@ -42,13 +42,23 @@ public class InterfazProfesor implements Initializable
     @FXML
     private Button TablaEmpresa;
 
-
+    /**
+     * Método que se ejecuta al presionar el botón para registrar un alumno.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     * @throws IOException Excepción de entrada/salida.
+     */
     @javafx.fxml.FXML
     public void RegistrarA(ActionEvent actionEvent) throws IOException {
         App.changeScene("registrar-alumno.fxml","Registrar Alumno");
     }
 
-
+    /**
+     * Método de inicialización de la interfaz.
+     *
+     * @param url             URL de la ubicación del objeto.
+     * @param resourceBundle  ResourceBundle que contiene los recursos específicos del local.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -87,6 +97,10 @@ public class InterfazProfesor implements Initializable
         });
     }
 
+    /**
+     * Actualiza la tabla de alumnos en la interfaz gráfica.
+     * Borra los elementos existentes en la tabla y luego agrega todos los alumnos del profesor actual.
+     */
     public void actualizarTablaAlumnos() {
         TvAlumnos.getItems().clear();
         TvAlumnos.getItems().addAll(Session.getCurrentProfesor().getAlumnos());
@@ -94,13 +108,22 @@ public class InterfazProfesor implements Initializable
 
 
 
-
+    /**
+     * Método que maneja el evento de registrar empresas.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     * @throws IOException Excepción de entrada/salida.
+     */
     @javafx.fxml.FXML
     public void RegistrarEmp(ActionEvent actionEvent) throws IOException {
         App.changeScene("registrar-empresas.fxml","Registrar Empresa");
 
     }
-
+    /**
+     * Método para cerrar la sesión del profesor.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     */
     @javafx.fxml.FXML
     public void cerrarsesion(ActionEvent actionEvent) {
         try {
@@ -109,6 +132,13 @@ public class InterfazProfesor implements Initializable
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Método para acceder al menú de información de empresas.
+     *
+     * @param actionEvent Evento de acción que desencadena el método.
+     * @throws IOException Excepción de entrada/salida.
+     */
 
     @FXML
     public void MenuEmpresa(ActionEvent actionEvent) throws IOException {

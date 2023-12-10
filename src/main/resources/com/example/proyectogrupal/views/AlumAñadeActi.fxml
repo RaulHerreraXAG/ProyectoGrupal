@@ -61,7 +61,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </GridPane.margin>
             </VBox>
-            <VBox alignment="CENTER" GridPane.rowIndex="2">
+            <VBox alignment="CENTER" styleClass="rd" stylesheets="@../../../../Style.css" GridPane.rowIndex="2">
                <children>
                   <Label text="Tipo de práctica" textFill="WHITE">
                      <font>
@@ -87,7 +87,7 @@
                      </font></RadioButton>
                </children>
                <GridPane.margin>
-                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                  <Insets bottom="20.0" left="150.0" right="150.0" top="20.0" />
                </GridPane.margin>
             </VBox>
             <VBox alignment="CENTER" GridPane.columnIndex="1">

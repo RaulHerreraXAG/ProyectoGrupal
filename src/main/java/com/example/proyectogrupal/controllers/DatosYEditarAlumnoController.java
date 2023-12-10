@@ -27,7 +27,13 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+/**
+ * Controlador para la visualización y edición de datos de un alumno.
+ * Implementa la interfaz Initializable de JavaFX para inicializar la ventana.
+ */
+
 public class DatosYEditarAlumnoController implements Initializable {
+    // Declaraciones de campos de la interfaz gráfica y DAOs
     @javafx.fxml.FXML
     private Button btnCancelar;
     @javafx.fxml.FXML
@@ -74,8 +80,17 @@ public class DatosYEditarAlumnoController implements Initializable {
     private TextField txttelefono;
     private final ProfesorDAO profesorDAO = new ProfesorDAO();
     private final EmpresaDAO empresaDAO = new EmpresaDAO();
+
+    /**
+     * Método de inicialización al cargar la interfaz.
+     * @param url La ubicación relativa al archivo FXML.
+     * @param resourceBundle El recurso de objetos específico del locale.
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        // Lógica para inicializar la ventana con los datos del alumno
+
 
         labelnombre.setText(Session.getCurrentAlumno().getNombre() + " " + Session.getCurrentAlumno().getApellidos());
 
@@ -96,7 +111,7 @@ public class DatosYEditarAlumnoController implements Initializable {
         LocalDate fechana = Session.getCurrentAlumno().getNacimiento();
         txtFecha.setValue(fechana);
 
-        //TODO Fumada de como añadir la empresa asociada al alumno al combo y te aparezca :)
+        // Como añadir la empresa asociada al alumno al combo y te aparezca :)
         Alumno alumno = Session.getCurrentAlumno();
         Empresa empresaasociada = alumno.getEmpresa();
         //Obtener las empresas
@@ -108,7 +123,7 @@ public class DatosYEditarAlumnoController implements Initializable {
         //Con esto elegimos la empresa que esta con el alumno
         comboEmpresa.setValue(empresaasociada != null ? empresaasociada.getNombre(): null);
 
-        //TODO Aqui añado el combo de Profesores
+        // Aqui añado el combo de Profesores
 
         Profesor profesoralumno = alumno.getTutor();
         List<Profesor> allprofesores = profesorDAO.getAll();
@@ -122,7 +137,7 @@ public class DatosYEditarAlumnoController implements Initializable {
         txtObservaciones.setText(Session.getCurrentAlumno().getObservaciones());
 
 
-        //TODO Tabla de actividades
+        // Tabla de actividades
 
         cFecha.setCellValueFactory((fila) ->{
             LocalDate fecha = fila.getValue().getFecha();
@@ -167,8 +182,14 @@ public class DatosYEditarAlumnoController implements Initializable {
 
     }
 
+    /**
+     * Método llamado al hacer clic en el botón de cancelar.
+     * @param actionEvent El evento de acción del botón.
+     */
+
     @javafx.fxml.FXML
     public void cancelar(ActionEvent actionEvent) {
+        // Lógica para cancelar y volver a la página del profesor
         try {
             App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
         } catch (IOException e) {
@@ -176,8 +197,13 @@ public class DatosYEditarAlumnoController implements Initializable {
         }
     }
 
+    /**
+     * Método llamado al hacer clic en el botón de eliminar.
+     * @param actionEvent El evento de acción del botón.
+     */
     @javafx.fxml.FXML
     public void eliminar(ActionEvent actionEvent) {
+        // Lógica para eliminar un alumno
 
         //Con esto mantenemos la pantalla para en caso de cancelar quedarnos donde estabamos
         Scene currentScene = btnActualizar.getScene();
@@ -212,8 +238,16 @@ public class DatosYEditarAlumnoController implements Initializable {
         }
     }
 
+    /**
+     * Método llamado al hacer clic en el botón de actualizar.
+     * @param actionEvent El evento de acción del botón.
+     */
+
     @javafx.fxml.FXML
     public void actualizar(ActionEvent actionEvent) {
+
+        // Lógica para actualizar los datos de un alumno
+
 
         // Obtén el alumno actual
         Alumno a = Session.getCurrentAlumno();
