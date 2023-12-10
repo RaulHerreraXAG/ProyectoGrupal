@@ -3,9 +3,7 @@ package com.example.proyectogrupal.controllers;
 import com.example.proyectogrupal.App;
 import com.example.proyectogrupal.Session;
 import com.example.proyectogrupal.alumno.Alumno;
-import com.example.proyectogrupal.alumno.AlumnoDAO;
 import com.example.proyectogrupal.profesor.Profesor;
-import com.example.proyectogrupal.profesor.ProfesorDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -20,7 +18,7 @@ import java.util.ResourceBundle;
 
 /**
  * Controlador para la funcionalidad de cambio de contraseña.
- *
+ * <p>
  * Esta clase gestiona la interfaz de usuario y las operaciones relacionadas con el cambio de contraseña
  * para tanto alumnos como profesores.
  *
@@ -47,7 +45,7 @@ public class CambioContraseña implements Initializable {
     /**
      * Inicializa la interfaz de usuario con el nombre del usuario actual.
      *
-     * @param url No utilizado.
+     * @param url            No utilizado.
      * @param resourceBundle No utilizado.
      */
     @Override
@@ -108,9 +106,9 @@ public class CambioContraseña implements Initializable {
     /**
      * Muestra una alerta con el título, mensaje y tipo de alerta dados.
      *
-     * @param titulo El título de la alerta.
+     * @param titulo  El título de la alerta.
      * @param mensaje El mensaje a mostrar en la alerta.
-     * @param tipo El tipo de alerta (por ejemplo, AlertType.ERROR, AlertType.INFORMATION).
+     * @param tipo    El tipo de alerta (por ejemplo, AlertType.ERROR, AlertType.INFORMATION).
      */
     private void mostrarAlerta(String titulo, String mensaje, Alert.AlertType tipo) {
         Alert alert = new Alert(tipo);

@@ -1,203 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-
-<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectogrupal.controllers.DatosYEditarAlumnoController">
-   <top>
-      <Label fx:id="labelnombre" textFill="WHITE" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="36.0" />
-         </font>
-         <BorderPane.margin>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </BorderPane.margin>
-      </Label>
-   </top>
-   <bottom>
-      <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font></Button>
-            <Button fx:id="btnBorrar" mnemonicParsing="false" onAction="#eliminar" styleClass="buttonCS" stylesheets="@../../../../Style.css" text="Eliminar" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../images/eliminar (1).png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="18.0" />
-               </font></Button>
-            <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizar" styleClass="buttonIS" stylesheets="@../../../../Style.css" text="Actualizar" textFill="WHITE">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../images/guardar-el-archivo.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-               <font>
-                  <Font size="18.0" />
-               </font></Button>
-         </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>
-         <padding>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </padding>
-      </HBox>
-   </bottom>
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <GridPane alignment="CENTER_LEFT">
-              <columnConstraints>
-                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Label text="Nombre:" textFill="WHITE">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="Apellidos:" textFill="WHITE" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="Contraseña:" textFill="WHITE" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="DNI:" textFill="WHITE" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <TextField fx:id="txtNombre" GridPane.columnIndex="1">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></TextField>
-                  <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></TextField>
-                  <TextField fx:id="txtDNI" GridPane.columnIndex="1" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></TextField>
-                  <Label text="Fecha de nacimiento:" textFill="WHITE" GridPane.columnIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="Empresa:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="Profesor asignado:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="Email:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <ComboBox fx:id="comboEmpresa" prefWidth="175.2" GridPane.columnIndex="3" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></ComboBox>
-                  <DatePicker fx:id="txtFecha" GridPane.columnIndex="3">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></DatePicker>
-                  <ComboBox fx:id="comboProfesor" prefWidth="175.2" GridPane.columnIndex="3" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></ComboBox>
-                  <TextField fx:id="txtEmail" GridPane.columnIndex="3" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin></TextField>
-                  <Label text="Nº horas que ha realizado:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="Nº horas pendientes de realizar:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Label text="Observaciones:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <TextArea fx:id="txtObservaciones" prefHeight="10.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
-                     <GridPane.margin>
-                        <Insets top="10.0" />
-                     </GridPane.margin></TextArea>
-                  <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-                  <TextField fx:id="txtHorasPorRealizar" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-                  <TextField fx:id="txtContraseña" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets right="40.0" />
-                     </GridPane.margin>
-                  </TextField>
-                  <Label prefHeight="17.0" prefWidth="87.0" text="Teléfono:" textFill="WHITE" GridPane.columnIndex="4">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txttelefono" GridPane.columnIndex="5" />
-               </children>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-            </GridPane>
-            <TableView fx:id="tablaeditAlum">
-              <columns>
-                <TableColumn fx:id="cFecha" prefWidth="75.0" text="Fecha" />
-                <TableColumn fx:id="cPractica" prefWidth="75.0" text="Tipo de práctica" />
-                  <TableColumn fx:id="cHoras" prefWidth="75.0" text="Horas en el día" />
-                  <TableColumn fx:id="cActividad" prefWidth="75.0" text="Actividad realizada" />
-                  <TableColumn fx:id="cObservaciones" prefWidth="75.0" text="Observaciones" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-         </children>
-         <BorderPane.margin>
-            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-         </BorderPane.margin>
-      </VBox>
-   </center>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane maxHeight="720.0" maxWidth="1280.0" minHeight="720.0" minWidth="1280.0" prefHeight="720.0"
+            prefWidth="1280.0" styleClass="FondoP" stylesheets="@../../../../Style.css"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.proyectogrupal.controllers.DatosYEditarAlumnoController">
+    <top>
+        <Label fx:id="labelnombre" textFill="WHITE" BorderPane.alignment="CENTER">
+            <font>
+                <Font size="36.0"/>
+            </font>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </BorderPane.margin>
+        </Label>
+    </top>
+    <bottom>
+        <HBox alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="btnCancelar" mnemonicParsing="false" onAction="#cancelar" styleClass="buttonCS"
+                        stylesheets="@../../../../Style.css" text="Cancelar" textFill="WHITE">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnBorrar" mnemonicParsing="false" onAction="#eliminar" styleClass="buttonCS"
+                        stylesheets="@../../../../Style.css" text="Eliminar" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/eliminar (1).png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+                <Button fx:id="btnActualizar" mnemonicParsing="false" onAction="#actualizar" styleClass="buttonIS"
+                        stylesheets="@../../../../Style.css" text="Actualizar" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../../images/guardar-el-archivo.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Button>
+            </children>
+            <BorderPane.margin>
+                <Insets/>
+            </BorderPane.margin>
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+            </padding>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane alignment="CENTER_LEFT">
+                    <columnConstraints>
+                        <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <Label text="Nombre:" textFill="WHITE">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Apellidos:" textFill="WHITE" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Contraseña:" textFill="WHITE" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="DNI:" textFill="WHITE" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtNombre" GridPane.columnIndex="1">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </TextField>
+                        <TextField fx:id="txtDNI" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </TextField>
+                        <Label text="Fecha de nacimiento:" textFill="WHITE" GridPane.columnIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Empresa:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Profesor asignado:" textFill="WHITE" GridPane.columnIndex="2"
+                               GridPane.rowIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Email:" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="comboEmpresa" prefWidth="175.2" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </ComboBox>
+                        <DatePicker fx:id="txtFecha" GridPane.columnIndex="3">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </DatePicker>
+                        <ComboBox fx:id="comboProfesor" prefWidth="175.2" GridPane.columnIndex="3"
+                                  GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </ComboBox>
+                        <TextField fx:id="txtEmail" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </TextField>
+                        <Label text="Nº horas que ha realizado:" textFill="WHITE" GridPane.columnIndex="4"
+                               GridPane.rowIndex="1">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Nº horas pendientes de realizar:" textFill="WHITE" GridPane.columnIndex="4"
+                               GridPane.rowIndex="2">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label text="Observaciones:" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <TextArea fx:id="txtObservaciones" prefHeight="10.0" prefWidth="200.0" GridPane.columnIndex="5"
+                                  GridPane.rowIndex="3">
+                            <GridPane.margin>
+                                <Insets top="10.0"/>
+                            </GridPane.margin>
+                        </TextArea>
+                        <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtHorasRealizadas" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+                        <TextField fx:id="txtHorasPorRealizar" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+                        <TextField fx:id="txtContraseña" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <GridPane.margin>
+                                <Insets right="40.0"/>
+                            </GridPane.margin>
+                        </TextField>
+                        <Label prefHeight="17.0" prefWidth="87.0" text="Teléfono:" textFill="WHITE"
+                               GridPane.columnIndex="4">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <TextField fx:id="txttelefono" GridPane.columnIndex="5"/>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="20.0"/>
+                    </VBox.margin>
+                </GridPane>
+                <TableView fx:id="tablaeditAlum">
+                    <columns>
+                        <TableColumn fx:id="cFecha" prefWidth="75.0" text="Fecha"/>
+                        <TableColumn fx:id="cPractica" prefWidth="75.0" text="Tipo de práctica"/>
+                        <TableColumn fx:id="cHoras" prefWidth="75.0" text="Horas en el día"/>
+                        <TableColumn fx:id="cActividad" prefWidth="75.0" text="Actividad realizada"/>
+                        <TableColumn fx:id="cObservaciones" prefWidth="75.0" text="Observaciones"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+            </children>
+            <BorderPane.margin>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </BorderPane.margin>
+        </VBox>
+    </center>
 </BorderPane>

@@ -19,10 +19,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -65,11 +63,11 @@ public class DatosYEditarAlumnoController implements Initializable {
     @javafx.fxml.FXML
     private TableColumn<Actividad, String> cPractica;
     @javafx.fxml.FXML
-    private TableColumn<Actividad,String> cHoras;
+    private TableColumn<Actividad, String> cHoras;
     @javafx.fxml.FXML
-    private TableColumn<Actividad,String> cActividad;
+    private TableColumn<Actividad, String> cActividad;
     @javafx.fxml.FXML
-    private TableColumn<Actividad,String> cObservaciones;
+    private TableColumn<Actividad, String> cObservaciones;
     @javafx.fxml.FXML
     private TableView tablaeditAlum;
     @javafx.fxml.FXML
@@ -83,7 +81,8 @@ public class DatosYEditarAlumnoController implements Initializable {
 
     /**
      * Método de inicialización al cargar la interfaz.
-     * @param url La ubicación relativa al archivo FXML.
+     *
+     * @param url            La ubicación relativa al archivo FXML.
      * @param resourceBundle El recurso de objetos específico del locale.
      */
     @Override
@@ -99,12 +98,12 @@ public class DatosYEditarAlumnoController implements Initializable {
         txtContraseña.setText(Session.getCurrentAlumno().getContrasenya());
         txtDNI.setText(Session.getCurrentAlumno().getDNI());
 
-        ActividadDAO actividadDAO=new ActividadDAO();
+        ActividadDAO actividadDAO = new ActividadDAO();
         List<Actividad> actividades = Session.getCurrentAlumno().getActividad_diaria();
         int horasTotales = actividadDAO.calcularTotalHoras(actividades);
         txtHorasRealizadas.setText(String.valueOf(horasTotales));
 
-        int horasRestantes= (700-horasTotales);
+        int horasRestantes = (700 - horasTotales);
         txtHorasPorRealizar.setText(String.valueOf(horasRestantes));
 
         //Esto es para poder pasar un DataPicker a otro sino no deja pasar los datos
@@ -117,20 +116,20 @@ public class DatosYEditarAlumnoController implements Initializable {
         //Obtener las empresas
         List<Empresa> allempresas = empresaDAO.getAll();
         //carga las empresas
-        for (Empresa empresa : allempresas){
+        for (Empresa empresa : allempresas) {
             comboEmpresa.getItems().add(empresa.getNombre());
         }
         //Con esto elegimos la empresa que esta con el alumno
-        comboEmpresa.setValue(empresaasociada != null ? empresaasociada.getNombre(): null);
+        comboEmpresa.setValue(empresaasociada != null ? empresaasociada.getNombre() : null);
 
         // Aqui añado el combo de Profesores
 
         Profesor profesoralumno = alumno.getTutor();
         List<Profesor> allprofesores = profesorDAO.getAll();
-        for (Profesor profesor : allprofesores){
+        for (Profesor profesor : allprofesores) {
             comboProfesor.getItems().add(profesor.getNombre());
         }
-        comboProfesor.setValue(profesoralumno != null ? profesoralumno.getNombre(): null);
+        comboProfesor.setValue(profesoralumno != null ? profesoralumno.getNombre() : null);
 
         txtEmail.setText(Session.getCurrentAlumno().getEmail());
         txttelefono.setText(String.valueOf(Session.getCurrentAlumno().getTelefono()));
@@ -139,11 +138,11 @@ public class DatosYEditarAlumnoController implements Initializable {
 
         // Tabla de actividades
 
-        cFecha.setCellValueFactory((fila) ->{
+        cFecha.setCellValueFactory((fila) -> {
             LocalDate fecha = fila.getValue().getFecha();
-            String fechaformato= "";
+            String fechaformato = "";
 
-            if(fecha != null){
+            if (fecha != null) {
                 DateTimeFormatter nuevafecha = DateTimeFormatter.ofPattern("dd-MM-yyyy");
                 fechaformato = fecha.format(nuevafecha);
             }
@@ -151,19 +150,19 @@ public class DatosYEditarAlumnoController implements Initializable {
 
         });
 
-        cPractica.setCellValueFactory((fila) ->{
+        cPractica.setCellValueFactory((fila) -> {
             String practicas = String.valueOf(fila.getValue().getTipo());
             return new SimpleStringProperty(practicas);
         });
-        cHoras.setCellValueFactory((fila)->{
+        cHoras.setCellValueFactory((fila) -> {
             String horas = String.valueOf(fila.getValue().getHoras());
             return new SimpleStringProperty(horas);
         });
-        cActividad.setCellValueFactory((fila)->{
+        cActividad.setCellValueFactory((fila) -> {
             String actividad = String.valueOf(fila.getValue().getActividad());
             return new SimpleStringProperty(actividad);
         });
-        cObservaciones.setCellValueFactory((fila)->{
+        cObservaciones.setCellValueFactory((fila) -> {
             String obsevaciones = String.valueOf(fila.getValue().getObservaciones());
             return new SimpleStringProperty(obsevaciones);
         });
@@ -184,6 +183,7 @@ public class DatosYEditarAlumnoController implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de cancelar.
+     *
      * @param actionEvent El evento de acción del botón.
      */
 
@@ -191,7 +191,7 @@ public class DatosYEditarAlumnoController implements Initializable {
     public void cancelar(ActionEvent actionEvent) {
         // Lógica para cancelar y volver a la página del profesor
         try {
-            App.changeScene("PaginaProfesor.fxml","Pagina Profesor");
+            App.changeScene("PaginaProfesor.fxml", "Pagina Profesor");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -199,6 +199,7 @@ public class DatosYEditarAlumnoController implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de eliminar.
+     *
      * @param actionEvent El evento de acción del botón.
      */
     @javafx.fxml.FXML
@@ -231,7 +232,7 @@ public class DatosYEditarAlumnoController implements Initializable {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }else{
+        } else {
             //Si cancelamos volvemos a la tabla del alumno
             Stage currentStage = (Stage) btnActualizar.getScene().getWindow();
             currentStage.setScene(currentScene);
@@ -240,6 +241,7 @@ public class DatosYEditarAlumnoController implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de actualizar.
+     *
      * @param actionEvent El evento de acción del botón.
      */
 
@@ -258,28 +260,27 @@ public class DatosYEditarAlumnoController implements Initializable {
         if (txtApellidos.getText().length() > 1) {
             a.setApellidos(txtApellidos.getText());
         }
-        if (txtContraseña.getText().length()>1){
+        if (txtContraseña.getText().length() > 1) {
             a.setContrasenya(txtContraseña.getText());
         }
-        if (txtDNI.getText().length()>1){
+        if (txtDNI.getText().length() > 1) {
             a.setDNI(txtDNI.getText());
         }
-        if (txtFecha.getValue() != null){
+        if (txtFecha.getValue() != null) {
             a.setNacimiento(txtFecha.getValue());
         }
-        if (txtEmail.getText().length()>1){
+        if (txtEmail.getText().length() > 1) {
             a.setEmail(txtEmail.getText());
         }
-        if (txttelefono.getText().length()>1){
+        if (txttelefono.getText().length() > 1) {
             a.setTelefono(Integer.valueOf(txttelefono.getText()));
         }
 
-        if(comboEmpresa.getValue().length()>1){
+        if (comboEmpresa.getValue().length() > 1) {
             String nombreEmpresaSeleccionada = comboEmpresa.getValue();
             Empresa empresaSeleccionada = empresaDAO.buscarEmpresaPorNombre(nombreEmpresaSeleccionada);
             a.setEmpresa(empresaSeleccionada);
         }
-
 
 
         AlumnoDAO alumnoDAO = new AlumnoDAO();
@@ -296,7 +297,7 @@ public class DatosYEditarAlumnoController implements Initializable {
         Session.getCurrentProfesor().getAlumnos().addAll(alumnoDAO.getAlumnosPorProfesor(Session.getCurrentProfesor()));
 
         try {
-            App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
+            App.changeScene("PaginaProfesor.fxml", "Inicio Profesor");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

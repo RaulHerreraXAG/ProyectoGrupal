@@ -12,9 +12,13 @@ import org.hibernate.query.Query;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que maneja la lógica de acceso a datos para la entidad Alumno.
+ */
 public class AlumnoDAO implements DAO<Alumno> {
-
-
+    /**
+     * @return Devuelve una lista con todos los alumnos.
+     */
     @Override
     public ArrayList<Alumno> getAll() {
         var salida = new ArrayList<Alumno>(0);
@@ -25,15 +29,25 @@ public class AlumnoDAO implements DAO<Alumno> {
         return salida;
     }
 
+    /**
+     * @param id Identificador del elemento a buscar.
+     * @return Devuelve el alumno según el ID proporcionado.
+     */
     @Override
     public Alumno get(Long id) {
         var salida = new Alumno();
-        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             salida = session.get(Alumno.class, id);
         }
         return salida;
     }
 
+    /**
+     * Guarda un nuevo alumno en la base de datos.
+     *
+     * @param data Elemento del tipo T a guardar en la base de datos.
+     * @return Devuelve el alumno guardado.
+     */
     @Override
     public Alumno save(Alumno data) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -58,9 +72,14 @@ public class AlumnoDAO implements DAO<Alumno> {
         }
     }
 
+    /**
+     * Actualiza un alumno existente en la base de datos.
+     *
+     * @param data Elemento del tipo T a actualizar en la base de datos.
+     */
     @Override
     public void update(Alumno data) {
-        try( org.hibernate.Session s = HibernateUtil.getSessionFactory().openSession()){
+        try (org.hibernate.Session s = HibernateUtil.getSessionFactory().openSession()) {
             Transaction t = s.beginTransaction();
 
             Alumno g = s.get(Alumno.class, data.getID_Alumno());
@@ -71,6 +90,11 @@ public class AlumnoDAO implements DAO<Alumno> {
 
     }
 
+    /**
+     * Elimina un alumno de la base datos.
+     *
+     * @param data Elemento del tipo T a eliminar de la base de datos.
+     */
     @Override
     public void delete(Alumno data) {
         HibernateUtil.getSessionFactory().inTransaction((session -> {
@@ -87,6 +111,13 @@ public class AlumnoDAO implements DAO<Alumno> {
 
     }
 
+    /**
+     * Válida el inicio de sesión del alumno.
+     *
+     * @param email       Email del alumno.
+     * @param contrasenya Contraseña del alumno.
+     * @return Devuelve el alumno si las credenciales son válidas.
+     */
     public Alumno validateUser(String email, String contrasenya) {
         Alumno result = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -105,6 +136,12 @@ public class AlumnoDAO implements DAO<Alumno> {
         return result;
     }
 
+    /**
+     * Obtiene una lista de alumnos asociados a un profesor.
+     *
+     * @param profesor El profesor del cual se desean obtener los alumnos.
+     * @return Devuelve una lista de alumnos asociados al profesor.
+     */
     public List<Alumno> getAlumnosPorProfesor(Profesor profesor) {
         List<Alumno> alumnos = new ArrayList<>();
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -118,13 +155,12 @@ public class AlumnoDAO implements DAO<Alumno> {
 
     /**
      * Obtiene un alumno basado en su dirección de correo electrónico.
-     *
+     * <p>
      * Este método busca y devuelve un objeto Alumno asociado a la dirección de correo electrónico proporcionada.
      *
      * @param email La dirección de correo electrónico del alumno a buscar.
      * @return Un objeto Alumno si se encuentra, o null si no se encuentra ningún alumno con el correo electrónico dado.
-     *         HibernateException Si hay algún problema con la sesión de Hibernate.
-     *
+     * HibernateException Si hay algún problema con la sesión de Hibernate.
      * @see Alumno
      */
     public Alumno getAlumnoByEmail(String email) {

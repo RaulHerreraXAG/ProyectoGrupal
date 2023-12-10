@@ -2,7 +2,6 @@ package com.example.proyectogrupal.controllers;
 
 import com.example.proyectogrupal.App;
 import com.example.proyectogrupal.Session;
-import com.example.proyectogrupal.alumno.Alumno;
 import com.example.proyectogrupal.empresa.Empresa;
 import com.example.proyectogrupal.empresa.EmpresaDAO;
 import javafx.beans.property.SimpleStringProperty;
@@ -15,7 +14,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -28,15 +26,15 @@ public class InformacionEmpresa implements Initializable {
     // Declaraciones de campos de la interfaz gráfica y observables
 
     @javafx.fxml.FXML
-    private TableColumn<Empresa,String> cNombre;
+    private TableColumn<Empresa, String> cNombre;
     @javafx.fxml.FXML
-    private TableColumn<Empresa,String> cEmail;
+    private TableColumn<Empresa, String> cEmail;
     @javafx.fxml.FXML
-    private TableColumn<Empresa,String> cTelefono;
+    private TableColumn<Empresa, String> cTelefono;
     @javafx.fxml.FXML
-    private TableColumn<Empresa,String> cResponsable;
+    private TableColumn<Empresa, String> cResponsable;
     @javafx.fxml.FXML
-    private TableColumn<Empresa,String> cObservaciones;
+    private TableColumn<Empresa, String> cObservaciones;
     @javafx.fxml.FXML
     private Button btnVolver;
     @javafx.fxml.FXML
@@ -46,7 +44,8 @@ public class InformacionEmpresa implements Initializable {
 
     /**
      * Método de inicialización que configura las columnas y carga la información de las empresas en la tabla.
-     * @param url La URL de la ubicación del archivo FXML.
+     *
+     * @param url            La URL de la ubicación del archivo FXML.
      * @param resourceBundle Los recursos utilizados para localizar el archivo FXML.
      */
     @Override
@@ -54,20 +53,20 @@ public class InformacionEmpresa implements Initializable {
 
         // Lógica para inicializar la tabla con la información de las empresas
 
-        cNombre.setCellValueFactory((fila)->{
+        cNombre.setCellValueFactory((fila) -> {
             return new SimpleStringProperty(fila.getValue().getNombre());
         });
-        cResponsable.setCellValueFactory((fila)->{
+        cResponsable.setCellValueFactory((fila) -> {
             return new SimpleStringProperty(fila.getValue().getResponsable());
         });
-        cEmail.setCellValueFactory((fila)->{
+        cEmail.setCellValueFactory((fila) -> {
             return new SimpleStringProperty(fila.getValue().getEmail());
         });
         cTelefono.setCellValueFactory((fila) -> {
-            String telefono= String.valueOf(fila.getValue().getTelefono());
+            String telefono = String.valueOf(fila.getValue().getTelefono());
             return new SimpleStringProperty(telefono);
         });
-        cObservaciones.setCellValueFactory((fila)->{
+        cObservaciones.setCellValueFactory((fila) -> {
             return new SimpleStringProperty(fila.getValue().getObservaciones());
         });
 
@@ -75,9 +74,9 @@ public class InformacionEmpresa implements Initializable {
         tvEmpresa.setItems(observableList);
 
         tvEmpresa.setOnMouseClicked(event -> {
-            if(event.getClickCount()==1){
+            if (event.getClickCount() == 1) {
                 Empresa empresaselect = tvEmpresa.getSelectionModel().getSelectedItem();
-                if (empresaselect != null){
+                if (empresaselect != null) {
                     Session.setCurrentEmpresa(empresaselect);
                     try {
                         App.changeScene("EditarEmpresa.fxml", "Editar Empresa");
@@ -91,6 +90,7 @@ public class InformacionEmpresa implements Initializable {
 
     /**
      * Método llamado al hacer clic en el botón de volver.
+     *
      * @param actionEvent El evento de acción del botón.
      * @throws IOException Si ocurre un error de E/S al cambiar la escena.
      */
@@ -98,7 +98,7 @@ public class InformacionEmpresa implements Initializable {
     @javafx.fxml.FXML
     public void volver(ActionEvent actionEvent) throws IOException {
         // Lógica para volver a la página del profesor
-        App.changeScene("PaginaProfesor.fxml","Inicio Profesor");
+        App.changeScene("PaginaProfesor.fxml", "Inicio Profesor");
     }
 
 
