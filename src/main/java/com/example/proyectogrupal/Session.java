@@ -13,8 +13,6 @@ import java.util.List;
 
 public class Session {
 
-    private static List<Actividad> actividades = new ArrayList<>();
-
     @Getter
     @Setter
     private static Alumno currentAlumno;
@@ -27,14 +25,5 @@ public class Session {
     @Getter
     @Setter
     private static Actividad currentActividad;
-
-    public static void cargarSesion(){
-        ActividadDAO actividadDAO = new ActividadDAO();
-        actividades = actividadDAO.getAll();
-    }
-    public static List<Actividad> getActividades() {
-        return actividades;
-    }
-
 
 }

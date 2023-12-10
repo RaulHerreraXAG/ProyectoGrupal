@@ -27,7 +27,7 @@ import java.util.ResourceBundle;
  * @author Tu Nombre
  * @version 1.0
  */
-public class cambiocontraseña implements Initializable {
+public class CambioContraseña implements Initializable {
 
     @javafx.fxml.FXML
     private VBox vBoxFondo2;
@@ -69,7 +69,32 @@ public class cambiocontraseña implements Initializable {
      */
     @javafx.fxml.FXML
     public void cambiarcontraseña(ActionEvent actionEvent) {
-        // Resto del código...
+
+        String newPassword1 = txtPassword1.getText();
+        String newPassword2 = txtPassword2.getText();
+
+        if (newPassword1.isEmpty() || newPassword2.isEmpty()) {
+            mostrarAlerta("Error", "Por favor, complete ambos campos de contraseña.", Alert.AlertType.ERROR);
+            return;
+        }
+
+        if (!newPassword1.equals(newPassword2)) {
+            mostrarAlerta("Error", "Las contraseñas no coinciden.", Alert.AlertType.ERROR);
+            return;
+        }
+
+        Alumno currentAlumno = Session.getCurrentAlumno();
+        Profesor currentProfesor = Session.getCurrentProfesor();
+
+        if (currentAlumno != null) {
+            AlumnoDAO alumnoDAO = new AlumnoDAO();
+            currentAlumno.setContrasenya(newPassword1);
+            alumnoDAO.update(currentAlumno);
+        } else if (currentProfesor != null) {
+            ProfesorDAO profesorDAO = new ProfesorDAO();
+            currentProfesor.setContrasenya(newPassword1);
+            profesorDAO.update(currentProfesor);
+        }
 
         mostrarAlerta("Éxito", "Contraseña actualizada exitosamente.", Alert.AlertType.INFORMATION);
 
